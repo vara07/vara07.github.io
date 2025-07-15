@@ -108,26 +108,22 @@
 <h1>🍟 Reasons I Should Have Tuckshop Tomorrow 🍓</h1>
 
 <div class="button-container">
-  <button onclick="showPopup(this)">Reason 1 🌟</button>
-  <button onclick="showReason(this, 2)">Reason 2 🍔</button>
-  <button onclick="showReason(this, 3)">Reason 3 🥳</button>
-  <button onclick="showReason(this, 4)">Reason 4 🌈</button>
-  <button onclick="showReason(this, 5)">Reason 5 🏆</button>
-  <button onclick="showReason(this, 6)">Reason 6 😍</button>
-  <button onclick="showReason(this, 7)">Reason 7 🤗</button>
-  <button onclick="showReason(this, 8)">Reason 8 👩‍🍳</button>
-  <button onclick="showReason(this, 9)">Reason 9 🥦</button>
-  <button onclick="showReason(this, 10)">Reason 10 🎉</button>
+  <button onclick="showPopup(this, 1)">Reason 1 🌟</button>
+  <button onclick="showPopup(this, 2)">Reason 2 🍔</button>
+  <button onclick="showPopup(this, 3)">Reason 3 🥳</button>
+  <button onclick="showPopup(this, 4)">Reason 4 🌈</button>
+  <button onclick="showPopup(this, 5)">Reason 5 🏆</button>
+  <button onclick="showPopup(this, 6)">Reason 6 😍</button>
+  <button onclick="showPopup(this, 7)">Reason 7 🤗</button>
+  <button onclick="showPopup(this, 8)">Reason 8 👩‍🍳</button>
+  <button onclick="showPopup(this, 9)">Reason 9 🥦</button>
+  <button onclick="showPopup(this, 10)">Reason 10 🎉</button>
 </div>
 
 <!-- POPUP WINDOW -->
 <div class="popup" id="popup">
-  <div class="popup-content">
-    🌟 Reason 1 🌟 <br><br>
-    I've been a 💯 angel all week! <br>
-    I totally deserve some delicious tuckshop! 💖🍟
-    <br><br>
-    <button class="close-btn" onclick="closePopup()">OKAY! 💕</button>
+  <div class="popup-content" id="popup-text">
+    <!-- Populated by JavaScript -->
   </div>
 </div>
 
@@ -136,31 +132,35 @@
 </footer>
 
 <script>
-function showPopup(button) {
-  document.getElementById("popup").style.display = "flex";
+let reasons = [
+  "I've been a 💯 angel all week! I totally deserve delicious tuckshop! 💖🍟",
+  "Tuckshop food is ✨ magical ✨ and makes me smile 😊",
+  "It will make my school day extra 💖 fabulous 💖",
+  "No boring lunchbox tomorrow! 🎀 Yay for yummy food!",
+  "I’ll be super motivated to do my best 🏆 if I have tuckshop",
+  "All my friends will go 😍 WOW 😍 when they see my yummy food!",
+  "I will give you the biggest hug ever 🤗 because you’re the best!",
+  "Tuckshop supports our lovely tuckshop helpers 👩‍🍳💗 and keeps me happy",
+  "I promise to eat my veggies 🥦 for the rest of the week if I get tuckshop!",
+  "Tuckshop = happiness = best day ever 🎉🍔🍟"
+];
+
+function showPopup(button, num) {
+  let popup = document.getElementById("popup");
+  let popupText = document.getElementById("popup-text");
+  
+  popupText.innerHTML = `
+    <div>Reason ${num}:<br><br>${reasons[num - 1]}</div>
+    <br>
+    <button class="close-btn" onclick="closePopup()">OKAY! 💕</button>
+  `;
+  
+  popup.style.display = "flex";
   button.classList.add("clicked");
 }
 
 function closePopup() {
   document.getElementById("popup").style.display = "none";
-}
-
-function showReason(button, num) {
-  let reasons = [
-    "I've been a 💯 angel all week!", // this is skipped in alerts
-    "Tuckshop food is ✨ magical ✨ and makes me smile 😊",
-    "It will make my school day extra 💖 fabulous 💖",
-    "No boring lunchbox tomorrow! 🎀",
-    "I’ll be super motivated to do my best 🏆",
-    "All my friends will go 😍 WOW 😍",
-    "I will give you the biggest hug ever 🤗",
-    "Tuckshop supports our lovely tuckshop helpers 👩‍🍳💗",
-    "I promise to eat my veggies 🥦 for the rest of the week!",
-    "Tuckshop = happiness = best day ever 🎉🍔🍟"
-  ];
-
-  alert("Reason " + num + ": " + reasons[num - 1]);
-  button.classList.add("clicked");
 }
 </script>
 
