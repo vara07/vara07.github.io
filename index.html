@@ -55,7 +55,6 @@
       transform: scale(1.1);
     }
 
-    /* Popup modal styles */
     .popup {
       display: none;
       position: fixed;
@@ -67,6 +66,7 @@
       background-color: rgba(0,0,0,0.5);
       justify-content: center;
       align-items: center;
+      animation: fadeIn 0.5s;
     }
 
     .popup-content {
@@ -80,6 +80,7 @@
       text-align: center;
       font-family: 'Pacifico', cursive;
       position: relative;
+      animation: slideUp 0.5s;
     }
 
     .close-btn {
@@ -100,6 +101,16 @@
       font-size: 24px;
       margin: 40px;
       text-shadow: 2px 2px #ff3399;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes slideUp {
+      from {transform: translateY(50px); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
     }
   </style>
 </head>
@@ -123,9 +134,12 @@
 <!-- POPUP WINDOW -->
 <div class="popup" id="popup">
   <div class="popup-content" id="popup-text">
-    <!-- Populated by JavaScript -->
+    <!-- Text added by JavaScript -->
   </div>
 </div>
+
+<!-- Happy Song -->
+<audio id="happy-sound" src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Short_happy_music.mp3"></audio>
 
 <footer>
   💖 Made by Vara, who totally deserves tuckshop 💖
@@ -146,16 +160,13 @@ let reasons = [
 ];
 
 function showPopup(button, num) {
-  let popup = document.getElementById("popup");
-  let popupText = document.getElementById("popup-text");
-  
-  popupText.innerHTML = `
+  document.getElementById("popup").style.display = "flex";
+  document.getElementById("popup-text").innerHTML = `
     <div>Reason ${num}:<br><br>${reasons[num - 1]}</div>
     <br>
     <button class="close-btn" onclick="closePopup()">OKAY! 💕</button>
   `;
-  
-  popup.style.display = "flex";
+  document.getElementById("happy-sound").play();
   button.classList.add("clicked");
 }
 
