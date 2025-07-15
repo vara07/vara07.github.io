@@ -1,74 +1,101 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>💖 10 Reasons I Deserve Tuckshop 💖</title>
+  <title>💖 10 Reasons I Should Get Tuckshop 💖</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Comic+Neue&display=swap');
 
     body {
       font-family: 'Comic Neue', cursive;
-      background: linear-gradient(135deg, #ffb6c1, #ff69b4, #ff1493);
+      background: linear-gradient(135deg, #ff99cc, #ff66b2, #ff3399);
       margin: 0;
       padding: 0;
       color: #4d004d;
+      text-align: center;
     }
 
     h1 {
-      text-align: center;
-      color: #ffffff;
       font-family: 'Pacifico', cursive;
+      color: white;
       font-size: 60px;
-      margin: 0;
-      padding: 30px;
-      background-color: rgba(255, 255, 255, 0.2);
-      text-shadow: 3px 3px #ff69b4;
+      margin: 20px;
+      text-shadow: 3px 3px #ff3399;
     }
 
-    ul {
-      max-width: 800px;
-      margin: 30px auto;
-      background-color: rgba(255, 255, 255, 0.4);
-      border-radius: 25px;
-      padding: 40px;
-      box-shadow: 0 0 20px rgba(255, 20, 147, 0.4);
-      font-size: 28px;
-      line-height: 2;
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 40px;
     }
 
-    li {
-      margin-bottom: 20px;
+    button {
+      font-family: 'Comic Neue', cursive;
+      background-color: #ffccf9;
+      color: #660066;
+      border: none;
+      border-radius: 20px;
+      padding: 20px 30px;
+      margin: 15px;
+      font-size: 25px;
+      cursor: pointer;
+      box-shadow: 0 5px #ff66b2;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px #ff3399;
     }
 
     footer {
-      text-align: center;
-      font-size: 20px;
-      margin-top: 50px;
-      color: #ffffff;
       font-family: 'Pacifico', cursive;
-      text-shadow: 2px 2px #ff1493;
+      color: white;
+      font-size: 24px;
+      margin: 40px;
+      text-shadow: 2px 2px #ff3399;
     }
   </style>
 </head>
 <body>
 
-<h1>🍓 10 Reasons I Should Get Tuckshop 🍟</h1>
+<h1>🍟 Reasons I Should Have Tuckshop Tomorrow 🍓</h1>
 
-<ul>
-  <li>1. I've been a 💯 angel all week!</li>
-  <li>2. Tuckshop food is ✨ magical ✨ and makes me smile 😊</li>
-  <li>3. It will make my school day extra 💖 fabulous 💖</li>
-  <li>4. No boring lunchbox tomorrow! 🎀</li>
-  <li>5. I’ll be super motivated to do my best 🏆</li>
-  <li>6. All my friends will go 😍 WOW 😍</li>
-  <li>7. I will give you the biggest hug ever 🤗</li>
-  <li>8. Tuckshop supports our lovely tuckshop helpers 👩‍🍳💗</li>
-  <li>9. I promise to eat my veggies 🥦 for the rest of the week!</li>
-  <li>10. Tuckshop = happiness = best day ever 🎉🍔🍟</li>
-</ul>
+<div class="button-container">
+  <button onclick="showReason(1)">Reason 1 🌟</button>
+  <button onclick="showReason(2)">Reason 2 🍔</button>
+  <button onclick="showReason(3)">Reason 3 🥳</button>
+  <button onclick="showReason(4)">Reason 4 🌈</button>
+  <button onclick="showReason(5)">Reason 5 🏆</button>
+  <button onclick="showReason(6)">Reason 6 😍</button>
+  <button onclick="showReason(7)">Reason 7 🤗</button>
+  <button onclick="showReason(8)">Reason 8 👩‍🍳</button>
+  <button onclick="showReason(9)">Reason 9 🥦</button>
+  <button onclick="showReason(10)">Reason 10 🎉</button>
+</div>
 
 <footer>
-  ✨ Made by Vara — I 1000% deserve it! ✨
+  💖 Made by Vara, who totally deserves tuckshop 💖
 </footer>
+
+<script>
+function showReason(num) {
+  let reasons = [
+    "I've been a 💯 angel all week!",
+    "Tuckshop food is ✨ magical ✨ and makes me smile 😊",
+    "It will make my school day extra 💖 fabulous 💖",
+    "No boring lunchbox tomorrow! 🎀",
+    "I’ll be super motivated to do my best 🏆",
+    "All my friends will go 😍 WOW 😍",
+    "I will give you the biggest hug ever 🤗",
+    "Tuckshop supports our lovely tuckshop helpers 👩‍🍳💗",
+    "I promise to eat my veggies 🥦 for the rest of the week!",
+    "Tuckshop = happiness = best day ever 🎉🍔🍟"
+  ];
+
+  alert("Reason " + num + ": " + reasons[num - 1]);
+}
+</script>
 
 </body>
 </html>
