@@ -54,7 +54,7 @@
   }
 
   .card {
-    background: white;
+    background: linear-gradient(to bottom, #d0c4f6, #99d5f9 40%, white 80%);
     width: 280px;
     border-radius: 20px;
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
@@ -62,6 +62,7 @@
     padding: 30px 20px;
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
+    color: #222;
   }
 
   .card:hover {
@@ -72,7 +73,14 @@
   .card i {
     font-size: 50px;
     color: #ff66aa;
+    background: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    line-height: 60px;
+    display: inline-block;
     margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   }
 
   .card h2 {
@@ -84,7 +92,7 @@
   .card p {
     font-size: 0.95rem;
     margin-bottom: 20px;
-    color: #666;
+    color: #444;
   }
 
   .card a {
