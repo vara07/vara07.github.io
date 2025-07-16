@@ -1,1 +1,161 @@
-i
+<!DOCTYPE html>
+<html>
+<head>
+  <title>💖 10 Reasons I Should Get Tuckshop 💖</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Comic+Neue&display=swap');
+    body {
+      font-family: 'Comic Neue', cursive;
+      background: linear-gradient(135deg, #ff99cc, #ff66b2, #ff3399);
+      margin: 0;
+      padding: 0;
+      color: #4d004d;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    body.no-scroll {
+      overflow: hidden;
+    }
+    h1 {
+      font-family: 'Pacifico', cursive;
+      color: white;
+      font-size: 60px;
+      margin: 20px;
+      text-shadow: 3px 3px #ff3399;
+    }
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 40px;
+    }
+    button {
+      font-family: 'Comic Neue', cursive;
+      background-color: #ffccf9;
+      color: #660066;
+      border: none;
+      border-radius: 20px;
+      padding: 20px 30px;
+      margin: 15px;
+      font-size: 25px;
+      cursor: pointer;
+      box-shadow: 0 5px #ff66b2;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.5s;
+    }
+    button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px #ff3399;
+    }
+    .clicked {
+      background: linear-gradient(to right, #ff99cc, #ff66b2, #ff3399);
+      color: white;
+      box-shadow: 0 8px #ff3399;
+    }
+    .popup {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s;
+    }
+    .popup.show {
+      display: flex;
+    }
+    .popup-content {
+      background: linear-gradient(to right, #ff99cc, #ff66b2, #ff3399);
+      color: white;
+      padding: 40px;
+      border-radius: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      font-size: 30px;
+      max-width: 500px;
+      text-align: center;
+      font-family: 'Pacifico', cursive;
+    }
+    .close-btn {
+      background-color: white;
+      color: #ff3399;
+      border: none;
+      padding: 10px 20px;
+      font-size: 20px;
+      border-radius: 20px;
+      margin-top: 20px;
+      cursor: pointer;
+      font-family: 'Comic Neue', cursive;
+    }
+    footer {
+      font-family: 'Pacifico', cursive;
+      color: white;
+      font-size: 24px;
+      margin: 40px;
+      text-shadow: 2px 2px #ff3399;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🍟 Reasons I Should Have Tuckshop Tomorrow 🍓</h1>
+
+<div class="button-container">
+  <button onclick="showPopup(this, 1)">Reason 1 🌟</button>
+  <button onclick="showPopup(this, 2)">Reason 2 🍔</button>
+  <button onclick="showPopup(this, 3)">Reason 3 🥳</button>
+  <button onclick="showPopup(this, 4)">Reason 4 🌈</button>
+  <button onclick="showPopup(this, 5)">Reason 5 🏆</button>
+  <button onclick="showPopup(this, 6)">Reason 6 😍</button>
+  <button onclick="showPopup(this, 7)">Reason 7 🤗</button>
+  <button onclick="showPopup(this, 8)">Reason 8 👩‍🍳</button>
+  <button onclick="showPopup(this, 9)">Reason 9 🥦</button>
+  <button onclick="showPopup(this, 10)">Reason 10 🎉</button>
+</div>
+
+<div class="popup" id="popup">
+  <div class="popup-content" id="popup-text"></div>
+</div>
+
+<audio id="happy-sound" preload="auto">
+  <source src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Short_happy_music.mp3" type="audio/mpeg">
+</audio>
+
+<footer>💖 Made by Vara, who totally deserves tuckshop 💖</footer>
+
+<script>
+const reasons = [
+  "I've been a 💯 angel all week! I totally deserve delicious tuckshop! 💖🍟",
+  "Tuckshop food is ✨ magical ✨ and makes me smile 😊",
+  "It will make my school day extra 💖 fabulous 💖",
+  "No boring lunchbox tomorrow! 🎀 Yay for yummy food!",
+  "I’ll be super motivated to do my best 🏆 if I have tuckshop",
+  "All my friends will go 😍 WOW 😍 when they see my yummy food!",
+  "I will give you the biggest hug ever 🤗 because you’re the best!",
+  "Tuckshop supports our lovely tuckshop helpers 👩‍🍳💗 and keeps me happy",
+  "I promise to eat my veggies 🥦 for the rest of the week if I get tuckshop!",
+  "Tuckshop = happiness = best day ever 🎉🍔🍟"
+];
+
+function showPopup(button, num) {
+  document.getElementById('popup-text').innerHTML = `
+    <div>Reason ${num}:<br><br>${reasons[num-1]}</div>
+    <br><button class='close-btn' onclick='closePopup()'>OKAY! 💕</button>`;
+  
+  document.getElementById('popup').classList.add('show');
+  document.body.classList.add('no-scroll');
+
+  button.classList.add('clicked');
+
+  // Play audio on click (Safari allows it because it's after user interaction)
+  const audio = document.getElementById('happy-sound');
+  audio.currentTime = 0;
+  audio.play();
+}
+
+function closePopup() {
+  document.getElementById('popup').classList.remove('show');
+  document.body.classList.remove('no-scroll');
+}
+</script>
+</body>
+</html>
