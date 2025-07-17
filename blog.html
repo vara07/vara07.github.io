@@ -140,10 +140,31 @@
     strong {
       color: #ff3399;
     }
+    
+    .home-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: linear-gradient(to right, #ff69b4, #ffff66, #66ccff);
+  color: white;
+  padding: 15px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 15px;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: transform 0.2s;
+}
+
+.home-button:hover {
+  transform: scale(1.1);
+  background: linear-gradient(to right, #ff33cc, #ffcc33, #3399ff);
+}
   </style>
 </head>
 <body>
-
+<a href="index.html" class="home-button">🏠 Home</a>
 <h1>🎀 Fun Facts About My Sisters 🎀</h1>
 
 <div class="sister">
