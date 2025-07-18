@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cartoon Cookie</title>
+  <style>
+    body {
+      background-color: #fffbe6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .cookie {
+      width: 200px;
+      height: 200px;
+      background-color: #d9a066;
+      border-radius: 50%;
+      position: relative;
+      box-shadow: inset -10px -10px #b3743d;
+    }
+
+    .choc-chip {
+      width: 30px;
+      height: 30px;
+      background-color: #4b2e14;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    /* Chocolate chip positions */
+    .chip1 { top: 30px; left: 40px; }
+    .chip2 { top: 70px; left: 130px; }
+    .chip3 { top: 120px; left: 60px; }
+    .chip4 { top: 50px; left: 100px; }
+    .chip5 { top: 140px; left: 120px; }
+
+    .cookie::after {
+      content: "🍪";
+      font-size: 50px;
+      position: absolute;
+      bottom: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  </style>
+</head>
+<body>
+
+<div class="cookie">
+  <div class="choc-chip chip1"></div>
+  <div class="choc-chip chip2"></div>
+  <div class="choc-chip chip3"></div>
+  <div class="choc-chip chip4"></div>
+  <div class="choc-chip chip5"></div>
+</div>
+
+</body>
+</html>
