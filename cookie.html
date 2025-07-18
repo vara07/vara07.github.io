@@ -54,6 +54,80 @@
   <div class="choc-chip chip4"></div>
   <div class="choc-chip chip5"></div>
 </div>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Yummy Cookie Sandwich</title>
+  <style>
+    body {
+      background-color: #fff5e1;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      color: #5c4033;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    p {
+      background-color: #ffe6b3;
+      border: 3px dashed #d9a066;
+      padding: 20px;
+      border-radius: 15px;
+      width: 80%;
+      max-width: 500px;
+      text-align: center;
+      font-size: 1.2em;
+      box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .cookie {
+      width: 200px;
+      height: 200px;
+      background-color: #d9a066;
+      border-radius: 50%;
+      position: relative;
+      box-shadow: inset -15px -15px #b3743d, 5px 5px 15px rgba(0,0,0,0.2);
+      margin-top: 30px;
+    }
+
+    .choc-chip {
+      width: 30px;
+      height: 30px;
+      background-color: #4b2e14;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .chip1 { top: 30px; left: 40px; }
+    .chip2 { top: 70px; left: 130px; }
+    .chip3 { top: 120px; left: 60px; }
+    .chip4 { top: 50px; left: 100px; }
+    .chip5 { top: 140px; left: 120px; }
+
+    .cookie::after {
+      content: "🍪";
+      font-size: 50px;
+      position: absolute;
+      bottom: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  </style>
+</head>
+<body>
+
+<p>Today I’m making the <strong>ultimate chocolate chip cookie sandwich</strong>! 🍪 The cookies will be <em>soft, golden-brown, and packed with lots of gooey chocolate chips</em> that melt in your mouth. In between, I’m adding a big scoop of <strong>creamy, rich Nutella</strong> that oozes out perfectly when you take a bite. It’s going to be <em>warm, gooey, chocolatey, and absolutely delicious</em> — the best treat ever! 😍🍫</p>
+
+<div class="cookie">
+  <div class="choc-chip chip1"></div>
+  <div class="choc-chip chip2"></div>
+  <div class="choc-chip chip3"></div>
+  <div class="choc-chip chip4"></div>
+  <div class="choc-chip chip5"></div>
+</div>
 
 </body>
 </html>
