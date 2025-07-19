@@ -13,9 +13,8 @@
       user-select: none;
     }
 
-    /* SCORE BAR */
     .score-bar {
-      background-color: #a0522d;
+      background: linear-gradient(90deg, #ffbb33, #ff8800);
       color: white;
       font-size: 28px;
       font-weight: bold;
@@ -23,7 +22,6 @@
       padding: 15px;
       position: sticky;
       top: 0;
-      left: 0;
       width: 100%;
       z-index: 100;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
@@ -31,7 +29,7 @@
     }
 
     .score-bar.flash {
-      transform: scale(1.2);
+      transform: scale(1.1);
     }
 
     h1 {
@@ -40,27 +38,38 @@
       margin-top: 20px;
     }
 
-    p {
-      text-align: center;
-      font-size: 18px;
-      margin-bottom: 10px;
+    .game-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin: 20px;
     }
 
-    .score {
-      font-size: 22px;
-      text-align: center;
-      margin: 10px;
-    }
-
-    .bowl {
-      width: 300px;
-      height: 150px;
-      background: #a0522d;
-      border-radius: 0 0 150px 150px;
+    .packet {
+      width: 120px;
+      height: 200px;
+      background: linear-gradient(135deg, #ffd280, #ffbb66);
+      border: 4px solid #cc7a00;
+      border-radius: 20px;
       position: relative;
-      margin: 20px auto;
-      box-shadow: inset 0 -10px 0 #8b4513;
-      overflow: hidden;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    }
+
+    .packet::before {
+      content: '🍫 Chips';
+      position: absolute;
+      top: -35px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #cc7a00;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 16px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
     }
 
     .chip {
@@ -71,6 +80,7 @@
       position: absolute;
       touch-action: none;
       transition: all 0.3s ease;
+      cursor: pointer;
     }
 
     .chip:active {
@@ -83,7 +93,6 @@
       height: 250px;
       background: #d2a679;
       border-radius: 50%;
-      margin: 0 auto;
       position: relative;
       box-shadow: inset 0 0 10px #b97c50;
     }
@@ -93,27 +102,48 @@
       top: 10px;
       left: 50%;
       transform: translateX(-50%);
-      font-size: 28px;
+      font-size: 32px;
       font-weight: bold;
-      color: green;
       opacity: 0;
-      transition: opacity 0.5s ease;
+      color: #ff3366;
+      text-shadow: 2px 2px #ffe600, -2px -2px #66ff66;
+      animation: none;
+      pointer-events: none;
     }
 
-    .show {
-      opacity: 1;
+    .celebration.show {
+      animation: confetti 1s ease-out;
+    }
+
+    @keyframes confetti {
+      0% { opacity: 1; transform: translateX(-50%) scale(1); }
+      50% { transform: translateX(-50%) scale(1.5) rotate(10deg); color: #66ff66; }
+      70% { color: #ffcc00; }
+      100% { opacity: 0; transform: translateX(-50%) scale(1); color: #ff3366; }
     }
 
     .reset-btn {
       display: block;
-      margin: 25px auto;
-      padding: 12px 25px;
-      font-size: 18px;
-      background-color: #ffd280;
+      margin: 30px auto;
+      padding: 15px 30px;
+      font-size: 20px;
+      color: white;
+      background: linear-gradient(135deg, #ff6f61, #ffcc70);
       border: none;
-      border-radius: 12px;
+      border-radius: 50px;
       cursor: pointer;
-      box-shadow: 2px 4px #b3743d;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+      transition: transform 0.2s;
+    }
+
+    .reset-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .score {
+      font-size: 20px;
+      text-align: center;
+      margin: 10px;
     }
   </style>
 </head>
@@ -122,19 +152,22 @@
 <div class="score-bar" id="scoreBar">Score: 0</div>
 
 <h1>🍪 Decorate the Cookie!</h1>
-<p>Drag or tap the chocolate chips onto the cookie!</p>
+<p style="text-align:center;">Drag the choc chips from the packet onto the cookie!</p>
+
 <div class="score" id="chipsLeft">Choc Chips Left: 10</div>
 
-<div class="bowl" id="bowl"></div>
+<div class="game-container">
+  <div class="cookie" id="cookie">
+    <div class="celebration" id="celebration">+1000 🎉</div>
+  </div>
 
-<div class="cookie" id="cookie">
-  <div class="celebration" id="celebration">+1000 Points!</div>
+  <div class="packet" id="packet"></div>
 </div>
 
 <button class="reset-btn" onclick="resetGame()">Reset Game</button>
 
 <script>
-const bowl = document.getElementById('bowl');
+const packet = document.getElementById('packet');
 const cookie = document.getElementById('cookie');
 const celebration = document.getElementById('celebration');
 const chipsLeft = document.getElementById('chipsLeft');
@@ -147,11 +180,10 @@ function createChips() {
   for (let i = 0; i < 10; i++) {
     const chip = document.createElement('div');
     chip.classList.add('chip');
-    chip.style.top = Math.random() * 100 + 'px';
-    chip.style.left = Math.random() * 260 + 'px';
+    chip.style.top = Math.random() * 150 + 'px';
+    chip.style.left = Math.random() * 70 + 'px';
     chip.id = 'chip-' + i;
-    bowl.appendChild(chip);
-
+    packet.appendChild(chip);
     setupDrag(chip);
   }
 }
@@ -192,11 +224,7 @@ function setupDrag(chip) {
       remaining--;
       totalScore += 1000;
       updateScore();
-
-      celebration.classList.remove('show');
-      void celebration.offsetWidth;
-      celebration.classList.add('show');
-
+      triggerCelebration();
       flashScoreBar();
 
       if (remaining === 0) {
@@ -205,8 +233,8 @@ function setupDrag(chip) {
       }
     } else {
       chip.style.transition = 'all 0.5s';
-      chip.style.left = Math.random() * 260 + 'px';
-      chip.style.top = Math.random() * 100 + 'px';
+      chip.style.left = Math.random() * 70 + 'px';
+      chip.style.top = Math.random() * 150 + 'px';
     }
   });
 }
@@ -220,17 +248,20 @@ function flashScoreBar() {
   scoreBar.classList.remove('flash');
   void scoreBar.offsetWidth;
   scoreBar.classList.add('flash');
+}
 
-  setTimeout(() => {
-    scoreBar.classList.remove('flash');
-  }, 300);
+function triggerCelebration() {
+  celebration.textContent = '+1000 🎉';
+  celebration.classList.remove('show');
+  void celebration.offsetWidth;
+  celebration.classList.add('show');
 }
 
 function resetGame() {
   document.querySelectorAll('.chip').forEach(chip => chip.remove());
   remaining = 10;
   totalScore = 0;
-  celebration.textContent = '+1000 Points!';
+  celebration.textContent = '+1000 🎉';
   celebration.classList.remove('show');
   updateScore();
   createChips();
