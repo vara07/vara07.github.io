@@ -41,6 +41,13 @@
       border-radius: 50%;
       position: absolute;
       touch-action: none;
+      transition: all 0.3s ease;
+    }
+
+    /* LIFT EFFECT WHEN DRAGGING */
+    .chip:active {
+      transform: scale(1.2);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     }
 
     .cookie {
@@ -122,7 +129,6 @@ function setupDrag(chip) {
     chip.setPointerCapture(e.pointerId);
     offsetX = e.clientX - chip.getBoundingClientRect().left;
     offsetY = e.clientY - chip.getBoundingClientRect().top;
-
     chip.style.transition = 'none';
   });
 
@@ -182,6 +188,7 @@ function resetGame() {
   createChips();
 }
 
+// Start game
 createChips();
 updateScore();
 </script>
