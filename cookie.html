@@ -195,45 +195,42 @@ function createChips() {
   }
 }
 
+// ✅ Touch-based dragging system:
 function setupDrag(chip) {
-  let offsetX, offsetY;
+  let offsetX = 0, offsetY = 0;
 
-  chip.addEventListener('pointerdown', (e) => {
-    chip.setPointerCapture(e.pointerId);
+  chip.addEventListener('touchstart', function(e) {
+    const touch = e.touches[0];
     const rect = chip.getBoundingClientRect();
-    offsetX = e.clientX - rect.left;
-    offsetY = e.clientY - rect.top;
+    offsetX = touch.clientX - rect.left;
+    offsetY = touch.clientY - rect.top;
     chip.style.transition = 'none';
     chip.style.zIndex = 999;
-  });
+  }, { passive: false });
 
-  chip.addEventListener('pointermove', (e) => {
-    if (e.pressure === 0) return;
-    const containerRect = document.body.getBoundingClientRect();
-    chip.style.left = (e.clientX - containerRect.left - offsetX) + 'px';
-    chip.style.top = (e.clientY - containerRect.top - offsetY) + 'px';
-  });
+  chip.addEventListener('touchmove', function(e) {
+    e.preventDefault();
+    const touch = e.touches[0];
+    chip.style.left = (touch.clientX - offsetX) + 'px';
+    chip.style.top = (touch.clientY - offsetY) + 'px';
+  }, { passive: false });
 
-  chip.addEventListener('pointerup', (e) => {
-    chip.releasePointerCapture(e.pointerId);
+  chip.addEventListener('touchend', function(e) {
     chip.style.zIndex = '';
+    const touch = e.changedTouches[0];
+    const x = touch.clientX;
+    const y = touch.clientY;
 
     const cookieRect = cookie.getBoundingClientRect();
-    const x = e.clientX;
-    const y = e.clientY;
 
     if (x > cookieRect.left && x < cookieRect.right &&
         y > cookieRect.top && y < cookieRect.bottom) {
 
-      const cookieX = x - cookieRect.left - 20;
-      const cookieY = y - cookieRect.top - 20;
-
+      chip.style.left = (x - cookieRect.left - 20) + 'px';
+      chip.style.top = (y - cookieRect.top - 20) + 'px';
       chip.style.position = 'absolute';
-      chip.style.left = cookieX + 'px';
-      chip.style.top = cookieY + 'px';
       chip.style.cursor = 'default';
       chip.style.transition = 'all 0.3s';
-      chip.style.touchAction = 'none';
       cookie.appendChild(chip);
 
       remaining--;
@@ -251,9 +248,8 @@ function setupDrag(chip) {
       chip.style.transition = 'all 0.5s';
       chip.style.left = Math.random() * 70 + 'px';
       chip.style.top = Math.random() * 150 + 'px';
-      chip.style.position = 'absolute';
     }
-  });
+  }, { passive: false });
 }
 
 function updateScore() {
