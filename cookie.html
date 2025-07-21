@@ -3,20 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Draggable Square</title>
+<title>Draggable Circle</title>
 <style>
-  body {
+  html, body {
     margin: 0;
     padding: 0;
+    width: 100vw;
     height: 100vh;
     overflow: hidden;
+    touch-action: none;
+    background: white;
   }
 
-  #square {
+  #circle {
+    position: absolute;
     width: 100px;
     height: 100px;
-    background: red;
-    position: absolute;
+    border-radius: 50%;
+    background-color: blue;
     top: 100px;
     left: 100px;
     touch-action: none;
@@ -24,29 +28,30 @@
 </style>
 </head>
 <body>
-testing
-<div id="square"></div>
+
+<div id="circle"></div>
 
 <script>
-const square = document.getElementById('square');
-let offsetX, offsetY;
+const circle = document.getElementById('circle');
+let offsetX = 0;
+let offsetY = 0;
 
-// On touch start, calculate the offset of finger from square corner
-square.addEventListener('touchstart', function(event) {
+// Touch start event: get the offset between touch point and circle corner
+circle.addEventListener('touchstart', function(event) {
     const touch = event.touches[0];
-    const rect = square.getBoundingClientRect();
+    const rect = circle.getBoundingClientRect();
     offsetX = touch.clientX - rect.left;
     offsetY = touch.clientY - rect.top;
 }, false);
 
-// On touch move, update the position of the square
-square.addEventListener('touchmove', function(event) {
+// Touch move event: update the position of the circle
+circle.addEventListener('touchmove', function(event) {
     event.preventDefault();
     const touch = event.touches[0];
     const x = touch.clientX - offsetX;
     const y = touch.clientY - offsetY;
-    square.style.left = x + 'px';
-    square.style.top = y + 'px';
+    circle.style.left = x + 'px';
+    circle.style.top = y + 'px';
 }, { passive: false });
 </script>
 
