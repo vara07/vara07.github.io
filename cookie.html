@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Touch Drag Example</title>
+<title>Simple Touch Drag</title>
 <style>
   html, body {
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom right, #fceabb, #f8b500);
     height: 100vh;
     width: 100vw;
     overflow: hidden;
     font-family: Arial, sans-serif;
     touch-action: none;
+    background: white;
   }
 
   .square {
@@ -29,7 +29,7 @@
 
   .text {
     position: relative;
-    color: #333;
+    color: #000;
     font-size: 32px;
     margin: 20px;
   }
@@ -49,7 +49,6 @@ let offsetY = 0;
 square.addEventListener('touchstart', function(e) {
     const touch = e.touches[0];
     const rect = square.getBoundingClientRect();
-
     offsetX = touch.clientX - rect.left;
     offsetY = touch.clientY - rect.top;
 });
@@ -57,10 +56,8 @@ square.addEventListener('touchstart', function(e) {
 square.addEventListener('touchmove', function(e) {
     e.preventDefault();
     const touch = e.touches[0];
-
     const x = touch.clientX - offsetX;
     const y = touch.clientY - offsetY;
-
     square.style.left = `${x}px`;
     square.style.top = `${y}px`;
 }, { passive: false });
