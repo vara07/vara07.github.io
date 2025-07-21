@@ -70,7 +70,7 @@
     position: absolute;
     font-size: 24px;
     font-weight: bold;
-    color: green;
+    color: hotpink;
     animation: flash 1s ease-out;
     z-index: 10;
   }
@@ -85,7 +85,7 @@
 <body>
 
 <div id="scoreBanner">
-  Score: <span id="score">0</span> | Time: <span id="timer">60</span>s
+  Score: <span id="score">0</span> | Time: <span id="timer">0</span>s
 </div>
 <button id="resetBtn">Reset Game</button>
 <div id="cookie"></div>
@@ -97,7 +97,7 @@ const cookie = document.getElementById('cookie');
 const resetBtn = document.getElementById('resetBtn');
 
 let score = 0;
-let time = 60;
+let seconds = 0;
 let timerInterval;
 
 function createChocChip(x, y) {
@@ -143,46 +143,41 @@ function createChocChip(x, y) {
           flash.style.top = chipRect.top + 'px';
           document.body.appendChild(flash);
           setTimeout(() => flash.remove(), 1000);
-
-          chip.remove();
       }
   });
 }
 
-// Create random choc chips pile
 function createInitialChocChips() {
   for (let i = 0; i < 20; i++) {
     const x = Math.random() * (window.innerWidth - 60);
-    const y = (Math.random() * 200) + (window.innerHeight - 200);
+    const y = (Math.random() * (window.innerHeight / 2)) + 100;
     createChocChip(x, y);
   }
 }
 
-function startTimer() {
-  time = 60;
-  timerDisplay.textContent = time;
+function startStopwatch() {
   clearInterval(timerInterval);
+  seconds = 0;
+  timerDisplay.textContent = seconds;
   timerInterval = setInterval(() => {
-    time--;
-    timerDisplay.textContent = time;
-    if (time <= 0) {
-      clearInterval(timerInterval);
-      alert('⏰ Time’s up! Final score: ' + score);
-    }
+    seconds++;
+    timerDisplay.textContent = seconds;
   }, 1000);
 }
 
 function resetGame() {
   score = 0;
   scoreDisplay.textContent = score;
+  seconds = 0;
+  timerDisplay.textContent = seconds;
   document.querySelectorAll('.choc-chip').forEach(chip => chip.remove());
   createInitialChocChips();
-  startTimer();
+  startStopwatch();
 }
 
 // Start game
 createInitialChocChips();
-startTimer();
+startStopwatch();
 
 resetBtn.addEventListener('click', resetGame);
 </script>
