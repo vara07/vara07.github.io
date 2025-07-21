@@ -2,57 +2,270 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<title>🍪 Cookie Decorator - Touch Drag Version</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Draggable Circle</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
 <style>
-  html, body {
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: #f8eecf;
     margin: 0;
     padding: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    touch-action: none;
-    background: white;
+    user-select: none;
   }
 
-  #circle {
+  .score-bar {
+    background: linear-gradient(90deg, #ffbb33, #ff8800);
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.2s ease;
+  }
+
+  .score-bar.flash {
+    transform: scale(1.1);
+  }
+
+  h1 {
+    color: #a0522d;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .game-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin: 20px;
+  }
+
+  .packet {
+    width: 120px;
+    height: 200px;
+    background: linear-gradient(135deg, #ffd280, #ffbb66);
+    border: 4px solid #cc7a00;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+  }
+
+  .packet::before {
+    content: '🍫 Chips';
     position: absolute;
-    width: 100px;
-    height: 100px;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #cc7a00;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  }
+
+  .chip {
+    width: 40px;
+    height: 40px;
+    background: #4b2e1e;
     border-radius: 50%;
-    background-color: blue;
-    top: 100px;
-    left: 100px;
+    position: absolute;
     touch-action: none;
+    transition: all 0.3s ease;
+  }
+
+  .cookie {
+    width: 250px;
+    height: 250px;
+    background: #d2a679;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: inset 0 0 10px #b97c50;
+  }
+
+  .celebration {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 32px;
+    font-weight: bold;
+    opacity: 0;
+    color: #ff3366;
+    text-shadow: 2px 2px #ffe600, -2px -2px #66ff66;
+    animation: none;
+    pointer-events: none;
+  }
+
+  .celebration.show {
+    animation: confetti 1s ease-out;
+  }
+
+  @keyframes confetti {
+    0% { opacity: 1; transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.5) rotate(10deg); color: #66ff66; }
+    70% { color: #ffcc00; }
+    100% { opacity: 0; transform: translateX(-50%) scale(1); color: #ff3366; }
+  }
+
+  .reset-btn {
+    display: block;
+    margin: 30px auto;
+    padding: 15px 30px;
+    font-size: 20px;
+    color: white;
+    background: linear-gradient(135deg, #ff6f61, #ffcc70);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+  }
+
+  .reset-btn:hover {
+    transform: scale(1.05);
+  }
+
+  .score {
+    font-size: 20px;
+    text-align: center;
+    margin: 10px;
   }
 </style>
 </head>
 <body>
 
-<div id="circle"></div>
+<div class="score-bar" id="scoreBar">Score: 0</div>
+
+<h1>🍪 Decorate the Cookie!</h1>
+<p style="text-align:center;">Drag the choc chips from the packet onto the cookie!</p>
+
+<div class="score" id="chipsLeft">Choc Chips Left: 10</div>
+
+<div class="game-container">
+  <div class="cookie" id="cookie">
+    <div class="celebration" id="celebration">+1000 🎉</div>
+  </div>
+
+  <div class="packet" id="packet"></div>
+</div>
+
+<button class="reset-btn" onclick="resetGame()">Reset Game</button>
 
 <script>
-const circle = document.getElementById('circle');
-let offsetX = 0;
-let offsetY = 0;
+const packet = document.getElementById('packet');
+const cookie = document.getElementById('cookie');
+const celebration = document.getElementById('celebration');
+const chipsLeft = document.getElementById('chipsLeft');
+const scoreBar = document.getElementById('scoreBar');
 
-// Touch start event: get the offset between touch point and circle corner
-circle.addEventListener('touchstart', function(event) {
+let totalScore = 0;
+let remaining = 10;
+
+function createChips() {
+  for (let i = 0; i < 10; i++) {
+    const chip = document.createElement('div');
+    chip.classList.add('chip');
+    chip.style.top = Math.random() * 150 + 'px';
+    chip.style.left = Math.random() * 70 + 'px';
+    chip.id = 'chip-' + i;
+    packet.appendChild(chip);
+    setupTouchDrag(chip);
+  }
+}
+
+function setupTouchDrag(chip) {
+  let offsetX, offsetY;
+
+  chip.addEventListener('touchstart', function(event) {
     const touch = event.touches[0];
-    const rect = circle.getBoundingClientRect();
+    const rect = chip.getBoundingClientRect();
     offsetX = touch.clientX - rect.left;
     offsetY = touch.clientY - rect.top;
-}, false);
+  }, false);
 
-// Touch move event: update the position of the circle
-circle.addEventListener('touchmove', function(event) {
+  chip.addEventListener('touchmove', function(event) {
     event.preventDefault();
     const touch = event.touches[0];
     const x = touch.clientX - offsetX;
     const y = touch.clientY - offsetY;
-    circle.style.left = x + 'px';
-    circle.style.top = y + 'px';
-}, { passive: false });
+    chip.style.position = 'fixed';
+    chip.style.left = x + 'px';
+    chip.style.top = y + 'px';
+  }, { passive: false });
+
+  chip.addEventListener('touchend', function(event) {
+    const touch = event.changedTouches[0];
+    const cookieRect = cookie.getBoundingClientRect();
+    const x = touch.clientX;
+    const y = touch.clientY;
+
+    if (x > cookieRect.left && x < cookieRect.right &&
+        y > cookieRect.top && y < cookieRect.bottom) {
+      chip.style.position = 'absolute';
+      chip.style.left = (x - cookieRect.left - 20) + 'px';
+      chip.style.top = (y - cookieRect.top - 20) + 'px';
+      chip.style.touchAction = 'none';
+      cookie.appendChild(chip);
+
+      remaining--;
+      totalScore += 1000;
+      updateScore();
+      triggerCelebration();
+      flashScoreBar();
+
+      if (remaining === 0) {
+        celebration.textContent = '🎉 All Done! 🎉';
+        celebration.classList.add('show');
+      }
+    } else {
+      chip.style.position = 'absolute';
+      chip.style.left = Math.random() * 70 + 'px';
+      chip.style.top = Math.random() * 150 + 'px';
+      packet.appendChild(chip);
+    }
+  }, false);
+}
+
+function updateScore() {
+  chipsLeft.textContent = 'Choc Chips Left: ' + remaining;
+  scoreBar.textContent = 'Score: ' + totalScore;
+}
+
+function flashScoreBar() {
+  scoreBar.classList.remove('flash');
+  void scoreBar.offsetWidth;
+  scoreBar.classList.add('flash');
+}
+
+function triggerCelebration() {
+  celebration.textContent = '+1000 🎉';
+  celebration.classList.remove('show');
+  void celebration.offsetWidth;
+  celebration.classList.add('show');
+}
+
+function resetGame() {
+  document.querySelectorAll('.chip').forEach(chip => chip.remove());
+  remaining = 10;
+  totalScore = 0;
+  celebration.textContent = '+1000 🎉';
+  celebration.classList.remove('show');
+  updateScore();
+  createChips();
+}
+
+createChips();
+updateScore();
 </script>
 
 </body>
