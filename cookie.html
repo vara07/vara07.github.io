@@ -3,60 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Touch Drag Square</title>
+<title>Touch Drag Example</title>
 <style>
   body {
     margin: 0;
-    height: 100vh;
     background: linear-gradient(to bottom right, #fceabb, #f8b500);
+    height: 100vh;
     overflow: hidden;
-    touch-action: none; /* Prevent iOS from scrolling when touching */
+    touch-action: none;
   }
 
-  .square {
+  #square {
     position: absolute;
     width: 100px;
     height: 100px;
     background: #ff6f61;
     border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    top: 50px;
-    left: 50px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    top: 100px;
+    left: 100px;
     touch-action: none;
-    transition: transform 0.1s;
   }
 </style>
 </head>
 <body>
 
-<div class="square" id="square"></div>
+<div id="square"></div>
 
 <script>
 const square = document.getElementById('square');
+
 let offsetX = 0;
 let offsetY = 0;
 
-square.addEventListener('touchstart', (e) => {
-  const touch = e.touches[0];
-  const rect = square.getBoundingClientRect();
+square.addEventListener('touchstart', function(e) {
+    const touch = e.touches[0];
+    const rect = square.getBoundingClientRect();
 
-  // Calculate offset so square stays under finger
-  offsetX = touch.clientX - rect.left;
-  offsetY = touch.clientY - rect.top;
-});
+    offsetX = touch.clientX - rect.left;
+    offsetY = touch.clientY - rect.top;
+}, false);
 
-square.addEventListener('touchmove', (e) => {
-  e.preventDefault(); // Prevent scrolling
-  const touch = e.touches[0];
+square.addEventListener('touchmove', function(e) {
+    e.preventDefault();
+    const touch = e.touches[0];
 
-  // Move square so it stays under finger
-  square.style.left = (touch.clientX - offsetX) + 'px';
-  square.style.top = (touch.clientY - offsetY) + 'px';
+    const x = touch.clientX - offsetX;
+    const y = touch.clientY - offsetY;
+
+    square.style.left = `${x}px`;
+    square.style.top = `${y}px`;
 }, { passive: false });
-
-square.addEventListener('touchend', () => {
-  // You could add some effect here if you want when released
-});
 </script>
 
 </body>
