@@ -3,63 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Simple Touch Drag</title>
+<title>Draggable Square</title>
 <style>
-  html, body {
+  body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    width: 100vw;
     overflow: hidden;
-    font-family: Arial, sans-serif;
-    touch-action: none;
-    background: white;
   }
 
-  .square {
-    position: absolute;
+  #square {
     width: 100px;
     height: 100px;
-    background: #ff6f61;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-    top: 150px;
+    background: red;
+    position: absolute;
+    top: 100px;
     left: 100px;
-  }
-
-  .text {
-    position: relative;
-    color: #000;
-    font-size: 32px;
-    margin: 20px;
+    touch-action: none;
   }
 </style>
 </head>
 <body>
 
-<div class="text">hello</div>
-<div class="square" id="square"></div>
+<div id="square"></div>
 
 <script>
 const square = document.getElementById('square');
+let offsetX, offsetY;
 
-let offsetX = 0;
-let offsetY = 0;
-
-square.addEventListener('touchstart', function(e) {
-    const touch = e.touches[0];
+// On touch start, calculate the offset of finger from square corner
+square.addEventListener('touchstart', function(event) {
+    const touch = event.touches[0];
     const rect = square.getBoundingClientRect();
     offsetX = touch.clientX - rect.left;
     offsetY = touch.clientY - rect.top;
-});
+}, false);
 
-square.addEventListener('touchmove', function(e) {
-    e.preventDefault();
-    const touch = e.touches[0];
+// On touch move, update the position of the square
+square.addEventListener('touchmove', function(event) {
+    event.preventDefault();
+    const touch = event.touches[0];
     const x = touch.clientX - offsetX;
     const y = touch.clientY - offsetY;
-    square.style.left = `${x}px`;
-    square.style.top = `${y}px`;
+    square.style.left = x + 'px';
+    square.style.top = y + 'px';
 }, { passive: false });
 </script>
 
