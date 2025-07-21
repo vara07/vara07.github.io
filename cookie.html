@@ -100,6 +100,19 @@ let score = 0;
 let seconds = 0;
 let timerInterval;
 
+// Check if a position is outside the cookie area
+function isOutsideCookie(x, y, chipSize) {
+  const cookieRect = cookie.getBoundingClientRect();
+  const chipCenterX = x + chipSize / 2;
+  const chipCenterY = y + chipSize / 2;
+  const cookieCenterX = cookieRect.left + cookieRect.width / 2;
+  const cookieCenterY = cookieRect.top + cookieRect.height / 2;
+  const distance = Math.hypot(chipCenterX - cookieCenterX, chipCenterY - cookieCenterY);
+  const safeDistance = cookieRect.width / 2 + 20; // keep chips clearly outside
+
+  return distance > safeDistance;
+}
+
 function createChocChip(x, y) {
   const chip = document.createElement('div');
   chip.className = 'choc-chip';
@@ -148,9 +161,20 @@ function createChocChip(x, y) {
 }
 
 function createInitialChocChips() {
+  const chipSize = 50;
+  const maxAttempts = 100;
+
   for (let i = 0; i < 20; i++) {
-    const x = Math.random() * (window.innerWidth - 60);
-    const y = (Math.random() * (window.innerHeight / 2)) + 100;
+    let x, y;
+    let attempts = 0;
+
+    do {
+      x = Math.random() * (window.innerWidth - chipSize);
+      y = Math.random() * (window.innerHeight / 2 - chipSize) + 100;
+      attempts++;
+      if (attempts > maxAttempts) break; // avoid infinite loop if cookie takes too much space
+    } while (!isOutsideCookie(x, y, chipSize));
+
     createChocChip(x, y);
   }
 }
