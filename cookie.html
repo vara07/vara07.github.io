@@ -79,13 +79,14 @@
       border-radius: 50%;
       position: absolute;
       touch-action: none;
-      transition: all 0.3s ease;
-      cursor: pointer;
+      cursor: grab;
+      transition: none;
     }
 
     .chip:active {
       transform: scale(1.2);
       box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      cursor: grabbing;
     }
 
     .cookie {
@@ -193,33 +194,41 @@ function setupDrag(chip) {
 
   chip.addEventListener('pointerdown', (e) => {
     chip.setPointerCapture(e.pointerId);
-    offsetX = e.clientX - chip.getBoundingClientRect().left;
-    offsetY = e.clientY - chip.getBoundingClientRect().top;
+    const rect = chip.getBoundingClientRect();
+    offsetX = e.clientX - rect.left;
+    offsetY = e.clientY - rect.top;
     chip.style.transition = 'none';
+    chip.style.zIndex = 999;
   });
 
   chip.addEventListener('pointermove', (e) => {
     if (e.pressure === 0) return;
-    chip.style.position = 'fixed';
-    chip.style.left = (e.clientX - offsetX) + 'px';
-    chip.style.top = (e.clientY - offsetY) + 'px';
+    const containerRect = document.body.getBoundingClientRect();
+    chip.style.left = (e.clientX - containerRect.left - offsetX) + 'px';
+    chip.style.top = (e.clientY - containerRect.top - offsetY) + 'px';
   });
 
   chip.addEventListener('pointerup', (e) => {
+    chip.releasePointerCapture(e.pointerId);
+    chip.style.zIndex = '';
+
     const cookieRect = cookie.getBoundingClientRect();
     const x = e.clientX;
     const y = e.clientY;
 
     if (x > cookieRect.left && x < cookieRect.right &&
         y > cookieRect.top && y < cookieRect.bottom) {
+
+      const cookieX = x - cookieRect.left - 20;
+      const cookieY = y - cookieRect.top - 20;
+
       chip.style.position = 'absolute';
-      chip.style.left = (x - cookieRect.left - 20) + 'px';
-      chip.style.top = (y - cookieRect.top - 20) + 'px';
+      chip.style.left = cookieX + 'px';
+      chip.style.top = cookieY + 'px';
       chip.style.cursor = 'default';
       chip.style.transition = 'all 0.3s';
       chip.style.touchAction = 'none';
       cookie.appendChild(chip);
-      chip.releasePointerCapture(e.pointerId);
 
       remaining--;
       totalScore += 1000;
@@ -231,10 +240,12 @@ function setupDrag(chip) {
         celebration.textContent = '🎉 All Done! 🎉';
         celebration.classList.add('show');
       }
+
     } else {
       chip.style.transition = 'all 0.5s';
       chip.style.left = Math.random() * 70 + 'px';
       chip.style.top = Math.random() * 150 + 'px';
+      chip.style.position = 'absolute';
     }
   });
 }
