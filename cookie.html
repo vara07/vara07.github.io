@@ -3,54 +3,129 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Draggable Brown Circle</title>
+<title>Cookie Choc Chip Game</title>
 <style>
   html, body {
     margin: 0;
     padding: 0;
-    width: 100vw;
+    background: white;
     height: 100vh;
     overflow: hidden;
+    font-family: Arial, sans-serif;
     touch-action: none;
-    background: white;
   }
 
-  #circle {
+  #scoreBanner {
+    width: 100%;
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    background: #f4d35e;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  }
+
+  #cookie {
     position: absolute;
-    width: 60px;
-    height: 60px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
-    background-color: brown;
-    top: 100px;
-    left: 100px;
+    background: #f5c16c;
+    border: 8px solid #d89245;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .choc-chip {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: brown;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     touch-action: none;
+  }
+
+  .flash {
+    position: absolute;
+    font-size: 24px;
+    font-weight: bold;
+    color: green;
+    animation: flash 1s ease-out;
+  }
+
+  @keyframes flash {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.5); }
+    100% { opacity: 0; transform: scale(1); }
   }
 </style>
 </head>
 <body>
 
-<div id="circle"></div>
+<div id="scoreBanner">Score: <span id="score">0</span></div>
+<div id="cookie"></div>
+
+<!-- Pile of choc chips -->
+<div class="choc-chip" style="top: 80%; left: 20%;"></div>
+<div class="choc-chip" style="top: 85%; left: 40%;"></div>
+<div class="choc-chip" style="top: 80%; left: 60%;"></div>
+<div class="choc-chip" style="top: 85%; left: 80%;"></div>
 
 <script>
-const circle = document.getElementById('circle');
-let offsetX = 0;
-let offsetY = 0;
+let score = 0;
+const scoreDisplay = document.getElementById('score');
+const cookie = document.getElementById('cookie');
+const chocChips = document.querySelectorAll('.choc-chip');
 
-circle.addEventListener('touchstart', function(event) {
-    const touch = event.touches[0];
-    const rect = circle.getBoundingClientRect();
-    offsetX = touch.clientX - rect.left;
-    offsetY = touch.clientY - rect.top;
-}, false);
+chocChips.forEach(chip => {
+    let offsetX = 0, offsetY = 0;
 
-circle.addEventListener('touchmove', function(event) {
-    event.preventDefault();
-    const touch = event.touches[0];
-    const x = touch.clientX - offsetX;
-    const y = touch.clientY - offsetY;
-    circle.style.left = x + 'px';
-    circle.style.top = y + 'px';
-}, { passive: false });
+    chip.addEventListener('touchstart', function(e) {
+        const touch = e.touches[0];
+        const rect = chip.getBoundingClientRect();
+        offsetX = touch.clientX - rect.left;
+        offsetY = touch.clientY - rect.top;
+    });
+
+    chip.addEventListener('touchmove', function(e) {
+        e.preventDefault();
+        const touch = e.touches[0];
+        chip.style.left = (touch.clientX - offsetX) + 'px';
+        chip.style.top = (touch.clientY - offsetY) + 'px';
+    }, { passive: false });
+
+    chip.addEventListener('touchend', function() {
+        const chipRect = chip.getBoundingClientRect();
+        const cookieRect = cookie.getBoundingClientRect();
+
+        // Check if choc chip is inside cookie area
+        const inside = !(chipRect.right < cookieRect.left ||
+                         chipRect.left > cookieRect.right ||
+                         chipRect.bottom < cookieRect.top ||
+                         chipRect.top > cookieRect.bottom);
+
+        if (inside) {
+            score += 1000;
+            scoreDisplay.textContent = score;
+
+            // Show flash animation
+            const flash = document.createElement('div');
+            flash.className = 'flash';
+            flash.innerHTML = '+1000 🎉';
+            flash.style.left = (chipRect.left) + 'px';
+            flash.style.top = (chipRect.top) + 'px';
+            document.body.appendChild(flash);
+
+            setTimeout(() => flash.remove(), 1000);
+
+            // Optionally, make the chip stick to cookie
+            chip.style.pointerEvents = 'none';
+        }
+    });
+});
 </script>
 
 </body>
