@@ -1,62 +1,57 @@
-<!-- CHANGES ONLY in JavaScript: -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Draggable Brown Circle</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    touch-action: none;
+    background: white;
+  }
+
+  #circle {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: brown;
+    top: 100px;
+    left: 100px;
+    touch-action: none;
+  }
+</style>
+</head>
+<body>
+
+<div id="circle"></div>
+
 <script>
-function setupTouchDrag(chip) {
-  let startX = 0, startY = 0, initialLeft = 0, initialTop = 0;
+const circle = document.getElementById('circle');
+let offsetX = 0;
+let offsetY = 0;
 
-  chip.addEventListener('touchstart', function(event) {
+circle.addEventListener('touchstart', function(event) {
     const touch = event.touches[0];
-    const rect = chip.getBoundingClientRect();
-    const parentRect = chip.parentElement.getBoundingClientRect();
+    const rect = circle.getBoundingClientRect();
+    offsetX = touch.clientX - rect.left;
+    offsetY = touch.clientY - rect.top;
+}, false);
 
-    startX = touch.clientX;
-    startY = touch.clientY;
-    initialLeft = chip.offsetLeft;
-    initialTop = chip.offsetTop;
-
-    chip.style.transition = 'none';
-  }, false);
-
-  chip.addEventListener('touchmove', function(event) {
+circle.addEventListener('touchmove', function(event) {
     event.preventDefault();
     const touch = event.touches[0];
-    const deltaX = touch.clientX - startX;
-    const deltaY = touch.clientY - startY;
-
-    chip.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
-  }, { passive: false });
-
-  chip.addEventListener('touchend', function(event) {
-    const touch = event.changedTouches[0];
-    const cookieRect = cookie.getBoundingClientRect();
-    const chipRect = chip.getBoundingClientRect();
-
-    const chipCenterX = chipRect.left + chipRect.width / 2;
-    const chipCenterY = chipRect.top + chipRect.height / 2;
-
-    if (chipCenterX > cookieRect.left && chipCenterX < cookieRect.right &&
-        chipCenterY > cookieRect.top && chipCenterY < cookieRect.bottom) {
-
-      chip.style.transform = 'none';
-      chip.style.position = 'absolute';
-      chip.style.left = (chipCenterX - cookieRect.left - 20) + 'px';
-      chip.style.top = (chipCenterY - cookieRect.top - 20) + 'px';
-      cookie.appendChild(chip);
-
-      remaining--;
-      totalScore += 1000;
-      updateScore();
-      triggerCelebration();
-      flashScoreBar();
-
-      if (remaining === 0) {
-        celebration.textContent = '🎉 All Done! 🎉';
-        celebration.classList.add('show');
-      }
-    } else {
-      chip.style.transform = 'none';
-      chip.style.left = initialLeft + 'px';
-      chip.style.top = initialTop + 'px';
-    }
-  }, false);
-}
+    const x = touch.clientX - offsetX;
+    const y = touch.clientY - offsetY;
+    circle.style.left = x + 'px';
+    circle.style.top = y + 'px';
+}, { passive: false });
 </script>
+
+</body>
+</html>
