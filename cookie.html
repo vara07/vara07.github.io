@@ -16,13 +16,31 @@
   }
 
   #scoreBanner {
+    position: fixed;
+    top: 20px;
     width: 100%;
     text-align: center;
-    font-size: 32px;
+    font-size: 28px;
     font-weight: bold;
     background: #f4d35e;
-    padding: 15px;
+    padding: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    z-index: 10;
+  }
+
+  #resetBtn {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-size: 18px;
+    background: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    cursor: pointer;
   }
 
   #cookie {
@@ -34,7 +52,7 @@
     border: 8px solid #d89245;
     box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
     left: 50%;
-    top: 50%;
+    top: 55%;
     transform: translate(-50%, -50%);
   }
 
@@ -54,6 +72,7 @@
     font-weight: bold;
     color: green;
     animation: flash 1s ease-out;
+    z-index: 10;
   }
 
   @keyframes flash {
@@ -65,67 +84,107 @@
 </head>
 <body>
 
-<div id="scoreBanner">Score: <span id="score">0</span></div>
+<div id="scoreBanner">
+  Score: <span id="score">0</span> | Time: <span id="timer">60</span>s
+</div>
+<button id="resetBtn">Reset Game</button>
 <div id="cookie"></div>
 
-<!-- Pile of choc chips -->
-<div class="choc-chip" style="top: 80%; left: 20%;"></div>
-<div class="choc-chip" style="top: 85%; left: 40%;"></div>
-<div class="choc-chip" style="top: 80%; left: 60%;"></div>
-<div class="choc-chip" style="top: 85%; left: 80%;"></div>
-
 <script>
-let score = 0;
 const scoreDisplay = document.getElementById('score');
+const timerDisplay = document.getElementById('timer');
 const cookie = document.getElementById('cookie');
-const chocChips = document.querySelectorAll('.choc-chip');
+const resetBtn = document.getElementById('resetBtn');
 
-chocChips.forEach(chip => {
-    let offsetX = 0, offsetY = 0;
+let score = 0;
+let time = 60;
+let timerInterval;
 
-    chip.addEventListener('touchstart', function(e) {
-        const touch = e.touches[0];
-        const rect = chip.getBoundingClientRect();
-        offsetX = touch.clientX - rect.left;
-        offsetY = touch.clientY - rect.top;
-    });
+function createChocChip(x, y) {
+  const chip = document.createElement('div');
+  chip.className = 'choc-chip';
+  chip.style.left = x + 'px';
+  chip.style.top = y + 'px';
+  document.body.appendChild(chip);
 
-    chip.addEventListener('touchmove', function(e) {
-        e.preventDefault();
-        const touch = e.touches[0];
-        chip.style.left = (touch.clientX - offsetX) + 'px';
-        chip.style.top = (touch.clientY - offsetY) + 'px';
-    }, { passive: false });
+  let offsetX = 0, offsetY = 0;
 
-    chip.addEventListener('touchend', function() {
-        const chipRect = chip.getBoundingClientRect();
-        const cookieRect = cookie.getBoundingClientRect();
+  chip.addEventListener('touchstart', function(e) {
+      const touch = e.touches[0];
+      const rect = chip.getBoundingClientRect();
+      offsetX = touch.clientX - rect.left;
+      offsetY = touch.clientY - rect.top;
+  });
 
-        // Check if choc chip is inside cookie area
-        const inside = !(chipRect.right < cookieRect.left ||
-                         chipRect.left > cookieRect.right ||
-                         chipRect.bottom < cookieRect.top ||
-                         chipRect.top > cookieRect.bottom);
+  chip.addEventListener('touchmove', function(e) {
+      e.preventDefault();
+      const touch = e.touches[0];
+      chip.style.left = (touch.clientX - offsetX) + 'px';
+      chip.style.top = (touch.clientY - offsetY) + 'px';
+  }, { passive: false });
 
-        if (inside) {
-            score += 1000;
-            scoreDisplay.textContent = score;
+  chip.addEventListener('touchend', function() {
+      const chipRect = chip.getBoundingClientRect();
+      const cookieRect = cookie.getBoundingClientRect();
 
-            // Show flash animation
-            const flash = document.createElement('div');
-            flash.className = 'flash';
-            flash.innerHTML = '+1000 🎉';
-            flash.style.left = (chipRect.left) + 'px';
-            flash.style.top = (chipRect.top) + 'px';
-            document.body.appendChild(flash);
+      const inside = !(chipRect.right < cookieRect.left ||
+                      chipRect.left > cookieRect.right ||
+                      chipRect.bottom < cookieRect.top ||
+                      chipRect.top > cookieRect.bottom);
 
-            setTimeout(() => flash.remove(), 1000);
+      if (inside) {
+          score += 1000;
+          scoreDisplay.textContent = score;
 
-            // Optionally, make the chip stick to cookie
-            chip.style.pointerEvents = 'none';
-        }
-    });
-});
+          const flash = document.createElement('div');
+          flash.className = 'flash';
+          flash.innerHTML = '+1000 🎉';
+          flash.style.left = chipRect.left + 'px';
+          flash.style.top = chipRect.top + 'px';
+          document.body.appendChild(flash);
+          setTimeout(() => flash.remove(), 1000);
+
+          chip.remove();
+      }
+  });
+}
+
+// Create random choc chips pile
+function createInitialChocChips() {
+  for (let i = 0; i < 20; i++) {
+    const x = Math.random() * (window.innerWidth - 60);
+    const y = (Math.random() * 200) + (window.innerHeight - 200);
+    createChocChip(x, y);
+  }
+}
+
+function startTimer() {
+  time = 60;
+  timerDisplay.textContent = time;
+  clearInterval(timerInterval);
+  timerInterval = setInterval(() => {
+    time--;
+    timerDisplay.textContent = time;
+    if (time <= 0) {
+      clearInterval(timerInterval);
+      alert('⏰ Time’s up! Final score: ' + score);
+    }
+  }, 1000);
+}
+
+function resetGame() {
+  score = 0;
+  scoreDisplay.textContent = score;
+  document.querySelectorAll('.choc-chip').forEach(chip => chip.remove());
+  createInitialChocChips();
+  startTimer();
+}
+
+// Start game
+createInitialChocChips();
+startTimer();
+
+resetBtn.addEventListener('click', resetGame);
 </script>
 
 </body>
