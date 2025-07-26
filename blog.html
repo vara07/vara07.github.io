@@ -650,12 +650,108 @@
       Even though it was the first week back for school sport, I stayed home. At school they decided what to go as for Book Week, and I think the class voted on going as coke bottles 🥤! I’ll have to check on Monday to know for sure.
     </p>
   </div>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #fff4f8;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .entry {
+      width: 320px;
+      height: 220px;
+      perspective: 1200px;
+    }
+
+    .note {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 1s ease;
+      animation: fadeInUp 1s ease-out forwards;
+      animation-delay: 0.2s;
+      opacity: 0;
+      transform: translateY(40px);
+      cursor: pointer;
+    }
+
+    .note.flipped {
+      transform: rotateY(180deg);
+    }
+
+    .front, .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      border-radius: 15px;
+      padding: 20px;
+      box-sizing: border-box;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
+    .front {
+      background: #ffe0ec;
+      border: 2px solid #ff8fcf;
+    }
+
+    .back {
+      background: #d8f1ff;
+      border: 2px solid #89d6f6;
+      transform: rotateY(180deg);
+    }
+
+    .date {
+      font-weight: bold;
+      font-size: 17px;
+      margin-bottom: 12px;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
   <div class="entry">
-    <div class="note">
-    <div class="date">📅Saturday 26 July</div>
-      💤 Vara is sleeping at her cousin’s tonight! We forgot to post this update before she left 😅
+    <div class="note" id="flipCard">
+      <div class="front">
+        <div class="date">📅 Saturday 26 July</div>
+        💤 Vara is sleeping at her cousin’s tonight!<br>
+        We forgot to post this update before she left 😅
+      </div>
+      <div class="back">
+        <div class="date">🔄 Flip Side</div>
+        🎉 Maybe tomorrow we’ll post another fun update!
+      </div>
     </div>
   </div>
+
+  <script>
+    // Tap to flip on touch screens
+    const card = document.getElementById('flipCard');
+    card.addEventListener('click', () => {
+      card.classList.toggle('flipped');
+    });
+  </script>
 
 </body>
 </html>
