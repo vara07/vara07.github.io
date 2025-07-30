@@ -417,3 +417,42 @@ strong, .highlight {
   padding: 5px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
+.post-20250730 {
+  background-color: #f5f7fa;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 40px auto;
+  max-width: 600px;
+  font-family: Arial, sans-serif;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.post-title-20250730 {
+  color: #2c3e50;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.post-date-20250730 {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.post-body-20250730 {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.quote-20250730 {
+  margin-top: 30px;
+  padding: 15px 20px;
+  background-color: #eef2f7;
+  border-left: 5px solid #6c7a89;
+  font-style: italic;
+  color: #555;
+  font-size: 15px;
+  line-height: 1.6;
+}
