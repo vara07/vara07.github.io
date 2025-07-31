@@ -25,10 +25,13 @@ body {
 /* Purple header with image */
 .header_purple {
   background-color: #8000c4;
-  height: 100%;
-  flex-grow: 1;
-  position: relative;
-  z-index: 0;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 100vw;          /* NEW: Full viewport width */
+  max-width: 100%;       /* Ensure no restriction */
 }
 
 .header-image_purple {
@@ -54,9 +57,10 @@ body {
 
 /* Drawer when collapsed */
 .collapsed_purple {
-  height: 60px;
-  transform: translateY(80%);
+  height: 140px;
+  transform: translateY(calc(100% - 140px));
 }
+
 
 /* Drawer when expanded */
 .expanded_purple {
@@ -82,4 +86,23 @@ body {
 
 .drawer-content_purple p {
   margin: 10px 0;
+}
+.drawer-handle_purple {
+  text-align: center;
+  padding: 12px 0 4px;
+  position: relative;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+}
+
+.drawer-handle_purple::before {
+  content: "";
+  display: block;
+  margin: 0 auto 6px;
+  width: 36px;
+  height: 5px;
+  background: #ccc;
+  border-radius: 3px;
 }
