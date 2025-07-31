@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Contact</title>
+  <link rel="stylesheet" href="contact_styles.css" />
+</head>
+<body>
+
+  <div class="app-card_purple">
+    <!-- Header with image -->
+    <div class="header_purple">
+      <img src="family_osaka.gif" alt="Family in Osaka" class="header-image_purple" />
+    </div>
+
+    <!-- Drawer section (collapsible contact info) -->
+    <div class="drawer_purple collapsed_purple" id="contactDrawer">
+      <div class="drawer-handle_purple" onclick="toggleDrawer()">Contact</div>
+      <div class="drawer-content_purple">
+        <p><strong>Email:</strong> hello@example.com</p>
+        <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+        <p><strong>Instagram:</strong> @myfamilytravel</p>
+        <p><strong>Location:</strong> Osaka, Japan</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleDrawer() {
+      const drawer = document.getElementById('contactDrawer');
+      drawer.classList.toggle('collapsed_purple');
+      drawer.classList.toggle('expanded_purple');
+    }
+  </script>
+
+</body>
+</html>
