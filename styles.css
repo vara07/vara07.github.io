@@ -553,3 +553,38 @@ strong, .highlight {
 .nav-icon_purple {
   cursor: pointer;
 }
+.update-050825 {
+  background: radial-gradient(circle at top left, #3b2b5f, #1d1137, #0e061f);
+  border: 3px solid #b497ff;
+  padding: 25px;
+  margin: 35px auto;
+  width: 90%;
+  max-width: 650px;
+  border-radius: 18px;
+  box-shadow: 0 0 25px rgba(174, 141, 255, 0.4);
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+  animation: stars-fade 10s ease-in-out infinite;
+}
+
+.update-050825-title {
+  font-size: 26px;
+  color: #e8d1ff;
+  margin-bottom: 15px;
+  text-align: center;
+  text-shadow: 0 0 5px #a278ff;
+}
+
+.update-050825-text {
+  font-size: 17px;
+  color: #dbc6ff;
+  line-height: 1.8;
+  text-align: center;
+}
+
+/* Optional: subtle star sparkle animation */
+@keyframes stars-fade {
+  0%, 100% { box-shadow: 0 0 25px rgba(174, 141, 255, 0.4); }
+  50% { box-shadow: 0 0 35px rgba(174, 141, 255, 0.7); }
+}
