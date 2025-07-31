@@ -486,6 +486,85 @@ strong, .highlight {
   padding: 0;
   display: block;
 }
+/* Base setup */
+body_purple {
+  margin: 0;
+  padding: 0;
+  background: #d8d8d8;
+  font-family: 'Helvetica Neue', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* App container */
+.app-card_purple {
+  width: 360px;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  background: white;
+}
+
+/* Purple image header */
+.header_purple {
+  background-color: #8000c4;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-image_purple {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Drawer-style bottom panel */
+.contribution_purple {
+  background: white;
+  padding: 30px 20px 60px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  margin-top: -30px;
+  z-index: 1;
+  position: relative;
+  box-shadow: 0 -6px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Text labels and value */
+.monthly-label_purple {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.monthly-value_purple {
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  color: #1c1c1c;
+  margin-bottom: 20px;
+}
+
+/* Bottom navigation */
+.bottom-bar_purple {
+  display: flex;
+  justify-content: space-around;
+  font-size: 20px;
+  margin-top: 20px;
+  color: #999;
+}
+
+.nav-icon_purple {
+  cursor: pointer;
+}
 
 
 
