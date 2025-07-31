@@ -486,37 +486,25 @@ strong, .highlight {
   padding: 0;
   display: block;
 }
-/* Base setup */
-body_purple {
-  margin: 0;
-  padding: 0;
-  background: #d8d8d8;
-  font-family: 'Helvetica Neue', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-/* App container */
+/* Component container */
 .app-card_purple {
   width: 360px;
   border-radius: 40px;
   overflow: hidden;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
   background: white;
+  font-family: 'Helvetica Neue', sans-serif;
+  margin: 40px auto;
 }
 
-/* Purple image header */
+/* Header with purple background and image */
 .header_purple {
   background-color: #8000c4;
-  padding: 0;
-  position: relative;
-  overflow: hidden;
   height: 280px;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .header-image_purple {
@@ -525,7 +513,7 @@ body_purple {
   object-fit: cover;
 }
 
-/* Drawer-style bottom panel */
+/* White rounded "drawer" panel */
 .contribution_purple {
   background: white;
   padding: 30px 20px 60px;
@@ -537,7 +525,7 @@ body_purple {
   box-shadow: 0 -6px 15px rgba(0, 0, 0, 0.05);
 }
 
-/* Text labels and value */
+/* Text styling */
 .monthly-label_purple {
   text-align: center;
   font-size: 14px;
@@ -553,7 +541,7 @@ body_purple {
   margin-bottom: 20px;
 }
 
-/* Bottom navigation */
+/* Navigation bar at bottom */
 .bottom-bar_purple {
   display: flex;
   justify-content: space-around;
@@ -565,7 +553,3 @@ body_purple {
 .nav-icon_purple {
   cursor: pointer;
 }
-
-
-
-
