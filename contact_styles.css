@@ -106,33 +106,4 @@ body {
   background: #ccc;
   border-radius: 3px;
 }
-.update-310725 {
-  background: linear-gradient(135deg, #fef6ff, #e4d7ff);
-  border: 2px dashed #c48fe1;
-  padding: 20px;
-  margin: 30px auto;
-  width: 90%;
-  max-width: 600px;
-  border-radius: 15px;
-  box-shadow: 0 0 15px rgba(196, 143, 225, 0.3);
-  font-family: 'Poppins', sans-serif;
-  transition: transform 0.3s ease;
-}
 
-.update-310725:hover {
-  transform: scale(1.02);
-}
-
-.update-310725-title {
-  font-size: 24px;
-  color: #a659d1;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-.update-310725-text {
-  font-size: 16px;
-  color: #5a4272;
-  line-height: 1.6;
-  text-align: center;
-}
