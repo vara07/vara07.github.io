@@ -500,7 +500,7 @@ strong, .highlight {
 /* Header with purple background and image */
 .header_purple {
   background-color: #8000c4;
-  height: 280px;
+  height: 380px;
   display: flex;
   justify-content: center;
   align-items: center;
