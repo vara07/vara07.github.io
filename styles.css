@@ -602,6 +602,20 @@ strong, .highlight {
   position: relative;
 }
 
+.update-050825-dt {
+  background: linear-gradient(145deg, #1a1a2e, #16213e, #0f3460);
+  border: 3px double #00f2fe;
+  padding: 25px;
+  margin: 35px auto;
+  width: 90%;
+  max-width: 650px;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 242, 254, 0.3);
+  font-family: 'Courier New', Courier, monospace;
+  color: #dff6ff;
+  position: relative;
+}
+
 .update-050825-dt-title {
   font-size: 24px;
   text-align: center;
@@ -629,3 +643,4 @@ strong, .highlight {
   80% { transform: translate(1px, 1px); }
   100% { transform: translate(0); }
 }
+
