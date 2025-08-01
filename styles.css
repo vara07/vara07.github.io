@@ -588,3 +588,44 @@ strong, .highlight {
   0%, 100% { box-shadow: 0 0 25px rgba(174, 141, 255, 0.4); }
   50% { box-shadow: 0 0 35px rgba(174, 141, 255, 0.7); }
 }
+.update-050825-dt {
+  background: linear-gradient(145deg, #1a1a2e, #16213e, #0f3460);
+  border: 2px solid #00f2fe;
+  padding: 25px;
+  margin: 35px auto;
+  width: 90%;
+  max-width: 650px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
+  font-family: 'Courier New', Courier, monospace;
+  color: #dff6ff;
+  position: relative;
+}
+
+.update-050825-dt-title {
+  font-size: 24px;
+  text-align: center;
+  color: #00f2fe;
+  text-shadow: 0 0 5px #00f2fe;
+  margin-bottom: 12px;
+}
+
+.update-050825-dt-text {
+  font-size: 16px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* Optional: glitch effect when hovering */
+.update-050825-dt:hover {
+  animation: glitchy 1s infinite;
+}
+
+@keyframes glitchy {
+  0% { transform: translate(0); }
+  20% { transform: translate(-1px, 1px); }
+  40% { transform: translate(1px, -1px); }
+  60% { transform: translate(-1px, -1px); }
+  80% { transform: translate(1px, 1px); }
+  100% { transform: translate(0); }
+}
