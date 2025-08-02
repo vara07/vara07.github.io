@@ -645,13 +645,13 @@ strong, .highlight {
 }
 .update-050825-style {
   background: linear-gradient(135deg, #fff0fb, #fceaff);
-  border: 3px dotted #ff8dd9;
+  border: 4px solid #ff73c4; /* 💖 Pretty pink solid border */
   padding: 25px;
   margin: 40px auto;
   width: 90%;
   max-width: 650px;
-  border-radius: 20px;
-  box-shadow: 0 0 20px rgba(255, 141, 217, 0.3);
+  border-radius: 22px;
+  box-shadow: 0 0 25px rgba(255, 115, 196, 0.3);
   font-family: 'Poppins', sans-serif;
   color: #6b2d5c;
   position: relative;
