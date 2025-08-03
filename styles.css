@@ -675,24 +675,29 @@ strong, .highlight {
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&display=swap');
+
 .post-container-aug3-2025 {
-  background: linear-gradient(145deg, rgba(70, 0, 100, 0.9), rgba(20, 0, 60, 0.8));
+  background: linear-gradient(145deg, #2e004f, #150032, #000010);
   border: 2px solid #9400ff;
-  box-shadow: 0 0 30px #ff00ff, 0 0 60px #0099ff;
+  box-shadow: 0 0 30px #8b00ff, 0 0 60px #00ccff;
   border-radius: 18px;
   padding: 30px 40px;
-  max-width: 800px;
+  max-width: 850px;
   margin: 40px auto;
+  position: relative;
+  overflow: hidden;
   backdrop-filter: blur(5px);
 }
 
 .date-title-aug3-2025 {
   font-size: 2.8em;
   text-align: center;
-  color: #ffccff;
+  color: #fbe5ff;
   text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ccff;
   margin-bottom: 20px;
   font-family: 'Unbounded', sans-serif;
+  position: relative;
+  z-index: 2;
 }
 
 .blog-text-aug3-2025 {
@@ -701,4 +706,32 @@ strong, .highlight {
   color: #f3e0ff;
   text-shadow: 0 0 5px #330066;
   font-family: 'Unbounded', sans-serif;
+  position: relative;
+  z-index: 2;
+}
+
+/* ✨ Magic Sword (pure CSS) */
+.magic-sword-aug3-2025 {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  width: 12px;
+  height: 100px;
+  background: linear-gradient(to top, #00ccff, #ffffff);
+  box-shadow: 0 0 10px #00ffff, 0 0 30px #ffffff;
+  transform: rotate(-20deg);
+  border-radius: 6px;
+  z-index: 1;
+}
+
+.magic-sword-aug3-2025::before {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: -6px;
+  width: 24px;
+  height: 10px;
+  background: #ff00ff;
+  border-radius: 50% 50% 0 0;
+  box-shadow: 0 0 10px #ff00ff;
 }
