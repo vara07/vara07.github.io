@@ -1,4 +1,90 @@
-body {
+.post-container-aug4-2025 {
+  position: relative;
+  background: linear-gradient(145deg, #ffe6f2, #ffccf9, #ffd6ec);
+  border: 2px solid #ff9edf;
+  box-shadow: 0 0 15px #ffb6e6, 0 0 40px #ffc3f5;
+  border-radius: 20px;
+  padding: 30px 40px;
+  max-width: 850px;
+  margin: 40px auto;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+}
+
+.date-title-aug4-2025 {
+  font-size: 2.6em;
+  text-align: center;
+  color: #d63384;
+  text-shadow: 0 0 6px #ff69b4, 0 0 12px #ffb6c1;
+  margin-bottom: 20px;
+  font-family: 'Unbounded', sans-serif;
+  position: relative;
+  z-index: 2;
+}
+
+.blog-text-aug4-2025 {
+  font-size: 1.3em;
+  line-height: 1.8;
+  color: #cc1a5e;
+  text-shadow: 0 0 4px #ffd6eb;
+  font-family: 'Unbounded', sans-serif;
+  position: relative;
+  z-index: 2;
+}
+
+/* 💕 Fog (pink misty glow) */
+.fog-layer-aug4-2025 {
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle, rgba(255, 192, 203, 0.2) 20%, transparent 70%);
+  animation: fog-move-aug4-2025 60s linear infinite;
+  z-index: 0;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+@keyframes fog-move-aug4-2025 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-30%, -15%); }
+}
+
+/* ✨ Sparkles (pastel pink dots) */
+.sparkle-layer-aug4-2025 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.sparkle-layer-aug4-2025::before,
+.sparkle-layer-aug4-2025::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffc3f5;
+  box-shadow:
+    60px 40px #ffb6e6,
+    120px 80px #ffd9ee,
+    200px 130px #ffc3f5,
+    100px 190px #ffe6f2,
+    180px 250px #ffcce6;
+  animation: sparkle-float-aug4-2025 12s linear infinite;
+  opacity: 0.9;
+}
+
+@keyframes sparkle-float-aug4-2025 {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-60px); }
+}body {
   font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
   margin: 0;
   background: linear-gradient(to right, #ff69b4, #ffff66, #66ccff);
