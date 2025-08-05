@@ -1,4 +1,90 @@
-.post-container-aug4-2025 {
+.post-container-aug5-2025 {
+  position: relative;
+  background: linear-gradient(145deg, #e6ccff, #fce6ff, #f3d9ff);
+  border: 2px solid #d1aaff;
+  box-shadow: 0 0 20px #ddaaff, 0 0 35px #ffccff;
+  border-radius: 20px;
+  padding: 30px 40px;
+  max-width: 850px;
+  margin: 40px auto;
+  overflow: hidden;
+  backdrop-filter: blur(7px);
+}
+
+.date-title-aug5-2025 {
+  font-size: 2.6em;
+  text-align: center;
+  color: #8e44ad;
+  text-shadow: 0 0 8px #cc66ff, 0 0 16px #ffccff;
+  margin-bottom: 20px;
+  font-family: 'Unbounded', sans-serif;
+  position: relative;
+  z-index: 2;
+}
+
+.blog-text-aug5-2025 {
+  font-size: 1.3em;
+  line-height: 1.8;
+  color: #5c2b6d;
+  text-shadow: 0 0 4px #f5d5ff;
+  font-family: 'Unbounded', sans-serif;
+  position: relative;
+  z-index: 2;
+}
+
+/* 🌫 Fog Layer */
+.fog-layer-aug5-2025 {
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 20%, transparent 70%);
+  animation: fog-move-aug5-2025 55s linear infinite;
+  z-index: 0;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+@keyframes fog-move-aug5-2025 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-25%, -10%); }
+}
+
+/* ✨ Sparkle Layer */
+.sparkle-layer-aug5-2025 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.sparkle-layer-aug5-2025::before,
+.sparkle-layer-aug5-2025::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffe6ff;
+  box-shadow:
+    40px 30px #fcd6ff,
+    100px 90px #ffccff,
+    180px 130px #f3d1ff,
+    120px 200px #fcecff,
+    220px 240px #f9d4ff;
+  animation: sparkle-float-aug5-2025 14s linear infinite;
+  opacity: 0.85;
+}
+
+@keyframes sparkle-float-aug5-2025 {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50px); }
+}.post-container-aug4-2025 {
   position: relative;
   background: linear-gradient(145deg, #ffe6f2, #ffccf9, #ffd6ec);
   border: 2px solid #ff9edf;
