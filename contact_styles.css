@@ -22,6 +22,88 @@ body {
   border-radius: 0;
 }
 
+.candy-theme {
+  background: repeating-linear-gradient(135deg, #ffe3f9, #ffe3f9 10px, #fce1ff 10px, #fce1ff 20px);
+  border: 4px dashed #ffbde1;
+  border-radius: 25px;
+  padding: 25px;
+  margin: 30px auto;
+  box-shadow: 0 0 20px rgba(255, 173, 223, 0.6);
+  font-family: 'Comic Sans MS', 'Poppins', cursive;
+  color: #733f60;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Layout */
+.blog-content-040825 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.text-040825 {
+  flex: 1;
+  min-width: 250px;
+}
+
+.image-040825 {
+  margin-left: 20px;
+  flex-shrink: 0;
+}
+
+.blog-img-040825 {
+  width: 180px;
+  height: auto;
+  border-radius: 20px;
+  border: 3px solid #ffc9ec;
+  box-shadow: 0 5px 15px rgba(255, 160, 210, 0.4);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.blog-img-040825:hover {
+  transform: scale(1.05) rotate(-2deg);
+  box-shadow: 0 8px 20px rgba(255, 160, 210, 0.6);
+}
+
+/* Modal Candy Style */
+.modal-040825 {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(255, 182, 218, 0.85);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content-040825 {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 20px;
+  border: 5px solid #ffcce7;
+  box-shadow: 0 0 30px rgba(255, 140, 200, 0.6);
+}
+
+.close-040825 {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  text-shadow: 2px 2px #ff94c2;
+  cursor: pointer;
+}
+
+
 /* Purple header with image */
 .header_purple {
   background-color: #8000c4;
