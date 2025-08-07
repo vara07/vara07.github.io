@@ -1,4 +1,46 @@
- 
+
+
+
+.blog-post-070825-lines {
+  background-color: #fdfdfd;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #fdfdfd,
+    #fdfdfd 23px,
+    #cce2ff 23px,
+    #cce2ff 24px
+  );
+  border: 3px solid #5b9bd5; /* more visible blue border */
+  border-radius: 14px;
+  padding: 30px;
+  margin: 40px auto;
+  max-width: 800px;
+  font-family: 'Segoe UI', 'Poppins', sans-serif;
+  color: #333;
+  box-shadow: 0 4px 12px rgba(91, 155, 213, 0.2);
+  line-height: 24px;
+  position: relative;
+}
+
+.blog-post-070825-lines h2 {
+  font-size: 1.6em;
+  margin-bottom: 15px;
+  color: #2a5da8;
+  background: white;
+  display: inline-block;
+  padding: 0 10px;
+  border-left: 6px solid #2a5da8;
+  border-radius: 4px;
+}
+
+.blog-post-070825-lines p {
+  font-size: 1.1em;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin: 0;
+  border: 1px dashed #aaccee; /* paragraph border for notebook style */
+} 
   
   
   
