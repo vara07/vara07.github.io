@@ -1,6 +1,44 @@
 
 
 
+.blog-post-080825-netball {
+  background: linear-gradient(135deg, #e0f7ff, #ffffff);
+  border: 3px dashed #4da6ff;
+  border-radius: 16px;
+  padding: 30px;
+  margin: 40px auto;
+  max-width: 800px;
+  font-family: 'Segoe UI', 'Poppins', sans-serif;
+  color: #2d3e50;
+  box-shadow: 0 0 12px rgba(77, 166, 255, 0.3);
+  position: relative;
+  background-image: 
+    repeating-linear-gradient(to right, transparent 0, transparent 59px, #4da6ff 60px),
+    repeating-linear-gradient(to bottom, transparent 0, transparent 59px, #4da6ff 60px);
+}
+
+.blog-post-080825-netball h2 {
+  font-size: 1.6em;
+  margin-bottom: 15px;
+  background: #d0ecff;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: #1a5dab;
+  border-left: 5px solid #1a5dab;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.blog-post-080825-netball p {
+  font-size: 1.1em;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 15px 20px;
+  border-radius: 10px;
+  border: 2px solid #b3ddff;
+  line-height: 1.6em;
+}
+
+
 .blog-post-070825-lines {
   background-color: #fdfdfd;
   background-image: repeating-linear-gradient(
