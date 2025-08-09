@@ -4,7 +4,7 @@
 
 .blog-post-090825-pjs {
   background: linear-gradient(135deg, #ffe6f0, #fffaf5);
-  border: 3px dotted #ffb6c1;
+  border: 5px solid #ff99bb; /* MAIN BORDER */
   border-radius: 20px;
   padding: 30px;
   margin: 40px auto;
