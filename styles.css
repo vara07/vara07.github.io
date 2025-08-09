@@ -1,6 +1,58 @@
 
 
 
+
+.blog-post-090825-pjs {
+  background: linear-gradient(135deg, #ffe6f0, #fffaf5);
+  border: 3px dotted #ffb6c1;
+  border-radius: 20px;
+  padding: 30px;
+  margin: 40px auto;
+  max-width: 800px;
+  font-family: 'Segoe UI', 'Poppins', sans-serif;
+  color: #4a3c4c;
+  box-shadow: 0 0 20px rgba(255, 192, 203, 0.4);
+  position: relative;
+}
+
+.blog-post-090825-pjs::before {
+  content: "💖 🛋️ ☕ 🌸";
+  position: absolute;
+  top: -18px;
+  left: 20px;
+  font-size: 1.2em;
+}
+
+.blog-post-090825-pjs::after {
+  content: "🌸 💤 🌈 💕";
+  position: absolute;
+  bottom: -18px;
+  right: 20px;
+  font-size: 1.2em;
+}
+
+.blog-post-090825-pjs h2 {
+  font-size: 1.6em;
+  margin-bottom: 15px;
+  background: #ffd9e8;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 12px;
+  color: #b34766;
+  border-left: 5px solid #ff99bb;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+}
+
+.blog-post-090825-pjs p {
+  font-size: 1.1em;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 15px 20px;
+  border-radius: 15px;
+  border: 2px solid #ffc6d9;
+  line-height: 1.6em;
+}
+
+
 .blog-post-080825-netball {
   background: linear-gradient(135deg, #e0f7ff, #ffffff);
   border: 3px dashed #4da6ff;
