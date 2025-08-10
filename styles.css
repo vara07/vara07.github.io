@@ -2,6 +2,47 @@
 
 
 
+
+
+
+.update-050825-bday {
+  background: url('https://i.imgur.com/BjA9nGt.png'), /* cute horses */
+              url('https://i.imgur.com/lO5HqC2.png'); /* balloons */
+  background-size: 150px, 120px;
+  background-repeat: repeat, repeat;
+  background-position: top left, top right;
+  background-color: #fffafc;
+  border: 3px solid #ff9ecd;
+  padding: 25px;
+  margin: 40px auto;
+  width: 90%;
+  max-width: 700px;
+  border-radius: 18px;
+  box-shadow: 0 0 20px rgba(255, 158, 205, 0.3);
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}
+
+.update-050825-bday-title {
+  font-size: 26px;
+  text-align: center;
+  color: #ff5c8d;
+  text-shadow: 0 0 5px #ffe6f0;
+  margin-bottom: 15px;
+}
+
+.update-050825-bday-text {
+  font-size: 16px;
+  line-height: 1.8;
+  text-align: center;
+  color: #663a53;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 15px;
+  border-radius: 12px;
+}
+
+
+
 .blog-post-090825-pjs {
   background: linear-gradient(135deg, #ffe6f0, #fffaf5);
   border: 6px solid hotpink; /* CLEAR BOLD BORDER */
