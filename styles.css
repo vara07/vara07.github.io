@@ -5,6 +5,58 @@
 
 
 
+
+
+.update-050825-soccer {
+  background: repeating-linear-gradient(
+      to right,
+      #3da74f,
+      #3da74f 40px,
+      #34a043 40px,
+      #34a043 80px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 39px,
+      white 39px,
+      white 41px
+    );
+  background-size: cover;
+  border: 4px solid white; /* Soccer field boundary */
+  padding: 25px;
+  margin: 40px auto;
+  width: 90%;
+  max-width: 700px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 128, 0, 0.4);
+  font-family: 'Poppins', sans-serif;
+}
+
+.update-050825-soccer-title {
+  font-size: 26px;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 5px black;
+  margin-bottom: 15px;
+}
+
+.update-050825-soccer-text {
+  font-size: 16px;
+  line-height: 1.8;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 3px black;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 12px;
+  border-radius: 8px;
+}
+
+
+
+
+
+
 .update-050825-bday {
   /* Cartoon horses seamless background */
   background: url('YOUR_CARTOON_HORSE_PATTERN_URL');
