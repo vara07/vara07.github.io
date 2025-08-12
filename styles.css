@@ -3,26 +3,7 @@
 
 
 
-
-
-
-
-
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
-
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: radial-gradient(circle at center, #111 0%, #000 100%);
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
-.blog-post {
+.blog-post12august {
   background: rgba(0,0,0,0.8);
    /* Thicker border */
   
@@ -32,18 +13,6 @@ body {
   text-align: center;
   box-shadow: 0 0 20px gold, 0 0 50px purple;
   position: relative;
-}
-
-h2 {
-  font-size: 2rem;
-  margin-bottom: 15px;
-  color: gold;
-  text-shadow: 0 0 10px gold, 0 0 20px orange;
-}
-
-p {
-  font-size: 1.1rem;
-  line-height: 1.5;
 }
 
 /* Stage Lights */
@@ -57,11 +26,11 @@ p {
   opacity: 0.7;
 }
 
-.light.left {
+.light.left12august {
   top: -50px;
   left: -80px;
 }
-.light.right {
+.light.right12august {
   top: -50px;
   right: -80px;
   animation-delay: 1.5s;
@@ -73,7 +42,7 @@ p {
 }
 
 /* Stage Floor */
-.stage-floor {
+.stage-floor12august {
   position: absolute;
   bottom: -20px;
   left: 0;
