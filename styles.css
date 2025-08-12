@@ -1,48 +1,59 @@
 
 
 
-
-
-.blog-post12august {
+.blog-post-120825-stage {
   background: rgba(0,0,0,0.8);
-   /* Thicker border */
-  
-   /* Slightly rounder edges */
+  border: 5px solid gold;
+  border-radius: 20px;
   padding: 30px;
   max-width: 800px;
+  margin: 40px auto;
   text-align: center;
   box-shadow: 0 0 20px gold, 0 0 50px purple;
   position: relative;
+  color: white;
+}
+
+.heading-120825 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: gold;
+  text-shadow: 0 0 10px gold, 0 0 20px orange;
+}
+
+.text-120825 {
+  font-size: 1.1rem;
+  line-height: 1.5;
 }
 
 /* Stage Lights */
-.light {
+.light-120825 {
   position: absolute;
   width: 150px;
   height: 150px;
   background: radial-gradient(circle, rgba(255,255,0,0.8) 0%, transparent 70%);
   transform: rotate(45deg);
-  animation: swing 3s infinite alternate ease-in-out;
+  animation: swing-120825 3s infinite alternate ease-in-out;
   opacity: 0.7;
 }
 
-.light.left12august {
+.left-120825 {
   top: -50px;
   left: -80px;
 }
-.light.right12august {
+.right-120825 {
   top: -50px;
   right: -80px;
   animation-delay: 1.5s;
 }
 
-@keyframes swing {
+@keyframes swing-120825 {
   0% { transform: rotate(30deg) translateY(0); }
   100% { transform: rotate(-30deg) translateY(10px); }
 }
 
 /* Stage Floor */
-.stage-floor12august {
+.stage-floor-120825 {
   position: absolute;
   bottom: -20px;
   left: 0;
@@ -57,8 +68,6 @@
   );
   border-top: 5px solid gold;
 }
-
-
 
 
 
