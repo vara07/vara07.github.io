@@ -7,24 +7,24 @@
 
 .blog-post-130825-science {
   background: linear-gradient(135deg, #ffe6f0, #e6f7ff, #f9f9e6);
-  border: 5px solid #a6b5c9; /* pastel grey-blue border */
-  border-radius: 18px;
+  border: 6px solid #ffb6c1; /* brighter pastel pink border */
+  border-radius: 20px;
   padding: 25px;
   margin: 40px auto;
   max-width: 800px;
   font-family: 'Segoe UI', 'Poppins', sans-serif;
   color: #4a4a4a;
-  box-shadow: 0 0 15px rgba(166, 181, 201, 0.3);
+  box-shadow: 0 0 15px rgba(255, 182, 193, 0.4); /* pink glow */
 }
 
 .blog-post-130825-science h2 {
   font-size: 1.5em;
   margin-bottom: 12px;
-  background: #fef6fa;
+  background: #fff0f5;
   display: inline-block;
   padding: 8px 16px;
   border-radius: 12px;
-  border: 2px solid #d1c4e9; /* pastel purple border */
+  border: 3px solid #ffb6c1;
   color: #6a5a99;
 }
 
@@ -33,7 +33,7 @@
   background-color: rgba(255, 255, 255, 0.9);
   padding: 15px 20px;
   border-radius: 15px;
-  border: 2px solid #a6b5c9; /* pastel border for text */
+  border: 2px solid #ffb6c1;
   line-height: 1.6em;
 }
 
