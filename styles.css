@@ -7,6 +7,10 @@
 
 
 
+.blog-post-130825-book-section {
+  padding: 20px;
+}
+
 .blog-post-130825-book {
   background: #fdf8f2; /* soft cream paper color */
   padding: 25px;
@@ -18,12 +22,14 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   border-radius: 12px;
 }
+
 .blog-post-130825-book h2 {
   font-family: 'Merriweather', serif;
   color: #5a4632;
   text-align: center;
   margin-bottom: 20px;
 }
+
 .blog-post-130825-book p {
   color: #3b2a1a;
 }
