@@ -7,6 +7,72 @@
 
 
 
+.blog-post-150825-netball-section {
+  padding: 20px;
+}
+
+.blog-post-150825-netball {
+  position: relative; /* so icons can be positioned inside */
+  background: repeating-linear-gradient(
+    to bottom,
+    #9be3ff,
+    #9be3ff 40px,
+    #ffffff 40px,
+    #ffffff 80px
+  ); /* light blue and white stripes */
+  border: 5px solid #2b8cc4;
+  padding: 25px;
+  margin: 30px auto;
+  max-width: 800px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #083b54;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.blog-post-150825-netball h2 {
+  text-align: center;
+  font-weight: bold;
+  color: #084c70;
+}
+
+.blog-post-150825-netball p {
+  font-size: 1.1em;
+}
+
+/* Netball icon positions */
+.netball-icon {
+  position: absolute;
+  font-size: 1.5em;
+}
+
+.netball-icon.top-left {
+  top: -15px;
+  left: -15px;
+}
+
+.netball-icon.top-right {
+  top: -15px;
+  right: -15px;
+}
+
+.netball-icon.bottom-left {
+  bottom: -15px;
+  left: -15px;
+}
+
+.netball-icon.bottom-right {
+  bottom: -15px;
+  right: -15px;
+}
+
+
+
+
+
+
+
+
 .blog-post-130825-book-section {
   padding: 20px;
 }
