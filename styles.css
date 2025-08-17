@@ -7,6 +7,67 @@
 
 
 
+.blog-post-170825-gem-section {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.blog-post-170825-gem {
+  background: linear-gradient(135deg, #fce4ec, #e1f5fe, #f3e5f5);
+  border: 6px solid #9c27b0;
+  border-radius: 20px;
+  padding: 25px;
+  max-width: 600px;
+  text-align: center;
+  font-family: 'Trebuchet MS', sans-serif;
+  color: #4a148c;
+  box-shadow: 0 8px 25px rgba(156, 39, 176, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Heading style */
+.blog-post-170825-gem h2 {
+  font-size: 1.8em;
+  color: #8e24aa;
+  margin-bottom: 15px;
+  text-shadow: 0 0 6px #e1bee7, 0 0 12px #ba68c8;
+}
+
+/* Sparkling gemstone effect */
+.blog-post-170825-gem::before,
+.blog-post-170825-gem::after {
+  content: "✧";
+  position: absolute;
+  font-size: 28px;
+  color: #d500f9;
+  animation: sparkle 3s infinite ease-in-out;
+}
+
+.blog-post-170825-gem::before {
+  top: 15px;
+  left: 20px;
+}
+
+.blog-post-170825-gem::after {
+  bottom: 20px;
+  right: 25px;
+}
+
+/* Sparkle animation */
+@keyframes sparkle {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.4); }
+}
+
+
+
+
+
+
+
+
 
 
 
