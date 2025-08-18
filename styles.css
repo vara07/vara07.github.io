@@ -18,13 +18,13 @@
 
 .blog-post-180825-coke {
   background: linear-gradient(180deg, #b71c1c 0%, #d32f2f 50%, #ffffff 100%);
-  border: 8px solid #ffffff;   /* 👈 Strong white border */
-  border-radius: 30px;         /* 👈 Rounded like a Coke bottle */
+  border: 8px solid #ffffff;
+  border-radius: 30px;
   padding: 25px;
   max-width: 600px;
   text-align: center;
   font-family: 'Trebuchet MS', sans-serif;
-  color: #fff;
+  color: #000; /* Normal text is black */
   position: relative;
   overflow: hidden;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
@@ -33,38 +33,62 @@
 /* Heading */
 .blog-post-180825-coke h2 {
   font-size: 1.8em;
-  color: #fff;
+  color: #000;
   margin-bottom: 15px;
-  text-shadow: 0 0 6px #000, 0 0 10px #c62828;
 }
 
-/* Fizzy bubbles effect */
-.blog-post-180825-coke::before,
-.blog-post-180825-coke::after {
-  content: "●";
-  position: absolute;
-  font-size: 20px;
+/* Strong standout words */
+.blog-post-180825-coke strong {
   color: #fff;
-  opacity: 0.7;
-  animation: fizz 3s infinite ease-in-out;
+  text-shadow: 0 0 6px #ff0000, 0 0 12px #ff0000, 0 0 18px #ff0000;
+  font-weight: bold;
+}
+
+/* Fizzy bubbles - 3 layers with different sizes/speeds */
+.blog-post-180825-coke::before,
+.blog-post-180825-coke::after,
+.blog-post-180825-coke .bubble-layer {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
 }
 
 .blog-post-180825-coke::before {
-  top: 20px;
-  left: 30px;
-  animation-delay: 0.5s;
+  background-image: radial-gradient(circle, white 2px, transparent 3px);
+  background-size: 20px 20px;
+  opacity: 0.6;
+  animation: fizz-small 8s linear infinite;
 }
 
 .blog-post-180825-coke::after {
-  bottom: 20px;
-  right: 40px;
-  animation-delay: 1.5s;
+  background-image: radial-gradient(circle, white 4px, transparent 6px);
+  background-size: 35px 35px;
+  opacity: 0.5;
+  animation: fizz-medium 12s linear infinite reverse;
 }
 
-@keyframes fizz {
-  0% { transform: translateY(0) scale(1); opacity: 0.4; }
-  50% { transform: translateY(-20px) scale(1.3); opacity: 1; }
-  100% { transform: translateY(0) scale(1); opacity: 0.4; }
+.blog-post-180825-coke .bubble-layer {
+  background-image: radial-gradient(circle, white 6px, transparent 8px);
+  background-size: 50px 50px;
+  opacity: 0.4;
+  animation: fizz-large 15s linear infinite;
+}
+
+/* Animations for different bubble sizes */
+@keyframes fizz-small {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 -300px; }
+}
+
+@keyframes fizz-medium {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 -200px; }
+}
+
+@keyframes fizz-large {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 -150px; }
 }
 
 
