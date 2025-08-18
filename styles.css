@@ -18,8 +18,8 @@
 
 .blog-post-180825-coke {
   background: linear-gradient(180deg, #b71c1c 0%, #d32f2f 50%, #ffffff 100%);
-  border: 6px solid #8b0000;
-  border-radius: 25px;
+  border: 8px solid #ffffff;   /* 👈 Strong white border */
+  border-radius: 30px;         /* 👈 Rounded like a Coke bottle */
   padding: 25px;
   max-width: 600px;
   text-align: center;
@@ -27,7 +27,7 @@
   color: #fff;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 6px 20px rgba(139, 0, 0, 0.4);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
 /* Heading */
