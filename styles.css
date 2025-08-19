@@ -10,6 +10,108 @@
 
 
 
+
+
+
+
+
+
+.blog-post-190825-trendy-section {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.blog-post-190825-trendy {
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7, #a1c4fd, #c2e9fb);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 650px;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+  line-height: 1.8;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Floating glow dots for a trendy vibe */
+.blog-post-190825-trendy::before,
+.blog-post-190825-trendy::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  filter: blur(15px);
+  animation: floaty 10s infinite ease-in-out alternate;
+}
+.blog-post-190825-trendy::before {
+  width: 100px;
+  height: 100px;
+  top: -30px;
+  left: -30px;
+}
+.blog-post-190825-trendy::after {
+  width: 120px;
+  height: 120px;
+  bottom: -40px;
+  right: -40px;
+}
+
+/* Heading */
+.blog-post-190825-trendy h2 {
+  text-align: center;
+  font-size: 1.9em;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-shadow: 0 0 6px rgba(0,0,0,0.4);
+}
+
+/* Strong highlights */
+.blog-post-190825-trendy strong {
+  color: #ffffff;
+  background: #ff4081;
+  padding: 3px 6px;
+  border-radius: 6px;
+  text-shadow: 0 0 8px rgba(255, 64, 129, 0.8);
+}
+
+/* Emphasized phrases */
+.blog-post-190825-trendy em {
+  color: #4a148c;
+  background: rgba(255,255,255,0.6);
+  padding: 2px 6px;
+  border-radius: 5px;
+  font-style: normal;
+}
+
+/* Animations */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes floaty {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(20px, 20px); }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 .blog-post-180825-coke-section {
   padding: 20px;
   display: flex;
