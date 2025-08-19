@@ -119,80 +119,73 @@
 }
 
 .blog-post-180825-coke {
-  background: linear-gradient(180deg, #b71c1c 0%, #d32f2f 50%, #ffffff 100%);
-  border: 8px solid #ffffff;
-  border-radius: 30px;
-  padding: 25px;
-  max-width: 600px;
-  text-align: center;
-  font-family: 'Trebuchet MS', sans-serif;
-  color: #000; /* Normal text is black */
+  background: linear-gradient(to bottom, #111, #222 70%, #111);
+  border: 4px solid #e50914;
+  border-radius: 18px;
+  padding: 30px;
+  max-width: 650px;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+  color: black;
+  line-height: 1.8;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+/* Fizzy bubbles - just a few */
+.bubble {
+  position: absolute;
+  bottom: -50px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: rise 6s linear infinite;
+}
+
+.bubble:nth-child(1) {
+  width: 18px; height: 18px;
+  left: 20%;
+  animation-duration: 7s;
+}
+.bubble:nth-child(2) {
+  width: 25px; height: 25px;
+  left: 50%;
+  animation-duration: 8s;
+}
+.bubble:nth-child(3) {
+  width: 14px; height: 14px;
+  left: 75%;
+  animation-duration: 6s;
+}
+.bubble:nth-child(4) {
+  width: 20px; height: 20px;
+  left: 35%;
+  animation-duration: 9s;
+}
+
+@keyframes rise {
+  0% { transform: translateY(0); opacity: 0.7; }
+  100% { transform: translateY(-500px); opacity: 0; }
 }
 
 /* Heading */
 .blog-post-180825-coke h2 {
-  font-size: 1.8em;
-  color: #000;
-  margin-bottom: 15px;
+  text-align: center;
+  font-size: 1.9em;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 0 0 8px rgba(229,9,20,0.8);
 }
 
-/* Strong standout words */
+/* Strong highlights */
 .blog-post-180825-coke strong {
   color: #fff;
-  text-shadow: 0 0 6px #ff0000, 0 0 12px #ff0000, 0 0 18px #ff0000;
-  font-weight: bold;
+  background: #e50914;
+  padding: 3px 6px;
+  border-radius: 6px;
+  text-shadow: 0 0 12px rgba(229,9,20,1);
 }
-
-/* Fizzy bubbles - 3 layers with different sizes/speeds */
-.blog-post-180825-coke::before,
-.blog-post-180825-coke::after,
-.blog-post-180825-coke .bubble-layer {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.blog-post-180825-coke::before {
-  background-image: radial-gradient(circle, white 2px, transparent 3px);
-  background-size: 20px 20px;
-  opacity: 0.6;
-  animation: fizz-small 8s linear infinite;
-}
-
-.blog-post-180825-coke::after {
-  background-image: radial-gradient(circle, white 4px, transparent 6px);
-  background-size: 35px 35px;
-  opacity: 0.5;
-  animation: fizz-medium 12s linear infinite reverse;
-}
-
-.blog-post-180825-coke .bubble-layer {
-  background-image: radial-gradient(circle, white 6px, transparent 8px);
-  background-size: 50px 50px;
-  opacity: 0.4;
-  animation: fizz-large 15s linear infinite;
-}
-
-/* Animations for different bubble sizes */
-@keyframes fizz-small {
-  0% { background-position: 0 0; }
-  100% { background-position: 0 -300px; }
-}
-
-@keyframes fizz-medium {
-  0% { background-position: 0 0; }
-  100% { background-position: 0 -200px; }
-}
-
-@keyframes fizz-large {
-  0% { background-position: 0 0; }
-  100% { background-position: 0 -150px; }
-}
-
 
 
 
