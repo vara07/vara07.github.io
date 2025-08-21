@@ -11,6 +11,61 @@
 
 
 
+/* Section wrapper */
+.blog-post-210825-anniversary-section {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Main card */
+.blog-post-210825-anniversary {
+  background: repeating-linear-gradient(
+    to bottom,
+    #ffffff,
+    #ffffff 40px,
+    #e6f0ff 40px,
+    #e6f0ff 80px
+  );
+  border: 12px double #004aad;   /* bold double border */
+  border-radius: 18px;
+  padding: 35px;
+  max-width: 750px;
+  font-family: 'Poppins', sans-serif;
+  color: #002b5c;
+  line-height: 1.9;
+  text-align: left;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+/* Heading */
+.blog-post-210825-anniversary h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #004aad;
+  text-shadow: 0 0 6px rgba(0,74,173,0.3);
+  background: #ffffffcc;
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 10px;
+  border: 3px solid #004aad; /* heading border */
+}
+
+/* Strong highlights */
+.blog-post-210825-anniversary strong {
+  color: #004aad;
+  background: #ffffffd9;
+  padding: 2px 6px;
+  border-radius: 5px;
+  border: 1px solid #004aad;
+}
+
+
+
+
+
 
 
 
