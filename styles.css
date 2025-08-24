@@ -10,6 +10,73 @@
 
 
 
+/* Section wrapper */
+.blog-post-170825-books-section {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Main card styled like a book */
+.blog-post-170825-books {
+  background: linear-gradient(135deg, #fffdf7, #f7f4ff);
+  border: 8px double #4a3f94;   /* Book cover style border */
+  border-radius: 15px;
+  padding: 40px;
+  max-width: 720px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #2e2a47;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25), inset 0 0 25px rgba(255,255,255,0.5);
+}
+
+/* Heading styled like a book title */
+.blog-post-170825-books h2 {
+  font-size: 2.2em;
+  margin-bottom: 20px;
+  color: #4a3f94;
+  text-shadow: 0 0 8px rgba(150,120,220,0.4);
+  font-weight: 700;
+}
+
+/* Strong words pop out */
+.blog-post-170825-books strong {
+  color: #fff;
+  background: #4a3f94;
+  padding: 3px 7px;
+  border-radius: 6px;
+  box-shadow: 0 0 6px rgba(74,63,148,0.6);
+}
+
+/* Decorative "bookmarks" */
+.blog-post-170825-books::before,
+.blog-post-170825-books::after {
+  content: "📖";
+  font-size: 2.2em;
+  position: absolute;
+  top: 15px;
+  color: #c5b4f7;
+  opacity: 0.8;
+}
+
+.blog-post-170825-books::before {
+  left: 15px;
+}
+.blog-post-170825-books::after {
+  right: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
