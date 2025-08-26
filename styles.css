@@ -9,6 +9,106 @@
 
 
 
+.blog-post-190825-tuesday-section {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.blog-post-190825-tuesday {
+  background: linear-gradient(135deg, #ffe6f9, #e0f7ff);
+  border: 6px dashed #ff69b4;
+  border-radius: 22px;
+  padding: 30px;
+  max-width: 650px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  line-height: 1.8;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  animation: floatyBorder 3s infinite alternate;
+}
+
+.blog-post-190825-tuesday h2 {
+  font-size: 1.9em;
+  color: #ff4da6;
+  text-shadow: 0 0 6px #fff;
+  margin-bottom: 15px;
+}
+
+.blog-post-190825-tuesday p {
+  color: #333;
+  font-size: 1.1em;
+}
+
+.blog-post-190825-tuesday strong {
+  color: #ff1493;
+}
+
+/* Subtle glowing border effect */
+@keyframes floatyBorder {
+  0% { box-shadow: 0 0 10px #ff69b4, 0 0 20px #ffccf9; }
+  100% { box-shadow: 0 0 20px #66e0ff, 0 0 40px #ff99cc; }
+}
+
+
+
+
+
+
+
+
+/* Monday Surprise Section */
+.blog-post-180825-monday-section {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.blog-post-180825-monday {
+  background: linear-gradient(135deg, #ffdee9, #b5fffc);
+  border: 5px solid #ff69b4;
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 700px;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  line-height: 1.8;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  position: relative;
+  overflow: hidden;
+  animation: bounce-card 3s ease-in-out infinite;
+}
+
+/* Header */
+.blog-post-180825-monday h2 {
+  text-align: center;
+  font-size: 2em;
+  color: #222;
+  text-shadow: 2px 2px 0 #fff, -2px -2px 0 #ff69b4;
+  margin-bottom: 20px;
+}
+
+/* Highlights */
+.blog-post-180825-monday strong {
+  color: #ff1493;
+  font-weight: bold;
+}
+
+/* Card bounce animation */
+@keyframes bounce-card {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+
+
+
+
+
+
+
+
+
 
 /* Section wrapper */
 .blog-post-170825-books-section {
