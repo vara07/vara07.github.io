@@ -1,4 +1,65 @@
+.blog-post-200825-wednesday-section {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+}
 
+.blog-post-200825-wednesday {
+  background: linear-gradient(135deg, #e0f7e9, #f5ffe0);
+  border: 8px double #2e7d32;   /* ✅ Thicker double border */
+  border-radius: 18px;
+  padding: 30px;
+  max-width: 650px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  line-height: 1.8;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Heading */
+.blog-post-200825-wednesday h2 {
+  font-size: 1.9em;
+  color: #2e7d32;
+  margin-bottom: 15px;
+  text-shadow: 0 0 6px #c8e6c9;
+}
+
+.blog-post-200825-wednesday p {
+  color: #333;
+  font-size: 1.1em;
+}
+
+.blog-post-200825-wednesday strong {
+  color: #1b5e20;
+}
+
+/* Floating mould spores effect */
+.blog-post-200825-wednesday::before,
+.blog-post-200825-wednesday::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(76, 175, 80, 0.25);
+  animation: floatSpores 10s infinite ease-in-out;
+}
+
+.blog-post-200825-wednesday::before {
+  width: 120px; height: 120px;
+  top: -40px; left: -40px;
+}
+
+.blog-post-200825-wednesday::after {
+  width: 90px; height: 90px;
+  bottom: -30px; right: -30px;
+}
+
+@keyframes floatSpores {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(20px, -20px) scale(1.1); }
+  100% { transform: translate(0, 0) scale(1); }
+}
 
 
 
