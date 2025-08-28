@@ -1,3 +1,48 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.blog-post-280825-anything-section {
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.blog-post-280825-anything {
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7, #a1c4fd, #c2e9fb);
+  border: 12px solid #444;  /* strong dark border */
+  border-radius: 25px;
+  padding: 35px;
+  max-width: 750px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+  line-height: 1.8;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 .blog-post-200825-wednesday-section {
   padding: 30px;
   display: flex;
