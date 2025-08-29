@@ -13,6 +13,68 @@
 
 
 
+
+
+.blog-post-290825-handmural-section {
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.blog-post-290825-handmural {
+  background: repeating-linear-gradient(
+    45deg,
+    #ffffff,
+    #ffffff 40px,
+    #d6ecff 40px,
+    #d6ecff 80px
+  );
+  border: 8px solid #2b6cb0;   /* strong border */
+  border-radius: 20px;
+  padding: 35px;
+  max-width: 750px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+  line-height: 1.8;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+/* little handprint icons for decoration */
+.blog-post-290825-handmural::before,
+.blog-post-290825-handmural::after {
+  content: "✋";
+  font-size: 2.8rem;
+  position: absolute;
+  opacity: 0.25;
+}
+
+.blog-post-290825-handmural::before {
+  top: 15px;
+  left: 20px;
+  color: #a5d8ff;
+}
+
+.blog-post-290825-handmural::after {
+  bottom: 15px;
+  right: 20px;
+  color: #004aad;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .blog-post-280825-anything-section {
   padding: 40px;
   display: flex;
