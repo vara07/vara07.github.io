@@ -6,6 +6,19 @@
 
 
 
+.blog-post-300825-sleepover {
+  background: linear-gradient(135deg, #dbeafe, #fdf2f8, #fff5d7);
+  border: 14px dashed #8b5cf6;   /* made border bolder */
+  border-radius: 28px;
+  padding: 40px;
+  max-width: 750px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  line-height: 1.9;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  position: relative;
+}
 
 
 
