@@ -1,3 +1,25 @@
+.blog-post-020925-dentist {
+  background: linear-gradient(135deg, #fff7f7, #e0f7ff);
+  border: 8px solid #0077cc; /* bold blue border */
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 720px;
+  margin: 40px auto;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  line-height: 1.8;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.blog-post-020925-dentist h2 {
+  font-size: 1.7em;
+  margin-bottom: 18px;
+  color: #ff4d6d;
+  text-shadow: 0 0 6px rgba(255,77,109,0.3);
+}
+
+
 
 
 
