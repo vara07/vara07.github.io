@@ -29,6 +29,44 @@
 
 
 
+.blog-post-030925-messages {
+  background: linear-gradient(135deg, #f0f8ff, #e6e6ff);
+  border: 10px double #6633cc;   /* extra bold & stylish border */
+  border-radius: 22px;
+  padding: 30px;
+  max-width: 720px;
+  margin: 40px auto;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+  line-height: 1.8;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* floating chat vibe */
+.blog-post-030925-messages::before {
+  content: "💬💬💬";
+  font-size: 2em;
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  opacity: 0.3;
+}
+
+.blog-post-030925-messages h2 {
+  font-size: 1.7em;
+  margin-bottom: 18px;
+  color: #6633cc;
+  text-shadow: 0 0 5px rgba(102,51,204,0.3);
+}
+
+
+
+
+
+
 
 
 .blog-post-010925-tooth {
