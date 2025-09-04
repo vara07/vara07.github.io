@@ -1,3 +1,44 @@
+.blog-post-040925-section {
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.blog-post-040925 {
+  background: linear-gradient(135deg, #ffe6f7, #e6f0ff);
+  border: 8px solid #000;   /* SUPER bold black border */
+  border-radius: 18px;
+  padding: 30px;
+  max-width: 700px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+  line-height: 1.8;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+/* Heading */
+.blog-post-040925 h2 {
+  font-size: 1.9em;
+  margin-bottom: 20px;
+  color: #ff3399;
+  text-shadow: 0 0 8px rgba(255,77,210,0.5);
+}
+
+/* Highlight strong text */
+.blog-post-040925 strong {
+  color: #ff3399;
+}
+
+
+
+
+
+
+
+
+
 .blog-post-020925-dentist {
   background: linear-gradient(135deg, #fff7f7, #e0f7ff);
   border: 8px solid #0077cc; /* bold blue border */
