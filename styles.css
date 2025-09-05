@@ -1,3 +1,41 @@
+
+
+
+
+
+
+
+
+
+
+
+
+.blog-post-050925-movie {
+  background: radial-gradient(circle at top, #222 0%, #000 100%);
+  border: 14px solid #ffcc00; /* Bolder golden border */
+  border-radius: 24px;
+  padding: 35px;
+  max-width: 760px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #f5f5f5;
+  line-height: 1.9;
+  box-shadow: 0 0 35px rgba(255, 204, 0, 1), 0 0 20px rgba(255, 102, 0, 0.7);
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 .blog-post-040925-section {
   padding: 25px;
   display: flex;
