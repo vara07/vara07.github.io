@@ -9,6 +9,27 @@
 
 
 
+.blog-post-060925 {
+  background: linear-gradient(135deg, #fff5e6, #ffe6f9, #e6f9ff);
+  border: 16px solid #ff3399;   /* 🔥 thicker & brighter pink party border */
+  border-radius: 28px;
+  padding: 35px;
+  max-width: 750px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  line-height: 1.9;
+  box-shadow: 0 0 30px rgba(255, 51, 153, 0.7), 0 0 15px rgba(255, 153, 51, 0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+
+
+
+
 
 .blog-post-050925-movie {
   background: radial-gradient(circle at top, #222 0%, #000 100%);
@@ -24,8 +45,6 @@
   position: relative;
   overflow: hidden;
 }
-
-
 
 
 
