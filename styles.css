@@ -9,6 +9,80 @@
 
 
 
+
+
+.blog-post-070925-section {
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.blog-post-070925 {
+  background: linear-gradient(135deg, #e6f0ff, #ffffff, #e6ffe6);
+  border: 20px solid #1a3dff;   /* 🔥 VERY thick bold border */
+  border-radius: 30px;
+  padding: 40px;
+  max-width: 750px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+  line-height: 1.9;
+  box-shadow: 0 0 25px rgba(26, 61, 255, 0.7);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Heading */
+.blog-post-070925 h2 {
+  font-size: 2.2em;
+  margin-bottom: 20px;
+  color: #1a3dff;
+  text-shadow: 0 0 10px rgba(0,0,0,0.25);
+}
+
+/* Strong highlights */
+.blog-post-070925 strong {
+  color: #ff6600;
+  background: #fff8e6;
+  padding: 4px 8px;
+  border-radius: 6px;
+  text-shadow: 0 0 6px rgba(255, 153, 51, 0.6);
+}
+
+/* Festive confetti */
+@keyframes fall {
+  0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(600px) rotate(360deg); opacity: 0; }
+}
+
+.blog-post-070925::before,
+.blog-post-070925::after {
+  content: "🎉🎁💙";
+  font-size: 1.8rem;
+  position: absolute;
+  animation: fall 7s linear infinite;
+}
+
+.blog-post-070925::before {
+  top: -25px;
+  left: 15%;
+}
+
+.blog-post-070925::after {
+  top: -25px;
+  right: 20%;
+  animation-delay: 3.5s;
+}
+
+
+
+
+
+
+
+
+
+
 .blog-post-060925 {
   background: linear-gradient(135deg, #fff5e6, #ffe6f9, #e6f9ff);
   border: 16px solid #ff3399;   /* 🔥 thicker & brighter pink party border */
