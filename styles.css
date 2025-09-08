@@ -9,6 +9,77 @@
 
 
 
+.blog-post-080925-section {
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.blog-post-080925 {
+  background: linear-gradient(135deg, #e0f7ff, #ffffff, #dfffe7);
+  border: 20px solid #00bfff; /* BIG + BOLD border */
+  border-radius: 30px;
+  padding: 35px;
+  max-width: 750px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+  line-height: 1.8;
+  box-shadow: 0 0 25px rgba(0, 191, 255, 0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Heading */
+.blog-post-080925 h2 {
+  font-size: 2.2em;
+  margin-bottom: 20px;
+  color: #0088cc;
+  text-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+/* Strong words pop */
+.blog-post-080925 strong {
+  color: #0066cc;
+  background: #f0faff;
+  padding: 3px 7px;
+  border-radius: 6px;
+}
+
+/* Floating teeth + bubbles */
+@keyframes floaty {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  50% { transform: translateY(-15px) rotate(15deg); opacity: 0.8; }
+  100% { transform: translateY(0) rotate(0deg); opacity: 1; }
+}
+
+.blog-post-080925::before {
+  content: "🦷";
+  font-size: 2rem;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  animation: floaty 3s ease-in-out infinite;
+}
+
+.blog-post-080925::after {
+  content: "🌊";
+  font-size: 2rem;
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+  animation: floaty 4s ease-in-out infinite;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 .blog-post-070925-section {
