@@ -9,6 +9,77 @@
 
 
 
+.blog-post-090925-section {
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.blog-post-090925 {
+  background: linear-gradient(135deg, #fdfdfd, #e8f0ff, #ffffff);
+  border: 20px solid #4a6cff; /* BIG + BOLD border */
+  border-radius: 28px;
+  padding: 35px;
+  max-width: 700px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+  line-height: 1.8;
+  box-shadow: 0 0 25px rgba(74,108,255,0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Heading */
+.blog-post-090925 h2 {
+  font-size: 2.1em;
+  margin-bottom: 20px;
+  color: #2c45cc;
+  text-shadow: 0 0 6px rgba(0,0,0,0.15);
+}
+
+/* Strong words */
+.blog-post-090925 strong {
+  color: #fff;
+  background: #4a6cff;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+/* Floating certificate + school bell */
+@keyframes floaty {
+  0% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(-12px); opacity: 0.8; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.blog-post-090925::before {
+  content: "📜";
+  font-size: 2rem;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  animation: floaty 3s ease-in-out infinite;
+}
+
+.blog-post-090925::after {
+  content: "🔔";
+  font-size: 2rem;
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+  animation: floaty 4s ease-in-out infinite;
+}
+
+
+
+
+
+
+
+
+
+
 .blog-post-080925-section {
   padding: 25px;
   display: flex;
