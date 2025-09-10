@@ -9,6 +9,77 @@
 
 
 
+.blog-post-100925-section {
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.blog-post-100925 {
+  background: linear-gradient(135deg, #ffffff, #f2f8ff, #ffffff);
+  border: 22px solid #1e90ff; /* BIG + BOLD easy to see border */
+  border-radius: 28px;
+  padding: 35px;
+  max-width: 700px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+  line-height: 1.8;
+  box-shadow: 0 0 30px rgba(30,144,255,0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Heading */
+.blog-post-100925 h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #1e90ff;
+  text-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+/* Strong highlight */
+.blog-post-100925 strong {
+  color: #fff;
+  background: #1e90ff;
+  padding: 3px 7px;
+  border-radius: 6px;
+}
+
+/* Floating science + walk emojis */
+@keyframes floaty {
+  0% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(-12px); opacity: 0.85; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.blog-post-100925::before {
+  content: "🧬";
+  font-size: 2rem;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  animation: floaty 3s ease-in-out infinite;
+}
+
+.blog-post-100925::after {
+  content: "👟";
+  font-size: 2rem;
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+  animation: floaty 4s ease-in-out infinite;
+}
+
+
+
+
+
+
+
+
+
+
 .blog-post-090925-section {
   padding: 25px;
   display: flex;
