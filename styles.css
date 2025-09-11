@@ -9,6 +9,77 @@
 
 
 
+.blog-post-110925-section {
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.blog-post-110925 {
+  background: linear-gradient(135deg, #fff7d1, #ffe3ec, #d8f5ff);
+  border: 22px solid #ff3b3b; /* BIG + BOLD border */
+  border-radius: 28px;
+  padding: 35px;
+  max-width: 720px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+  line-height: 1.8;
+  box-shadow: 0 0 30px rgba(255,59,59,0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Heading */
+.blog-post-110925 h2 {
+  font-size: 2.1em;
+  margin-bottom: 20px;
+  color: #ff3b3b;
+  text-shadow: 0 0 6px rgba(0,0,0,0.15);
+}
+
+/* Strong highlight */
+.blog-post-110925 strong {
+  color: #fff;
+  background: #ff3b3b;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+/* Floating game pieces */
+@keyframes floaty-110925 {
+  0% { transform: translateY(0) rotate(0); opacity: 1; }
+  50% { transform: translateY(-14px) rotate(10deg); opacity: 0.85; }
+  100% { transform: translateY(0) rotate(0); opacity: 1; }
+}
+
+.blog-post-110925::before {
+  content: "🎲";
+  font-size: 2rem;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  animation: floaty-110925 3s ease-in-out infinite;
+}
+
+.blog-post-110925::after {
+  content: "🧩";
+  font-size: 2rem;
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+  animation: floaty-110925 4s ease-in-out infinite;
+}
+
+
+
+
+
+
+
+
+
+
 .blog-post-100925-section {
   padding: 25px;
   display: flex;
