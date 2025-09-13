@@ -8,6 +8,70 @@
 
 
 
+
+
+
+.blog-post-130925-section {
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.blog-post-130925 {
+  background: linear-gradient(to bottom, #87cefa, #ffffff 40%, #1e90ff 70%, #001f3f);
+  border: 12px dashed #004080;
+  border-radius: 30px;
+  padding: 40px;
+  max-width: 650px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #003366;
+  line-height: 1.8;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 0 8px #ffffff, 0 0 0 14px #004080; /* layered "passport stamp" effect */
+}
+
+/* Heading */
+.blog-post-130925 h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #002244;
+  text-shadow: 0 0 8px rgba(255,255,255,0.6);
+}
+
+/* Strong highlight */
+.blog-post-130925 strong {
+  background: #ffdd57;
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: #000;
+}
+
+/* Plane flying animation */
+.blog-post-130925::before {
+  content: "✈️";
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 2rem;
+  animation: fly-plane-130925 6s linear infinite;
+}
+
+@keyframes fly-plane-130925 {
+  0% { transform: translateX(0) translateY(0) rotate(0deg); opacity: 1; }
+  50% { transform: translateX(250px) translateY(-50px) rotate(20deg); opacity: 0.8; }
+  100% { transform: translateX(500px) translateY(-100px) rotate(0deg); opacity: 0; }
+}
+
+
+
+
+
+
+
+
+
 .blog-post-120925-section {
   padding: 40px;
   display: flex;
