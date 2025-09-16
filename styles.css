@@ -4,6 +4,62 @@
 
 
 
+.blog-post-160925-section {
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.blog-post-160925 {
+  background: linear-gradient(135deg, #00c6ff, #0072ff, #00ffcc);
+  border: 16px solid #ffcc00;
+  border-radius: 30px;
+  padding: 40px;
+  max-width: 750px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  line-height: 1.9;
+  position: relative;
+  box-shadow: 0 0 25px #0072ff, 0 0 35px #00ffcc;
+  animation: holiday-glow 3s ease-in-out infinite alternate;
+}
+
+/* Glow animation */
+@keyframes holiday-glow {
+  0% { box-shadow: 0 0 20px #0072ff, 0 0 30px #00ffcc; }
+  100% { box-shadow: 0 0 40px #ffcc00, 0 0 60px #00c6ff; }
+}
+
+.blog-post-160925 h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-shadow: 0 0 12px #000, 0 0 20px #ffcc00;
+}
+
+/* Highlights */
+.blog-post-160925 strong {
+  color: #000;
+  background: #ffcc00;
+  padding: 4px 8px;
+  border-radius: 8px;
+  text-shadow: 0 0 6px #fff;
+}
+
+/* Decorative plane + shopping bag */
+.blog-post-160925::before {
+  content: "✈️ 🏨 🛍️ 🎉";
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.8rem;
+}
+
+
+
+
+
 
 
 
