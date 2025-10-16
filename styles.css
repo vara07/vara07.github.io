@@ -4,6 +4,77 @@
 
 
 
+.blog-post-161025-section {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+.blog-post-161025 {
+  background: linear-gradient(135deg, #ff99cc, #ffe6ff, #99ccff);
+  border: 12px double #ff66cc;
+  border-radius: 40px;
+  padding: 40px;
+  max-width: 800px;
+  text-align: center;
+  font-family: 'Poppins', cursive;
+  color: #333;
+  box-shadow: 0 0 25px #ff66cc, 0 0 50px #99ccff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Sparkle and star background */
+.blog-post-161025::before {
+  content: "✨🌟💫🎠🎆🏰";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.8rem;
+  text-shadow: 0 0 10px #fff, 0 0 20px #ff66cc;
+}
+
+/* Magical confetti sparkle animation */
+@keyframes sparkle {
+  0% { box-shadow: 0 0 20px #ff66cc, 0 0 30px #99ccff; }
+  100% { box-shadow: 0 0 40px #ff99cc, 0 0 60px #66ccff; }
+}
+.blog-post-161025 {
+  animation: sparkle 3s ease-in-out infinite alternate;
+}
+
+.blog-post-161025 h2 {
+  font-size: 2.2em;
+  color: #ff3399;
+  text-shadow: 0 0 10px #fff, 0 0 20px #ff99cc;
+  margin-bottom: 20px;
+}
+
+.blog-post-161025 strong {
+  color: #ff3399;
+  background: #fff5fd;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+/* Mickey Ear Border Design */
+.blog-post-161025::after {
+  content: "🐭🎀";
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.8rem;
+}
+
+
+
+
+
+
+
+
 .blog-post-160925-section {
   padding: 40px;
   display: flex;
