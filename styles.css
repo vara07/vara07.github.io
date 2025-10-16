@@ -8,84 +8,79 @@
   display: flex;
   justify-content: center;
   padding: 40px;
+  background: radial-gradient(circle at top, #fff5fd 0%, #ffe6fa 50%, #fceaff 100%);
 }
 
 .blog-post-161025 {
-  background: linear-gradient(135deg, #ffb6e6, #fff0ff, #b3e0ff);
-  border: 16px solid transparent;
-  border-radius: 40px;
+  background: #ffffffd9; /* soft white with transparency */
+  border: 10px solid transparent;
+  border-image: linear-gradient(90deg, #ff66cc, #66ccff, #ff99cc) 1;
+  border-radius: 30px;
   padding: 40px;
   max-width: 800px;
-  text-align: center;
-  font-family: 'Poppins', cursive;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
   color: #333;
+  box-shadow: 0 0 25px rgba(255, 153, 204, 0.6), 0 0 40px rgba(102, 204, 255, 0.4);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 0 40px #ff99cc, 0 0 80px #99ccff;
-  animation: sparkle 3s ease-in-out infinite alternate;
 }
 
-/* ✨ Disney Magic Border Frame ✨ */
-.blog-post-161025::before {
-  content: "";
-  position: absolute;
-  top: -6px;
-  left: -6px;
-  right: -6px;
-  bottom: -6px;
-  border-radius: 40px;
-  padding: 10px;
-  background: repeating-linear-gradient(
-    45deg,
-    #ff66cc 0%,
-    #ffccff 10%,
-    #66ccff 20%,
-    #99ccff 30%,
-    #ff99cc 40%
-  );
-  mask: 
-    radial-gradient(circle at 10% 10%, transparent 8%, black 9%) repeat,
-    linear-gradient(#000, #000);
-  mask-size: 40px 40px, auto;
-  mask-composite: intersect;
-  -webkit-mask-composite: destination-in;
-  z-index: 0;
-}
-
-/* 🏰 Sparkly Mickey Border with icons */
+/* Floating Disney icons outside the text area */
+.blog-post-161025::before,
 .blog-post-161025::after {
-  content: "🏰✨🐭💫🎆🎀✨🏰🐭💖🎆🌟";
+  content: "🏰✨🐭💖🎆🌟🎀✨";
   position: absolute;
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1.6rem;
-  text-shadow: 0 0 10px #fff, 0 0 25px #ff99cc;
-  animation: float 4s ease-in-out infinite;
+  width: 100%;
+  text-align: center;
+  left: 0;
+  color: #fff;
+  font-size: 1.4rem;
+  text-shadow: 0 0 12px #ffb6e6, 0 0 20px #66ccff;
+  pointer-events: none;
 }
 
-@keyframes float {
-  0% { transform: translate(-50%, 0); }
-  50% { transform: translate(-50%, 6px); }
-  100% { transform: translate(-50%, 0); }
+.blog-post-161025::before {
+  top: -28px; /* floats above border */
+  animation: floatIconsTop 5s ease-in-out infinite;
 }
 
-@keyframes sparkle {
-  0% { box-shadow: 0 0 20px #ff66cc, 0 0 30px #99ccff; }
-  100% { box-shadow: 0 0 40px #ff99cc, 0 0 60px #66ccff; }
+.blog-post-161025::after {
+  bottom: -28px; /* floats below border */
+  animation: floatIconsBottom 5s ease-in-out infinite;
 }
 
+@keyframes floatIconsTop {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+
+@keyframes floatIconsBottom {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Heading */
 .blog-post-161025 h2 {
+  text-align: center;
   font-size: 2.3em;
-  color: #ff33aa;
-  text-shadow: 0 0 10px #fff, 0 0 20px #ff99cc;
   margin-bottom: 20px;
+  color: #ff33aa;
+  text-shadow: 0 0 8px #fff, 0 0 12px #ffb6e6;
 }
 
+/* Paragraphs */
+.blog-post-161025 p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #333;
+}
+
+/* Highlights */
 .blog-post-161025 strong {
   color: #ff33aa;
-  background: #fff5fd;
-  padding: 4px 8px;
+  background: #fff4fa;
+  padding: 3px 6px;
   border-radius: 8px;
 }
 
