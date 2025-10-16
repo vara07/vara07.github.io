@@ -11,61 +11,82 @@
 }
 
 .blog-post-161025 {
-  background: linear-gradient(135deg, #ff99cc, #ffe6ff, #99ccff);
-  border: 12px double #ff66cc;
+  background: linear-gradient(135deg, #ffb6e6, #fff0ff, #b3e0ff);
+  border: 16px solid transparent;
   border-radius: 40px;
   padding: 40px;
   max-width: 800px;
   text-align: center;
   font-family: 'Poppins', cursive;
   color: #333;
-  box-shadow: 0 0 25px #ff66cc, 0 0 50px #99ccff;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 0 40px #ff99cc, 0 0 80px #99ccff;
+  animation: sparkle 3s ease-in-out infinite alternate;
 }
 
-/* Sparkle and star background */
+/* ✨ Disney Magic Border Frame ✨ */
 .blog-post-161025::before {
-  content: "✨🌟💫🎠🎆🏰";
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 40px;
+  padding: 10px;
+  background: repeating-linear-gradient(
+    45deg,
+    #ff66cc 0%,
+    #ffccff 10%,
+    #66ccff 20%,
+    #99ccff 30%,
+    #ff99cc 40%
+  );
+  mask: 
+    radial-gradient(circle at 10% 10%, transparent 8%, black 9%) repeat,
+    linear-gradient(#000, #000);
+  mask-size: 40px 40px, auto;
+  mask-composite: intersect;
+  -webkit-mask-composite: destination-in;
+  z-index: 0;
+}
+
+/* 🏰 Sparkly Mickey Border with icons */
+.blog-post-161025::after {
+  content: "🏰✨🐭💫🎆🎀✨🏰🐭💖🎆🌟";
   position: absolute;
   top: -20px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 1.8rem;
-  text-shadow: 0 0 10px #fff, 0 0 20px #ff66cc;
+  font-size: 1.6rem;
+  text-shadow: 0 0 10px #fff, 0 0 25px #ff99cc;
+  animation: float 4s ease-in-out infinite;
 }
 
-/* Magical confetti sparkle animation */
+@keyframes float {
+  0% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, 6px); }
+  100% { transform: translate(-50%, 0); }
+}
+
 @keyframes sparkle {
   0% { box-shadow: 0 0 20px #ff66cc, 0 0 30px #99ccff; }
   100% { box-shadow: 0 0 40px #ff99cc, 0 0 60px #66ccff; }
 }
-.blog-post-161025 {
-  animation: sparkle 3s ease-in-out infinite alternate;
-}
 
 .blog-post-161025 h2 {
-  font-size: 2.2em;
-  color: #ff3399;
+  font-size: 2.3em;
+  color: #ff33aa;
   text-shadow: 0 0 10px #fff, 0 0 20px #ff99cc;
   margin-bottom: 20px;
 }
 
 .blog-post-161025 strong {
-  color: #ff3399;
+  color: #ff33aa;
   background: #fff5fd;
   padding: 4px 8px;
   border-radius: 8px;
-}
-
-/* Mickey Ear Border Design */
-.blog-post-161025::after {
-  content: "🐭🎀";
-  position: absolute;
-  bottom: -25px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1.8rem;
 }
 
 
