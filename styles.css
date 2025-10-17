@@ -4,6 +4,102 @@
 
 
 
+
+
+.blog-post-171025-section {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  background: radial-gradient(circle at top, #001122, #000814 70%, #001122);
+}
+
+.blog-post-171025 {
+  position: relative;
+  background: rgba(0, 20, 40, 0.95);
+  border-radius: 25px;
+  padding: 40px;
+  max-width: 750px;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+  color: #e0f7ff;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(0, 200, 255, 0.5);
+  z-index: 1;
+}
+
+/* Glowing neon circuit border */
+.blog-post-171025::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #00ffff, #00ccff, #0099ff, #00ffff);
+  padding: 6px;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  animation: neonGlow 6s linear infinite;
+  z-index: 0;
+}
+
+@keyframes neonGlow {
+  0% { filter: hue-rotate(0deg) brightness(1); }
+  50% { filter: hue-rotate(180deg) brightness(1.3); }
+  100% { filter: hue-rotate(360deg) brightness(1); }
+}
+
+/* Digital sparkle animation */
+.blog-post-171025::after {
+  content: "💡⚙️💻🔋✨";
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.25;
+  font-size: 1.4rem;
+  animation: flickerBits 5s infinite ease-in-out;
+}
+
+@keyframes flickerBits {
+  0%, 100% { opacity: 0.3; transform: translateX(-50%) scale(1); }
+  50% { opacity: 0.6; transform: translateX(-50%) scale(1.05); }
+}
+
+/* Heading */
+.blog-post-171025 h2 {
+  text-align: center;
+  font-size: 2em;
+  color: #00e6ff;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ccff;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Paragraph */
+.blog-post-171025 p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #ccf4ff;
+  position: relative;
+  z-index: 2;
+}
+
+/* Highlights */
+.blog-post-171025 strong {
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ccff;
+}
+
+
+
+
+
+
+
+
 .blog-post-161025-section {
   display: flex;
   justify-content: center;
