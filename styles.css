@@ -317,17 +317,16 @@
 
 
 
-
-
 .blog-post-140925-section-neon {
   padding: 40px;
   display: flex;
   justify-content: center;
+  overflow-x: hidden; /* prevent horizontal overflow */
 }
 
 .blog-post-140925-neon {
   background: linear-gradient(135deg, #ff00ff, #00ffff, #ffff00);
-  border: 14px solid #39ff14; /* neon green thick border */
+  border: 14px solid #39ff14;
   border-radius: 30px;
   padding: 40px;
   max-width: 650px;
@@ -337,9 +336,9 @@
   line-height: 1.9;
   position: relative;
   box-shadow: 0 0 25px #39ff14, 0 0 40px #ff00ff, 0 0 60px #00ffff;
+  overflow: hidden; /* important to contain pseudo-elements */
 }
 
-/* Neon text heading */
 .blog-post-140925-neon h2 {
   font-size: 2em;
   margin-bottom: 20px;
@@ -347,7 +346,6 @@
   text-shadow: 0 0 8px #ff00ff, 0 0 12px #00ffff;
 }
 
-/* Strong highlights */
 .blog-post-140925-neon strong {
   color: #000;
   background: #39ff14;
@@ -356,14 +354,16 @@
   text-shadow: 0 0 6px #fff;
 }
 
-/* Plane icons around border */
+/* plane icons */
 .blog-post-140925-neon::before,
 .blog-post-140925-neon::after {
   content: "✈️ ✈️ ✈️ ✈️";
   position: absolute;
+  left: 0;
+  right: 0; /* ensures centering within box */
   font-size: 1.5rem;
-  width: 100%;
   text-align: center;
+  white-space: nowrap; /* prevents wrapping overflow */
   animation: fly-plane 10s linear infinite;
 }
 
@@ -376,15 +376,10 @@
 }
 
 @keyframes fly-plane {
-  0% { letter-spacing: 10px; opacity: 0.8; }
-  50% { letter-spacing: 30px; opacity: 1; }
-  100% { letter-spacing: 10px; opacity: 0.8; }
+  0% { letter-spacing: 5px; opacity: 0.8; }
+  50% { letter-spacing: 15px; opacity: 1; }
+  100% { letter-spacing: 5px; opacity: 0.8; }
 }
-
-
-
-
-
 
 
 
