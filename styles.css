@@ -7,6 +7,79 @@
 
 
 
+
+.blog-post-251025-section {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  background: linear-gradient(135deg, #ffe6f9, #fff6e3, #e3f8ff);
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Floating shopping bag emojis 🛍️ */
+.blog-post-251025-section::before {
+  content: "🛍️ 🛍️ 🛍️ 🛍️ 🛍️ 🛍️ 🛍️";
+  position: absolute;
+  font-size: 60px;
+  width: 100%;
+  text-align: center;
+  top: 10%;
+  animation: floatBags 8s linear infinite;
+  opacity: 0.15;
+}
+
+@keyframes floatBags {
+  0% { transform: translateY(0); opacity: 0.15; }
+  50% { transform: translateY(-30px); opacity: 0.25; }
+  100% { transform: translateY(0); opacity: 0.15; }
+}
+
+/* The blog box */
+.blog-post-251025 {
+  position: relative;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 30px;
+  padding: 50px;
+  max-width: 800px;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  text-align: left;
+  box-shadow: 0 0 40px rgba(255, 192, 203, 0.6);
+  z-index: 1;
+  border: 8px dashed #ff99cc; /* Cute bold pink border */
+}
+
+/* Title */
+.blog-post-251025 h2 {
+  text-align: center;
+  font-size: 2.2em;
+  color: #ff66b3;
+  text-shadow: 0 0 10px #fff, 0 0 15px #ffb6e0;
+  margin-bottom: 25px;
+}
+
+/* Text */
+.blog-post-251025 p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #444;
+}
+
+/* Highlighted text */
+.blog-post-251025 strong {
+  color: #ff3399;
+}
+
+
+
+
+
+
+
+
+
 .blog-post-241025-section {
   display: flex;
   justify-content: center;
