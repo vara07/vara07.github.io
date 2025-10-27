@@ -8,6 +8,85 @@
 
 
 
+
+
+
+
+.blog-post-271025-section {
+  display: flex;
+  justify-content: center;
+  padding: 60px;
+  background: linear-gradient(135deg, #1a001a, #330033, #000000);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Floating bats and candy */
+.blog-post-271025-section::before {
+  content: "🦇 🍬 🎃 👻 🦇 🍭 🎃 🕸️";
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 60px;
+  opacity: 0.1;
+  animation: floatSpooky 10s ease-in-out infinite;
+  top: 10%;
+}
+
+@keyframes floatSpooky {
+  0% { transform: translateY(0); opacity: 0.1; }
+  50% { transform: translateY(-30px); opacity: 0.2; }
+  100% { transform: translateY(0); opacity: 0.1; }
+}
+
+/* Blog post container */
+.blog-post-271025 {
+  background: rgba(30, 0, 30, 0.85);
+  border-radius: 25px;
+  padding: 50px;
+  max-width: 800px;
+  font-family: 'Poppins', sans-serif;
+  color: #ffccff;
+  text-align: left;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 30px #ff6600, 0 0 60px #ff3300 inset;
+  border: 10px solid #ff6600; /* Big bright orange border */
+  outline: 6px solid #9900ff; /* Second layer border for spooky glow */
+}
+
+/* Title */
+.blog-post-271025 h2 {
+  text-align: center;
+  font-size: 2.4em;
+  color: #ff9900;
+  text-shadow: 0 0 10px #ff6600, 0 0 20px #ff33cc;
+  margin-bottom: 25px;
+}
+
+/* Text */
+.blog-post-271025 p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #ffd9ff;
+}
+
+/* Bold words */
+.blog-post-271025 strong {
+  color: #ff66ff;
+  text-shadow: 0 0 5px #ff99ff;
+}
+
+
+
+
+
+
+
+
+
+
+
 .blog-post-251025-section {
   display: flex;
   justify-content: center;
