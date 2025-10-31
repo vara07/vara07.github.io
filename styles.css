@@ -6,6 +6,91 @@
 
 
 
+.blog-post-281025-section {
+  display: flex;
+  justify-content: center;
+  padding: 60px;
+  background: radial-gradient(circle at top, #3d0066 0%, #12002b 60%, #000000 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Floating emojis */
+.blog-post-281025-section::before {
+  content: "💅 🎃 🐿️ 👻 💜 🦇 🎉 💫";
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 55px;
+  opacity: 0.1;
+  animation: floatSparkle 10s ease-in-out infinite alternate;
+  top: 15%;
+}
+
+@keyframes floatSparkle {
+  0% { transform: translateY(0); opacity: 0.1; }
+  50% { transform: translateY(-25px); opacity: 0.2; }
+  100% { transform: translateY(0); opacity: 0.1; }
+}
+
+/* Main post */
+.blog-post-281025 {
+  background: rgba(255, 240, 255, 0.08);
+  border-radius: 30px;
+  padding: 50px;
+  max-width: 800px;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  text-align: left;
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(8px);
+}
+
+/* Border */
+.blog-post-281025-border {
+  position: absolute;
+  inset: 0;
+  border-radius: 30px;
+  border: 10px solid transparent;
+  background: linear-gradient(45deg, #ff33cc, #9900ff, #ff00ff, #ff66cc);
+  background-size: 300% 300%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: borderGlow 5s linear infinite;
+}
+
+@keyframes borderGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Title */
+.blog-post-281025 h2 {
+  text-align: center;
+  font-size: 2.4em;
+  color: #ff99ff;
+  text-shadow: 0 0 15px #ff33cc, 0 0 30px #ff66ff;
+  margin-bottom: 25px;
+}
+
+/* Paragraph text */
+.blog-post-281025 p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #fff;
+  text-shadow: 0 0 8px rgba(255, 105, 255, 0.3);
+}
+
+/* Highlighted words */
+.blog-post-281025 strong {
+  color: #ffb3ff;
+  text-shadow: 0 0 12px #ff33cc, 0 0 25px #ff66ff;
+}
+
+
 
 
 
