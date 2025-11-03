@@ -8,69 +8,23 @@
 
 
 
-.blog-post-031125-section {
-  display: flex;
-  justify-content: center;
-  padding: 60px;
-  background: linear-gradient(to bottom, #4e4e4e, #2b2b2b);
-  position: relative;
-  overflow: hidden;
-}
-
-/* soft falling rain */
-.blog-post-031125-section::before {
-  content: "";
-  position: absolute;
-  top: -200px;
-  left: 0;
-  width: 100%;
-  height: 800px;
-  background-image:
-    linear-gradient(transparent 0%, rgba(255,255,255,0.25) 50%, transparent 100%);
-  background-size: 2px 50px;
-  animation: rain031125 1.8s linear infinite;
-  pointer-events: none;
-}
-
-@keyframes rain031125 {
-  from { transform: translateY(0); }
-  to { transform: translateY(200px); }
-}
-
-.blog-post-031125 {
-  position: relative;
-  background: rgba(255,255,255,0.07);
-  border-radius: 30px;
-  padding: 50px;
-  max-width: 800px;
-  font-family: 'Poppins', sans-serif;
-  color: #ffffff;
+.blog-post-3nov-christmas-cookie {
+  background: #fffcef; /* cookie dough colour */
+  padding: 30px;
+  margin: 40px auto;
+  width: 80%;
+  border: 25px dotted #c67a3f; /* gingerbread dot border */
+  border-radius: 50%; /* this makes it cookie shaped */
+  color: #2e2e2e;
+  font-family: "Comic Sans MS", cursive;
   text-align: center;
-  backdrop-filter: blur(7px);
-  z-index: 2;
-}
-
-/* BIG BOLD BORDER */
-.blog-post-031125-border {
-  position: absolute;
-  inset: 0;
-  border-radius: 30px;
-  border: 12px solid #b8b8b8;
-  z-index: -1;
-}
-
-/* heading */
-.blog-post-031125 h2 {
-  font-size: 2.2em;
-  margin-bottom: 20px;
-  color: #d9d9d9;
-  text-shadow: 0 0 12px rgba(255,255,255,0.5);
-}
-
-/* highlight strong words */
-.blog-post-031125 strong {
-  color: #ffe8e8;
-  text-shadow: 0 0 12px rgba(255,200,200,0.9);
+  box-shadow: 0 0 20px rgba(198,122,63,0.8);
+  background-image:
+    url("https://emojiisland.com/cdn/shop/products/Christmas_tree_emoji_icon_png_1024x1024.png?v=1571606033"),
+    url("https://emojiisland.com/cdn/shop/products/Emoji_Icon_-_Santa_emoji_icon_png_large.png?v=1571606089");
+  background-repeat: no-repeat, no-repeat;
+  background-size: 60px, 60px;
+  background-position: 40px 40px, calc(100% - 100px) calc(100% - 100px);
 }
 
 
