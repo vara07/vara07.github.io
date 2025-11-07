@@ -6,6 +6,45 @@
 
 
 
+
+
+.blog-post-071125-dogman {
+  max-width: 650px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #fff7af;
+  font-family: "Poppins", sans-serif;
+  color: #1a1a1a;
+  border: 8px solid #000;   /* bold comic border */
+  border-radius: 18px;
+  box-shadow: 6px 6px 0 #000; /* comic block shadow */
+  background-image:
+    repeating-linear-gradient(45deg,
+      rgba(255,255,0,0.1) 0 6px,
+      transparent 6px 12px);
+}
+
+.blog-post-071125-dogman h2 {
+  text-align: center;
+  font-size: 1.9em;
+  margin-bottom: 15px;
+  color: #ff3c00;
+  text-shadow: 2px 2px 0 #000;
+}
+
+.blog-post-071125-dogman p strong {
+  color: #0077ff;
+  text-shadow: 1px 1px 0 #000;
+}
+
+
+
+
+
+
+
+
+
 .blog-post-061125-y2ksoda {
   position: relative;
   padding: 30px;
