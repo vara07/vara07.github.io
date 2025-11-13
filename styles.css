@@ -9,6 +9,72 @@
 
 
 
+.blog-post-131125-artpegasus {
+  position: relative;
+  padding: 30px;
+  max-width: 650px;
+  margin: 40px auto;
+  background: linear-gradient(135deg, #ffeaff, #fff5ff, #e8d4ff);
+  font-family: 'Poppins', sans-serif;
+  border-radius: 28px;
+  color: #3c0066;
+  box-shadow: 0 0 20px rgba(210, 150, 255, 0.6);
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+  overflow: hidden;
+}
+
+/* ✨ Soft glowing pegasus-inspired border behind text */
+.blog-post-131125-artpegasus::before {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  border-radius: 40px;
+  background: conic-gradient(
+    from 0deg,
+    #ffb7ff,
+    #cda7ff,
+    #ffffff,
+    #b3a6ff,
+    #ffb7ff
+  );
+  filter: blur(10px) brightness(1.1);
+  z-index: -1;
+}
+
+/* 🦄 Floating stars and sparkles */
+.blog-post-131125-artpegasus::after {
+  content: "🌸✨🦄💖⭐🌈";
+  position: absolute;
+  font-size: 24px;
+  width: 100%;
+  text-align: center;
+  top: 10px;
+  left: 0;
+  animation: sparkle-drift 6s infinite alternate ease-in-out;
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes sparkle-drift {
+  0% { transform: translateY(0px); opacity: 0.7; }
+  100% { transform: translateY(10px); opacity: 1; }
+}
+
+.blog-post-131125-artpegasus h2 {
+  text-align: center;
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: #7b00b3;
+  text-shadow: 0 0 10px rgba(255,255,255,0.9), 0 0 20px rgba(200,150,255,0.8);
+}
+
+
+
+
+
+
+
 
 
 
