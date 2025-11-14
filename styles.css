@@ -7,9 +7,6 @@
 
 
 
-
-
-
 .blog-post-141125-camppacking {
   position: relative;
   padding: 32px;
@@ -24,22 +21,26 @@
   text-shadow: 0 0 5px rgba(255,255,255,0.7);
 }
 
-/* 🌟 Cute forest green glowing border BEHIND the text */
+/* 🌲🔥 BIG + BOLD CAMP BORDER (BEHIND TEXT) */
 .blog-post-141125-camppacking::before {
   content: "";
   position: absolute;
-  inset: -12px;
-  border-radius: 40px;
+  inset: -20px; /* bigger border thickness */
+  border-radius: 50px;
   background: conic-gradient(
-    from 0deg,
-    #89d18b,
-    #c8ffcf,
-    #ffffff,
-    #a2e8a8,
-    #89d18b
+    #2e5b34,
+    #4a7d52,
+    #73a273,
+    #cfa36a,
+    #ffcc7a,
+    #ff9f45,
+    #d27d3f,
+    #4a7d52,
+    #2e5b34
   );
-  filter: blur(10px) brightness(1.15);
+  filter: blur(4px) brightness(1.1);
   z-index: -1;
+  border: 16px solid rgba(40, 90, 55, 0.7); /* SUPER THICK outline */
 }
 
 /* ⛺ floating camp icons */
@@ -68,6 +69,9 @@
   color: #145c33;
   text-shadow: 0 0 10px rgba(255,255,255,0.9), 0 0 16px rgba(120,200,140,0.8);
 }
+
+
+
 
 
 
