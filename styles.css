@@ -9,6 +9,76 @@
 
 
 
+
+.blog-post-141125-camppacking {
+  position: relative;
+  padding: 32px;
+  max-width: 650px;
+  margin: 40px auto;
+  background: linear-gradient(135deg, #e7ffe6, #dfffe5, #f0fff2);
+  font-family: 'Poppins', sans-serif;
+  border-radius: 28px;
+  color: #1e4d2b;
+  box-shadow: 0 0 20px rgba(90, 150, 100, 0.4);
+  overflow: hidden;
+  text-shadow: 0 0 5px rgba(255,255,255,0.7);
+}
+
+/* 🌟 Cute forest green glowing border BEHIND the text */
+.blog-post-141125-camppacking::before {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border-radius: 40px;
+  background: conic-gradient(
+    from 0deg,
+    #89d18b,
+    #c8ffcf,
+    #ffffff,
+    #a2e8a8,
+    #89d18b
+  );
+  filter: blur(10px) brightness(1.15);
+  z-index: -1;
+}
+
+/* ⛺ floating camp icons */
+.blog-post-141125-camppacking::after {
+  content: "⛺🎒🌲✨🌄";
+  position: absolute;
+  top: 12px;
+  width: 100%;
+  font-size: 26px;
+  text-align: center;
+  opacity: 0.75;
+  pointer-events: none;
+  animation: camp-float 6s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+@keyframes camp-float {
+  0% { transform: translateY(0); opacity: 0.7; }
+  100% { transform: translateY(12px); opacity: 1; }
+}
+
+.blog-post-141125-camppacking h2 {
+  text-align: center;
+  font-size: 1.85em;
+  margin-bottom: 20px;
+  color: #145c33;
+  text-shadow: 0 0 10px rgba(255,255,255,0.9), 0 0 16px rgba(120,200,140,0.8);
+}
+
+
+
+
+
+
+
+
+
+
+
 .blog-post-131125-artpegasus {
   position: relative;
   padding: 30px;
