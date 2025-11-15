@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ice Cream Catcher Game</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: #ffe6f2;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+  }
+
+  /* SCORE + HOME BUTTON BAR */
+  .top-bar {
+    width: 100%;
+    height: 60px;
+    background: #ff9acb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    font-size: 24px;
+    color: #fff;
+    font-weight: bold;
+  }
+
+  .home-btn {
+    background: #fff;
+    color: #ff66a3;
+    padding: 8px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .game-area {
+    position: relative;
+    width: 100vw;
+    height: calc(100vh - 60px);
+    overflow: hidden;
+  }
+
+  /* THE PLAYER - ICE CREAM CONE */
+  .cone {
+    width: 90px;
+    height: 90px;
+    background-image: url('https://i.imgur.com/uxZ3b7a.png'); /* Cone pic */
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* DROPPING SCOOPS */
+  .scoop {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: -80px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+</style>
+</head>
+<body>
+  <div class="top-bar">
+    <div id="score">Score: 0</div>
+    <a class="home-btn" href="index.html">Home</a>
+  </div>
+
+  <div class="game-area" id="gameArea">
+    <div class="cone" id="cone"></div>
+  </div>
+
+<script>
+  const gameArea = document.getElementById("gameArea");
+  const cone = document.getElementById("cone");
+  const scoreDisplay = document.getElementById("score");
+
+  let score = 0;
+  let coneX = window.innerWidth / 2;
+
+  const scoopImages = [
+    "https://i.imgur.com/1aY2oYc.png", // vanilla
+    "https://i.imgur.com/mkdJx2T.png", // chocolate
+    "https://i.imgur.com/62Wc3pW.png", // mint
+    "https://i.imgur.com/tEPVgi7.png", // choc mint
+    "https://i.imgur.com/7yRZ5rk.png", // strawberry
+    "https://i.imgur.com/HB7e2tC.png"  // cookies n creme
+  ];
+
+  // Move cone with touch or mouse
+  function moveCone(x) {
+    coneX = x;
+    cone.style.left = `${x - 45}px`;
+  }
+
+  document.addEventListener("mousemove", (e) => moveCone(e.clientX));
+  document.addEventListener("touchmove", (e) => {
+    moveCone(e.touches[0].clientX);
+  });
+
+  // Create falling scoops
+  function createScoop() {
+    const scoop = document.createElement("div");
+    scoop.classList.add("scoop");
+
+    // Random flavour
+    scoop.style.backgroundImage = `url(${scoopImages[Math.floor(Math.random() * scoopImages.length)]})`;
+
+    // Random horizontal position
+    scoop.style.left = Math.random() * (window.innerWidth - 70) + "px";
+
+    gameArea.appendChild(scoop);
+
+    let scoopY = -80;
+
+    const fall = setInterval(() => {
+      scoopY += 5;
+      scoop.style.top = scoopY + "px";
+
+      const coneRect = cone.getBoundingClientRect();
+      const scoopRect = scoop.getBoundingClientRect();
+
+      // Collision Detection
+      if (
+        scoopRect.bottom >= coneRect.top &&
+        scoopRect.top <= coneRect.bottom &&
+        scoopRect.right >= coneRect.left &&
+        scoopRect.left <= coneRect.right
+      ) {
+        score++;
+        scoreDisplay.textContent = "Score: " + score;
+        scoop.remove();
+        clearInterval(fall);
+      }
+
+      // Missed scoop -> Game over
+      if (scoopY > window.innerHeight) {
+        alert("You missed a scoop! Game over! Your score: " + score);
+        location.reload();
+      }
+    }, 20);
+  }
+
+  // Create scoops every 1 second
+  setInterval(createScoop, 1000);
+</script>
+</body>
+</html>
