@@ -7,6 +7,104 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 🌿🎳 Cute Camp + Bowling Themed Border */
+.blog-post-241125-pebowl {
+  position: relative;
+  padding: 32px;
+  max-width: 650px;
+  margin: 40px auto;
+  background: linear-gradient(135deg, #f3fff4, #e8ffe8, #f8fff9);
+  font-family: 'Poppins', sans-serif;
+  border-radius: 28px;
+  color: #184f2c;
+  box-shadow: 0 0 22px rgba(80, 150, 100, 0.45);
+  overflow: hidden;
+  text-shadow: 0 0 4px rgba(255,255,255,0.7);
+}
+
+/* Big leafy border with glowing campy colours */
+.blog-post-241125-pebowl::before {
+  content: "";
+  position: absolute;
+  inset: -14px;
+  border-radius: 40px;
+  background: conic-gradient(
+    from 0deg,
+    #9ce7a0,
+    #caffcb,
+    #ffffff,
+    #baffc1,
+    #9ce7a0
+  );
+  filter: blur(12px) brightness(1.17);
+  z-index: -1;
+}
+
+/* Floating icons — bowling, camping, sparkles */
+.blog-post-241125-pebowl::after {
+  content: "🎳🌿✨⛺🌲🎳";
+  position: absolute;
+  top: 12px;
+  width: 100%;
+  font-size: 26px;
+  text-align: center;
+  opacity: 0.75;
+  pointer-events: none;
+  animation: pebowl-float 6s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+@keyframes pebowl-float {
+  0% { transform: translateY(0); opacity: 0.7; }
+  100% { transform: translateY(10px); opacity: 1; }
+}
+
+.blog-post-241125-pebowl h2 {
+  text-align: center;
+  font-size: 1.9em;
+  margin-bottom: 20px;
+  color: #126a36;
+  text-shadow: 0 0 10px rgba(255,255,255,0.9), 0 0 18px rgba(120,200,140,0.8);
+}
+
+
+
+
+
+
+
+
+
 .blog-post-141125-camppacking {
   position: relative;
   padding: 32px;
