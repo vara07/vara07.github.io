@@ -23,6 +23,68 @@
 
 
 
+/* 💅 Ewww Boys Hands Dance Day — Dramatic Pink & Purple Border */
+.blog-post-281125-danceew {
+  position: relative;
+  padding: 32px;
+  max-width: 650px;
+  margin: 40px auto;
+  background: linear-gradient(135deg, #ffd6f7, #ffe3ff, #fff0ff);
+  font-family: 'Poppins', sans-serif;
+  border-radius: 28px;
+  color: #4d004d;
+  box-shadow: 0 0 24px rgba(255, 120, 220, 0.45);
+  overflow: hidden;
+  text-shadow: 0 0 6px rgba(255,255,255,0.8);
+}
+
+/* 🌈 Big bold border BEHIND text */
+.blog-post-281125-danceew::before {
+  content: "";
+  position: absolute;
+  inset: -14px;
+  border-radius: 40px;
+  background: conic-gradient(
+    from 0deg,
+    #ff46c4,
+    #ff9ae8,
+    #ffffff,
+    #ff78da,
+    #ff46c4
+  );
+  filter: blur(10px) brightness(1.25);
+  z-index: -1;
+}
+
+/* ✨ Floating sparkles — dramatic dance energy */
+.blog-post-281125-danceew::after {
+  content: "✨💃😖🩷✨";
+  position: absolute;
+  top: 14px;
+  width: 100%;
+  font-size: 26px;
+  text-align: center;
+  opacity: 0.75;
+  pointer-events: none;
+  animation: dance-bleh 6s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+@keyframes dance-bleh {
+  0% { transform: translateY(0); opacity: 0.7; }
+  100% { transform: translateY(12px); opacity: 1; }
+}
+
+.blog-post-281125-danceew h2 {
+  text-align: center;
+  font-size: 1.85em;
+  margin-bottom: 20px;
+  color: #b300b3;
+  text-shadow: 0 0 10px rgba(255,255,255,0.9),
+               0 0 18px rgba(255,90,210,0.8);
+}
+
+
 
 
 
