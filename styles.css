@@ -25,25 +25,26 @@
 </div>
 
 <style>
-/* 💖 Basic Card Style */
+/* 💖 Base Card Style */
 .update-card-291125 {
   position: relative;
   background: #ffeef7;
-  border-radius: 20px;
-  padding: 20px;
+  border-radius: 28px;
+  padding: 24px;
   margin: 20px 0;
   font-family: "Comic Sans MS", "Poppins", sans-serif;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  color: #333;
+  color: #4d004d;
   overflow: hidden;
+  text-shadow: 0 0 6px rgba(255,255,255,0.8);
+  box-shadow: 0 0 24px rgba(255,120,220,0.45);
 }
 
-/* 🌈 Glowing Conic-Gradient Border */
+/* 🌈 FULL Dramatic Glowing Border */
 .update-card-291125::before {
   content: "";
   position: absolute;
-  inset: -8px; /* space around the card for border */
-  border-radius: 28px;
+  inset: -14px; /* thick space around card for border */
+  border-radius: 40px;
   background: conic-gradient(
     from 0deg,
     #ff46c4,
@@ -52,68 +53,91 @@
     #ff78da,
     #ff46c4
   );
-  filter: blur(10px) brightness(1.2);
+  filter: blur(10px) brightness(1.25);
   z-index: -1;
 }
 
-/* ✨ Optional Floating Sparkles */
+/* ✨ Floating Sparkles */
 .update-card-291125::after {
   content: "✨🎉🎅✨";
   position: absolute;
-  top: 10px;
+  top: 12px;
   width: 100%;
-  font-size: 24px;
+  font-size: 26px;
   text-align: center;
   opacity: 0.75;
   pointer-events: none;
-  animation: sparkle-move 5s ease-in-out infinite alternate;
+  animation: sparkle-dance 6s ease-in-out infinite alternate;
   z-index: 0;
 }
 
-@keyframes sparkle-move {
+@keyframes sparkle-dance {
   0% { transform: translateY(0); opacity: 0.7; }
-  100% { transform: translateY(10px); opacity: 1; }
+  100% { transform: translateY(12px); opacity: 1; }
 }
 
 /* 💖 Title & Text */
-.update-c
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 💖 28th Nov — Pretty Border */
-.blog-post-281125 {
-  position: relative;
-  padding: 32px;
-  max-width: 650px;
-  margin: 40px auto;
-  background: linear-gradient(135deg, #ffe6f0, #fff0f7, #fff8ff);
-  font-family: 'Poppins', sans-serif;
-  border-radius: 28px;
-  color: #550055;
-  box-shadow: 0 0 20px rgba(255, 120, 220, 0.35);
-  overflow: hidden;
-  text-shadow: 0 0 6px rgba(255,255,255,0.7);
+.update-card-291125 .update-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: #b300b3;
+  text-shadow: 0 0 10px rgba(255,255,255,0.9),
+               0 0 18px rgba(255,90,210,0.8);
 }
 
-/* 🌸 Border behind text */
-.blog-post-281125::before {
+.update-card-291125 .update-text {
+  font-size: 18px;
+  line-height: 1.6;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Daily Update: 28 November -->
+<div class="update-card update-card-281125">
+  <h2 class="update-title">🎉 28 November – Fun Times! 🥳</h2>
+  <p class="update-text">
+    Today was super cool too! I spent time with friends and we played some fun games. I even made a new little craft project that turned out really cute! 😍
+  </p>
+</div>
+
+<style>
+/* 💖 Base Card Style */
+.update-card-281125 {
+  position: relative;
+  background: #fff0f7;
+  border-radius: 28px;
+  padding: 24px;
+  margin: 20px 0;
+  font-family: "Comic Sans MS", "Poppins", sans-serif;
+  color: #4d004d;
+  overflow: hidden;
+  text-shadow: 0 0 6px rgba(255,255,255,0.8);
+  box-shadow: 0 0 24px rgba(255,120,220,0.45);
+}
+
+/* 🌈 FULL Dramatic Glowing Border */
+.update-card-281125::before {
   content: "";
   position: absolute;
-  inset: -12px;
-  border-radius: 36px;
+  inset: -14px;
+  border-radius: 40px;
   background: conic-gradient(
     from 0deg,
     #ff78da,
@@ -122,9 +146,45 @@
     #ff99dd,
     #ff78da
   );
-  filter: blur(8px) brightness(1.2);
+  filter: blur(10px) brightness(1.25);
   z-index: -1;
 }
+
+/* ✨ Floating Sparkles */
+.update-card-281125::after {
+  content: "✨💖🎨✨";
+  position: absolute;
+  top: 12px;
+  width: 100%;
+  font-size: 26px;
+  text-align: center;
+  opacity: 0.75;
+  pointer-events: none;
+  animation: sparkle-dance2 6s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+@keyframes sparkle-dance2 {
+  0% { transform: translateY(0); opacity: 0.7; }
+  100% { transform: translateY(12px); opacity: 1; }
+}
+
+/* 💖 Title & Text */
+.update-card-281125 .update-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: #b300b3;
+  text-shadow: 0 0 10px rgba(255,255,255,0.9),
+               0 0 18px rgba(255,90,210,0.8);
+}
+
+.update-card-281125 .update-text {
+  font-size: 18px;
+  line-height: 1.6;
+}
+</style>
+
 
 
 
