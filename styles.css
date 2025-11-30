@@ -16,28 +16,34 @@
 
 
 
-
-
-
-/* 💖 Base Card Style */
-.update-card-291125 {
+/* ===========================================
+   Base Card Styles
+=========================================== */
+.update-card {
   position: relative;
-  background: #ffeef7;
   border-radius: 28px;
   padding: 24px;
-  margin: 20px 0;
+  margin: 20px auto;
+  max-width: 650px;
   font-family: "Comic Sans MS", "Poppins", sans-serif;
+  overflow: visible; /* allow glowing border to show */
   color: #4d004d;
-  overflow: hidden;
-  text-shadow: 0 0 6px rgba(255,255,255,0.8);
   box-shadow: 0 0 24px rgba(255,120,220,0.45);
+  text-shadow: 0 0 6px rgba(255,255,255,0.8);
+  background: #ffeef7; /* default background, overridden per card */
 }
 
-/* 🌈 FULL Dramatic Glowing Border */
+/* ===========================================
+   29 November Card – Glowing Border
+=========================================== */
+.update-card-291125 {
+  background: #ffeef7;
+}
+
 .update-card-291125::before {
   content: "";
   position: absolute;
-  inset: -14px; /* thick space around card for border */
+  inset: -20px; /* thick space for glow */
   border-radius: 40px;
   background: conic-gradient(
     from 0deg,
@@ -47,11 +53,10 @@
     #ff78da,
     #ff46c4
   );
-  filter: blur(10px) brightness(1.25);
+  filter: blur(15px) brightness(1.25);
   z-index: -1;
 }
 
-/* ✨ Floating Sparkles */
 .update-card-291125::after {
   content: "✨🎉🎅✨";
   position: absolute;
@@ -70,61 +75,17 @@
   100% { transform: translateY(12px); opacity: 1; }
 }
 
-/* 💖 Title & Text */
-.update-card-291125 .update-title {
-  text-align: center;
-  font-size: 28px;
-  margin-bottom: 12px;
-  color: #b300b3;
-  text-shadow: 0 0 10px rgba(255,255,255,0.9),
-               0 0 18px rgba(255,90,210,0.8);
-}
-
-.update-card-291125 .update-text {
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 💖 Base Card Style */
+/* ===========================================
+   28 November Card – Glowing Border
+=========================================== */
 .update-card-281125 {
-  position: relative;
   background: #fff0f7;
-  border-radius: 28px;
-  padding: 24px;
-  margin: 20px 0;
-  font-family: "Comic Sans MS", "Poppins", sans-serif;
-  color: #4d004d;
-  overflow: hidden;
-  text-shadow: 0 0 6px rgba(255,255,255,0.8);
-  box-shadow: 0 0 24px rgba(255,120,220,0.45);
 }
 
-/* 🌈 FULL Dramatic Glowing Border */
 .update-card-281125::before {
   content: "";
   position: absolute;
-  inset: -14px;
+  inset: -20px; /* thick space for glow */
   border-radius: 40px;
   background: conic-gradient(
     from 0deg,
@@ -134,11 +95,10 @@
     #ff99dd,
     #ff78da
   );
-  filter: blur(10px) brightness(1.25);
+  filter: blur(15px) brightness(1.25);
   z-index: -1;
 }
 
-/* ✨ Floating Sparkles */
 .update-card-281125::after {
   content: "✨💖🎨✨";
   position: absolute;
@@ -157,8 +117,10 @@
   100% { transform: translateY(12px); opacity: 1; }
 }
 
-/* 💖 Title & Text */
-.update-card-281125 .update-title {
+/* ===========================================
+   Title & Text
+=========================================== */
+.update-card .update-title {
   text-align: center;
   font-size: 28px;
   margin-bottom: 12px;
@@ -167,28 +129,10 @@
                0 0 18px rgba(255,90,210,0.8);
 }
 
-.update-card-281125 .update-text {
+.update-card .update-text {
   font-size: 18px;
   line-height: 1.6;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* 🌿🎳 Cute Camp + Bowling Themed Border */
