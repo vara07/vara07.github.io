@@ -25,66 +25,6 @@
 
 
 
-.blog-post-281125-pebowl {
-  position: relative;
-  padding: 32px;
-  max-width: 650px;
-  margin: 40px auto;
-  background: linear-gradient(135deg, #fff6ff, #f8e9ff, #ffeefe);
-  font-family: 'Poppins', sans-serif;
-  border-radius: 28px;
-  color: #3b174f;
-  box-shadow: 0 0 20px rgba(140, 80, 200, 0.4);
-  overflow: hidden;
-  text-shadow: 0 0 5px rgba(255,255,255,0.7);
-}
-
-/* 🎳 GLOWING BOWLING-THEMED BORDER */
-.blog-post-281125-pebowl::before {
-  content: "";
-  position: absolute;
-  inset: -14px;
-  border-radius: 40px;
-  background: conic-gradient(
-    #ff6bcd,
-    #ffb0ff,
-    #ffffff,
-    #b37dff,
-    #ff6bcd
-  );
-  filter: blur(12px) brightness(1.15);
-  z-index: -1;
-}
-
-/* 🎳 FLOATING BOWLING ICONS */
-.blog-post-281125-pebowl::after {
-  content: "🎳🎳🎳🎳🎳";
-  position: absolute;
-  top: 10px;
-  width: 100%;
-  font-size: 30px;
-  text-align: center;
-  opacity: 0.75;
-  animation: bowling-bounce 5.5s infinite ease-in-out alternate;
-  pointer-events: none;
-  z-index: 0;
-}
-
-@keyframes bowling-bounce {
-  0% { transform: translateY(0); opacity: 0.7; }
-  100% { transform: translateY(12px); opacity: 1; }
-}
-
-.blog-post-281125-pebowl h2 {
-  text-align: center;
-  font-size: 2em;
-  margin-bottom: 20px;
-  color: #7d18a8;
-  text-shadow: 
-    0 0 10px rgba(255,255,255,0.9),
-    0 0 15px rgba(200,120,255,0.8);
-}
-
 
 
 
