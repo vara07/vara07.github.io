@@ -14,6 +14,92 @@
 
 
 
+
+/* ===========================================
+   🎄 Christmas Update Card – 20 December
+=========================================== */
+
+.update-card-201225 {
+  position: relative;
+  background: linear-gradient(135deg, #fffdf0, #ffffff, #f2fff5);
+  border-radius: 30px;
+  padding: 26px;
+  margin: 30px auto;
+  max-width: 650px;
+  font-family: "Comic Sans MS", "Poppins", sans-serif;
+  color: #2a4a34;
+  overflow: visible;
+  box-shadow: 0 0 28px rgba(170, 30, 30, 0.3);
+  text-shadow: 0 0 6px rgba(255,255,255,0.85);
+}
+
+/* 🌈 Red + Green Christmas Glow */
+.update-card-201225::before {
+  content: "";
+  position: absolute;
+  inset: -22px;
+  border-radius: 46px;
+  background: conic-gradient(
+    from 0deg,
+    #1e7f4a,
+    #6fe3a1,
+    #ffffff,
+    #ffd95a,
+    #ff6b6b,
+    #b8142a,
+    #1e7f4a
+  );
+  filter: blur(16px) brightness(1.2);
+  z-index: -1;
+}
+
+/* ✨ Floating Christmas Icons */
+.update-card-201225::after {
+  content: "🎄✨💛🎁✨🎄";
+  position: absolute;
+  top: 12px;
+  width: 100%;
+  font-size: 26px;
+  text-align: center;
+  opacity: 0.8;
+  pointer-events: none;
+  animation: christmas-float-20 6s ease-in-out infinite alternate;
+}
+
+/* 🎄 Animation */
+@keyframes christmas-float-20 {
+  0% { transform: translateY(0); opacity: 0.7; }
+  100% { transform: translateY(14px); opacity: 1; }
+}
+
+/* 🎁 Title */
+.update-card-201225 .update-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 14px;
+  color: #b8162c;
+  text-shadow:
+    0 0 10px rgba(255,255,255,0.9),
+    0 0 18px rgba(200,30,30,0.7);
+}
+
+/* 🎄 Text */
+.update-card-201225 .update-text {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /* ===========================================
    🎄 Christmas Update Card – 15 December
 =========================================== */
