@@ -9,6 +9,83 @@
 
 
 
+/* ===========================================
+   🎄 Christmas Update Card – 22 December
+=========================================== */
+
+.update-card-221225 {
+  position: relative;
+  background: linear-gradient(135deg, #f3fff6, #ffffff, #fff3f3);
+  border-radius: 32px;
+  padding: 28px;
+  margin: 34px auto;
+  max-width: 650px;
+  font-family: "Comic Sans MS", "Poppins", sans-serif;
+  color: #214634;
+  overflow: visible;
+  box-shadow: 0 0 30px rgba(200, 40, 40, 0.35);
+  text-shadow: 0 0 6px rgba(255,255,255,0.9);
+}
+
+/* 🌈 Extra Festive Red + Green Glow */
+.update-card-221225::before {
+  content: "";
+  position: absolute;
+  inset: -24px;
+  border-radius: 50px;
+  background: conic-gradient(
+    from 0deg,
+    #0f6b3e,
+    #44c28a,
+    #ffffff,
+    #ff8b8b,
+    #c4162a,
+    #0f6b3e
+  );
+  filter: blur(18px) brightness(1.25);
+  z-index: -1;
+}
+
+/* ✨ Floating Festive Icons */
+.update-card-221225::after {
+  content: "🎄✨🎁🍗🍦✨🎄";
+  position: absolute;
+  top: 12px;
+  width: 100%;
+  font-size: 26px;
+  text-align: center;
+  opacity: 0.85;
+  pointer-events: none;
+  animation: christmas-float-22 6s ease-in-out infinite alternate;
+}
+
+/* 🎄 Animation */
+@keyframes christmas-float-22 {
+  0% { transform: translateY(0); opacity: 0.7; }
+  100% { transform: translateY(16px); opacity: 1; }
+}
+
+/* 🎁 Title */
+.update-card-221225 .update-title {
+  text-align: center;
+  font-size: 29px;
+  margin-bottom: 16px;
+  color: #b5172d;
+  text-shadow:
+    0 0 10px rgba(255,255,255,0.95),
+    0 0 20px rgba(200,30,30,0.75);
+}
+
+/* 🎄 Text */
+.update-card-221225 .update-text {
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+
+
+
+
 
 
 
