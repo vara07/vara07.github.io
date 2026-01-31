@@ -11,7 +11,77 @@
 
 
 
+/* ===========================================
+   🏫 High School Week One – 31 January
+=========================================== */
 
+.update-card-310126 {
+  position: relative;
+  background: linear-gradient(135deg, #f4f8ff, #ffffff, #f7f3ff);
+  border-radius: 32px;
+  padding: 28px;
+  margin: 40px auto;
+  max-width: 700px;
+  font-family: "Comic Sans MS", "Poppins", sans-serif;
+  color: #2b2b4d;
+  overflow: visible;
+  box-shadow: 0 0 28px rgba(120, 110, 255, 0.35);
+  text-shadow: 0 0 6px rgba(255,255,255,0.85);
+}
+
+/* 🌈 School-style glow border */
+.update-card-310126::before {
+  content: "";
+  position: absolute;
+  inset: -24px;
+  border-radius: 54px;
+  background: conic-gradient(
+    from 0deg,
+    #6a7cff,
+    #a9b6ff,
+    #ffffff,
+    #ffb3d9,
+    #ff7aa8,
+    #6a7cff
+  );
+  filter: blur(18px) brightness(1.25);
+  z-index: -1;
+}
+
+/* ✨ Floating icons */
+.update-card-310126::after {
+  content: "🏫📚✨💤🛍️✨";
+  position: absolute;
+  top: 14px;
+  width: 100%;
+  font-size: 26px;
+  text-align: center;
+  opacity: 0.8;
+  pointer-events: none;
+  animation: school-float 6s ease-in-out infinite alternate;
+}
+
+@keyframes school-float {
+  0% { transform: translateY(0); opacity: 0.7; }
+  100% { transform: translateY(16px); opacity: 1; }
+}
+
+/* 🏫 Title */
+.update-card-310126 .update-title {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 16px;
+  color: #4b55c9;
+  text-shadow:
+    0 0 12px rgba(255,255,255,0.95),
+    0 0 20px rgba(120,110,255,0.85);
+}
+
+/* 📚 Text */
+.update-card-310126 .update-text {
+  font-size: 18px;
+  line-height: 1.7;
+}
 
 
 
