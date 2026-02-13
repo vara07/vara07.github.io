@@ -10,6 +10,85 @@
 
 
 
+/* ===========================================
+   🏫 High School – Week 3
+=========================================== */
+
+.update-card-week3 {
+  position: relative;
+  background: linear-gradient(135deg, #eef4ff, #ffffff, #f3f0ff);
+  border-radius: 32px;
+  padding: 28px;
+  margin: 40px auto;
+  max-width: 700px;
+  font-family: "Comic Sans MS", "Poppins", sans-serif;
+  color: #2c2c5a;
+  overflow: visible;
+  box-shadow: 0 0 28px rgba(120, 120, 255, 0.35);
+  text-shadow: 0 0 6px rgba(255,255,255,0.9);
+}
+
+/* 🌈 Glowing school border */
+.update-card-week3::before {
+  content: "";
+  position: absolute;
+  inset: -22px;
+  border-radius: 52px;
+  background: conic-gradient(
+    from 0deg,
+    #6c7bff,
+    #a5b4ff,
+    #ffffff,
+    #ffb3e6,
+    #ff7ac8,
+    #6c7bff
+  );
+  filter: blur(18px) brightness(1.2);
+  z-index: -1;
+}
+
+/* ✨ Floating school vibes */
+.update-card-week3::after {
+  content: "🏫📚✏️🌏🇯🇵✨";
+  position: absolute;
+  top: 14px;
+  width: 100%;
+  font-size: 26px;
+  text-align: center;
+  opacity: 0.8;
+  pointer-events: none;
+  animation: week3-float 6s ease-in-out infinite alternate;
+}
+
+@keyframes week3-float {
+  0% { transform: translateY(0); opacity: 0.7; }
+  100% { transform: translateY(14px); opacity: 1; }
+}
+
+/* Title */
+.update-card-week3 .update-title {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 16px;
+  color: #4f5bd5;
+  text-shadow:
+    0 0 12px rgba(255,255,255,0.95),
+    0 0 20px rgba(120,120,255,0.8);
+}
+
+/* Text */
+.update-card-week3 .update-text {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+
+
+
+
+
+
+
 
 /* ===========================================
    🏫 High School Week One – 31 January
