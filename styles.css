@@ -10,6 +10,111 @@
 
 
 
+
+
+/* ===========================================
+   🦄 POP Holographic Update – 22 Feb
+=========================================== */
+
+.update-card-220225-pop {
+  position: relative;
+  padding: 35px;
+  margin: 50px auto;
+  max-width: 720px;
+  border-radius: 40px;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    #ff00cc,
+    #3333ff,
+    #00f7ff,
+    #ffcc00
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+  box-shadow:
+    0 0 40px #ff00cc,
+    0 0 80px #00f7ff,
+    0 0 120px #ffcc00;
+}
+
+/* 🌈 Moving background */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 🔥 Glowing animated border */
+.update-card-220225-pop::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 45px;
+  background: linear-gradient(
+    90deg,
+    #ff00cc,
+    #00f7ff,
+    #ffcc00,
+    #ff00cc
+  );
+  background-size: 300% 300%;
+  animation: borderGlow 4s linear infinite;
+  z-index: -1;
+  filter: blur(12px);
+}
+
+@keyframes borderGlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* ✨ Floating sparkle explosion */
+.update-card-220225-pop::after {
+  content: "✨🔑🌈🐶⚡✨";
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 28px;
+  animation: floatPop 3s ease-in-out infinite alternate;
+}
+
+@keyframes floatPop {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(20px); }
+}
+
+/* Title POP */
+.update-card-220225-pop .update-title {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow:
+    0 0 10px #ffffff,
+    0 0 20px #ff00cc,
+    0 0 30px #00f7ff;
+}
+
+/* Text */
+.update-card-220225-pop .update-text {
+  font-size: 18px;
+  line-height: 1.7;
+  text-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+
+
+
+
+
+
+
+
 /* ===========================================
    🏫 High School – Week 3
 =========================================== */
