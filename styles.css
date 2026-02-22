@@ -18,6 +18,7 @@
 
 .update-card-220225-pop {
   position: relative;
+  z-index: 1; /* ensures border shows correctly */
   padding: 40px;
   margin: 60px auto;
   max-width: 720px;
@@ -37,7 +38,7 @@
 .update-card-220225-pop::before {
   content: "";
   position: absolute;
-  inset: -4px;
+  inset: -6px;
   border-radius: 45px;
   background: linear-gradient(
     90deg,
@@ -49,7 +50,7 @@
   background-size: 300% 300%;
   animation: borderShift 6s linear infinite;
   z-index: -1;
-  filter: blur(14px);
+  filter: blur(12px);
 }
 
 @keyframes borderShift {
@@ -67,6 +68,7 @@
   font-size: 26px;
   opacity: 0.8;
   animation: floatMystery 4s ease-in-out infinite alternate;
+  pointer-events: none;
 }
 
 @keyframes floatMystery {
@@ -97,7 +99,7 @@
 
 /* ✨ HOVER SPARKLE MODE */
 .update-card-220225-pop:hover {
-  transform: scale(1.03);
+  transform: scale(1.05);
   box-shadow:
     0 0 40px #00eaff,
     0 0 80px #ff00c8,
@@ -108,13 +110,14 @@
 .update-card-220225-pop:hover::after {
   content: "✨🔑✨🌙✨⚡✨";
   font-size: 30px;
-  animation: sparkleBurst 1.2s ease-in-out infinite alternate;
+  animation: sparkleBurst 1s ease-in-out infinite alternate;
 }
 
 @keyframes sparkleBurst {
   0% { letter-spacing: 5px; opacity: 0.7; }
   100% { letter-spacing: 15px; opacity: 1; }
 }
+
 
 
 
