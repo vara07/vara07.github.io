@@ -13,98 +13,107 @@
 
 
 /* ===========================================
-   🦄 POP Holographic Update – 22 Feb
+   🌑 Mystery-Core Neon – 22 Feb
 =========================================== */
 
 .update-card-220225-pop {
   position: relative;
-  padding: 35px;
-  margin: 50px auto;
+  padding: 40px;
+  margin: 60px auto;
   max-width: 720px;
   border-radius: 40px;
   font-family: "Poppins", sans-serif;
-  color: white;
+  color: #e6f7ff;
   overflow: hidden;
-  background: linear-gradient(
-    135deg,
-    #ff00cc,
-    #3333ff,
-    #00f7ff,
-    #ffcc00
-  );
-  background-size: 400% 400%;
-  animation: gradientShift 8s ease infinite;
+  background: radial-gradient(circle at top left, #1a002b, #050010 70%);
   box-shadow:
-    0 0 40px #ff00cc,
-    0 0 80px #00f7ff,
-    0 0 120px #ffcc00;
+    0 0 25px #6a00ff,
+    0 0 60px #00eaff,
+    inset 0 0 40px rgba(0, 0, 0, 0.8);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* 🌈 Moving background */
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* 🔥 Glowing animated border */
+/* 🔑 Neon animated border */
 .update-card-220225-pop::before {
   content: "";
   position: absolute;
-  inset: -8px;
+  inset: -4px;
   border-radius: 45px;
   background: linear-gradient(
     90deg,
-    #ff00cc,
-    #00f7ff,
-    #ffcc00,
-    #ff00cc
+    #6a00ff,
+    #00eaff,
+    #ff00c8,
+    #6a00ff
   );
   background-size: 300% 300%;
-  animation: borderGlow 4s linear infinite;
+  animation: borderShift 6s linear infinite;
   z-index: -1;
-  filter: blur(12px);
+  filter: blur(14px);
 }
 
-@keyframes borderGlow {
+@keyframes borderShift {
   0% { background-position: 0% 50%; }
   100% { background-position: 200% 50%; }
 }
 
-/* ✨ Floating sparkle explosion */
+/* 🌌 Floating neon icons */
 .update-card-220225-pop::after {
-  content: "✨🔑🌈🐶⚡✨";
+  content: "🔑✨🌙⚡";
   position: absolute;
-  top: 10px;
+  top: 14px;
   width: 100%;
   text-align: center;
-  font-size: 28px;
-  animation: floatPop 3s ease-in-out infinite alternate;
+  font-size: 26px;
+  opacity: 0.8;
+  animation: floatMystery 4s ease-in-out infinite alternate;
 }
 
-@keyframes floatPop {
+@keyframes floatMystery {
   0% { transform: translateY(0); }
-  100% { transform: translateY(20px); }
+  100% { transform: translateY(18px); }
 }
 
-/* Title POP */
+/* 🌑 Title glow */
 .update-card-220225-pop .update-title {
   text-align: center;
   font-size: 34px;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  color: #ffffff;
   text-shadow:
-    0 0 10px #ffffff,
-    0 0 20px #ff00cc,
-    0 0 30px #00f7ff;
+    0 0 10px #6a00ff,
+    0 0 20px #00eaff,
+    0 0 35px #ff00c8;
 }
 
-/* Text */
+/* 📜 Text styling */
 .update-card-220225-pop .update-text {
   font-size: 18px;
-  line-height: 1.7;
-  text-shadow: 0 0 10px rgba(0,0,0,0.4);
+  line-height: 1.75;
+  text-shadow: 0 0 8px rgba(0, 234, 255, 0.3);
+}
+
+/* ✨ HOVER SPARKLE MODE */
+.update-card-220225-pop:hover {
+  transform: scale(1.03);
+  box-shadow:
+    0 0 40px #00eaff,
+    0 0 80px #ff00c8,
+    0 0 120px #6a00ff;
+}
+
+/* ✨ Magical sparkles appear on hover */
+.update-card-220225-pop:hover::after {
+  content: "✨🔑✨🌙✨⚡✨";
+  font-size: 30px;
+  animation: sparkleBurst 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes sparkleBurst {
+  0% { letter-spacing: 5px; opacity: 0.7; }
+  100% { letter-spacing: 15px; opacity: 1; }
 }
 
 
