@@ -12,6 +12,95 @@
 
 
 
+
+.update-card-230225 {
+  position: relative;
+  padding: 40px;
+  border-radius: 25px;
+  overflow: hidden;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  margin: 40px 0;
+  
+  background: linear-gradient(
+    180deg,
+    #ff9966 0%,
+    #ff5e62 40%,
+    #c94b4b 70%,
+    #4b134f 100%
+  );
+
+  box-shadow: 0 0 40px rgba(255, 120, 120, 0.6);
+}
+
+.update-title {
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.update-text {
+  font-size: 16px;
+  line-height: 1.6;
+  z-index: 2;
+  position: relative;
+}
+
+/* ✨ Floating Music Notes */
+
+.music-note {
+  position: absolute;
+  font-size: 28px;
+  opacity: 0.6;
+  animation: floatUpDown 4s ease-in-out infinite;
+}
+
+.note1 {
+  left: 10%;
+  top: 70%;
+  animation-delay: 0s;
+}
+
+.note2 {
+  left: 30%;
+  top: 60%;
+  animation-delay: 1s;
+}
+
+.note3 {
+  left: 60%;
+  top: 75%;
+  animation-delay: 2s;
+}
+
+.note4 {
+  left: 80%;
+  top: 65%;
+  animation-delay: 3s;
+}
+
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+
+
+
+
+
+
+
+
+
 /* ===========================================
    🌑 Mystery-Core Neon – 22 Feb
 =========================================== */
