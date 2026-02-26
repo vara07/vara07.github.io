@@ -12,7 +12,108 @@
 
 
 
+.update-card-260225 {
+  position: relative;
+  padding: 45px;
+  border-radius: 30px;
+  margin: 50px 0;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  color: #e0f7ff;
 
+  background: radial-gradient(circle at top, #1a0033, #000014 70%);
+  box-shadow:
+    0 0 30px #00f0ff,
+    0 0 60px #9d00ff;
+}
+
+/* ✨ Stars */
+.update-card-260225::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.15;
+  animation: drift 60s linear infinite;
+}
+
+@keyframes drift {
+  from { transform: translateY(0); }
+  to { transform: translateY(-200px); }
+}
+
+.update-title {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 20px;
+  text-shadow:
+    0 0 10px #00f0ff,
+    0 0 20px #9d00ff;
+}
+
+.update-text {
+  font-size: 16px;
+  line-height: 1.7;
+  position: relative;
+  z-index: 2;
+}
+
+/* 🪐 Floating Planets */
+
+.planet {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.5;
+  animation: float 6s ease-in-out infinite;
+}
+
+.p1 {
+  width: 40px;
+  height: 40px;
+  background: #00f0ff;
+  top: 20%;
+  left: 10%;
+}
+
+.p2 {
+  width: 25px;
+  height: 25px;
+  background: #ff00cc;
+  top: 70%;
+  left: 80%;
+  animation-delay: 2s;
+}
+
+.p3 {
+  width: 30px;
+  height: 30px;
+  background: #9d00ff;
+  top: 60%;
+  left: 40%;
+  animation-delay: 1s;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+/* ⚡ Subtle Glitch on Hover */
+.update-card-260225:hover {
+  animation: glitch 0.4s linear infinite;
+}
+
+@keyframes glitch {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(2px, -2px); }
+  60% { transform: translate(-2px, -2px); }
+  80% { transform: translate(2px, 2px); }
+  100% { transform: translate(0, 0); }
+}
 
 
 
