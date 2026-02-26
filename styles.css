@@ -22,12 +22,43 @@
   color: #e0f7ff;
 
   background: radial-gradient(circle at top, #1a0033, #000014 70%);
+
+  /* Transparent border base */
+  border: 4px solid transparent;
+  background-clip: padding-box;
+
   box-shadow:
-    0 0 30px #00f0ff,
-    0 0 60px #9d00ff;
+    0 0 20px #00f0ff,
+    0 0 40px #9d00ff,
+    inset 0 0 30px rgba(0, 240, 255, 0.25);
 }
 
-/* ✨ Stars */
+/* 🌈 Animated Gradient Border */
+.update-card-260225::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 30px;
+  padding: 4px;
+  background: linear-gradient(45deg, #00f0ff, #9d00ff, #ff00cc, #00f0ff);
+  background-size: 300% 300%;
+  animation: borderFlow 6s linear infinite;
+
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  pointer-events: none;
+}
+
+@keyframes borderFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* ✨ Moving Star Field */
 .update-card-260225::before {
   content: "";
   position: absolute;
@@ -35,7 +66,7 @@
   height: 200%;
   background-image: radial-gradient(white 1px, transparent 1px);
   background-size: 30px 30px;
-  opacity: 0.15;
+  opacity: 0.12;
   animation: drift 60s linear infinite;
 }
 
@@ -51,6 +82,8 @@
   text-shadow:
     0 0 10px #00f0ff,
     0 0 20px #9d00ff;
+  position: relative;
+  z-index: 2;
 }
 
 .update-text {
@@ -101,7 +134,7 @@
   100% { transform: translateY(0); }
 }
 
-/* ⚡ Subtle Glitch on Hover */
+/* ⚡ Subtle Glitch Hover Effect */
 .update-card-260225:hover {
   animation: glitch 0.4s linear infinite;
 }
