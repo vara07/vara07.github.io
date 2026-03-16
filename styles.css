@@ -9,6 +9,95 @@
 
 
 
+
+
+
+
+
+
+
+
+.update-card-160325 {
+  position: relative;
+  padding: 45px;
+  border-radius: 35px;
+  margin: 50px 0;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  color: #3b1f2b;
+
+  background: linear-gradient(
+    180deg,
+    #ffb347,
+    #ff7e5f,
+    #ff4e7a
+  );
+
+  border: 5px solid #ffffff;
+
+  box-shadow:
+    0 0 25px rgba(255,255,255,0.7),
+    0 0 50px rgba(255,126,95,0.6),
+    inset 0 0 30px rgba(255,255,255,0.3);
+}
+
+.update-title {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.update-text {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #ffffff;
+  position: relative;
+  z-index: 2;
+}
+
+/* 🐾 Floating Paw Prints */
+
+.paw {
+  position: absolute;
+  font-size: 26px;
+  opacity: 0.6;
+  animation: pawFloat 6s ease-in-out infinite;
+}
+
+.p1 { top: 20%; left: 15%; animation-delay: 0s; }
+.p2 { top: 60%; left: 75%; animation-delay: 2s; }
+.p3 { top: 40%; left: 50%; animation-delay: 4s; }
+
+@keyframes pawFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+  100% { transform: translateY(0); }
+}
+
+/* ✨ Hover Glow */
+
+.update-card-160325:hover {
+  transform: scale(1.04);
+  transition: 0.3s ease;
+  box-shadow:
+    0 0 40px rgba(255,255,255,0.9),
+    0 0 70px rgba(255,126,95,0.8);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 .update-card-010325 {
   position: relative;
   padding: 45px;
