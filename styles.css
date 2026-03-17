@@ -9,6 +9,132 @@
 
 
 
+.update-card-arcade {
+  position: relative;
+  padding: 50px;
+  border-radius: 35px;
+  margin: 60px 0;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+
+  background: linear-gradient(
+    135deg,
+    #ff00cc,
+    #3333ff,
+    #00f0ff,
+    #ffea00
+  );
+
+  background-size: 400% 400%;
+  animation: bgShift 10s ease infinite;
+
+  border: 6px solid #ffffff;
+
+  box-shadow:
+    0 0 30px #ff00cc,
+    0 0 60px #00f0ff,
+    0 0 100px #ffea00;
+}
+
+/* 🌈 Moving Background */
+@keyframes bgShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.update-title {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 25px;
+  text-shadow:
+    0 0 10px #fff,
+    0 0 20px #ff00cc,
+    0 0 40px #00f0ff;
+}
+
+.update-text {
+  font-size: 17px;
+  line-height: 1.7;
+  position: relative;
+  z-index: 2;
+}
+
+/* 🎮 Grid Overlay (arcade floor vibes) */
+.update-card-arcade::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+      rgba(255,255,255,0.1) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.1) 1px,
+      transparent 1px
+    );
+  background-size: 40px 40px;
+  opacity: 0.3;
+}
+
+/* ⚡ Floating Neon Orbs */
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(8px);
+  opacity: 0.7;
+  animation: floatOrb 6s ease-in-out infinite;
+}
+
+.o1 {
+  width: 80px;
+  height: 80px;
+  background: #ff00cc;
+  top: 10%;
+  left: 10%;
+}
+
+.o2 {
+  width: 60px;
+  height: 60px;
+  background: #00f0ff;
+  bottom: 15%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.o3 {
+  width: 50px;
+  height: 50px;
+  background: #ffea00;
+  top: 50%;
+  left: 70%;
+  animation-delay: 4s;
+}
+
+@keyframes floatOrb {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-25px); }
+  100% { transform: translateY(0); }
+}
+
+/* 💥 HOVER = FULL POP */
+.update-card-arcade:hover {
+  transform: scale(1.07) rotate(1deg);
+  transition: 0.3s ease;
+
+  box-shadow:
+    0 0 50px #ffffff,
+    0 0 100px #ff00cc,
+    0 0 150px #00f0ff;
+}
+
+
+
+
 
 
 
