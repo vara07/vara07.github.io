@@ -1,226 +1,522 @@
-
-
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>My School Timetable</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ff6fb7">
 
-<style>
+  <title>My School Timetable</title>
 
-body{
-    font-family:Poppins,sans-serif;
-    background:linear-gradient(135deg,#ffe6f5,#e6f7ff);
-    padding:30px;
-}
+  <style>
+    :root {
+      --pink: #e94097;
+      --ink: #32283a;
+      --muted: #766d7d;
+      --surface: rgba(255, 255, 255, 0.92);
+      --shadow: 0 18px 45px rgba(73, 43, 91, 0.12);
+    }
 
-h1{
-    text-align:center;
-    color:#ff4da6;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-.week{
-    margin-bottom:50px;
-}
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: clamp(18px, 4vw, 48px);
+      font-family: Poppins, Inter, ui-rounded, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(
+          circle at 10% 5%,
+          rgba(255, 255, 255, 0.9),
+          transparent 25%
+        ),
+        linear-gradient(135deg, #ffe6f5, #e6f7ff);
+    }
 
-table{
-    width:100%;
-    border-collapse:collapse;
-    background:white;
-    border-radius:20px;
-    overflow:hidden;
-    box-shadow:0 0 20px rgba(0,0,0,.1);
-}
+    .page {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+    }
 
-th{
-    background:#ff9ad5;
-    color:white;
-    padding:12px;
-}
+    .hero {
+      margin-bottom: clamp(28px, 5vw, 48px);
+      text-align: center;
+    }
 
-td{
-    border:1px solid #ddd;
-    padding:12px;
-    text-align:center;
-    font-weight:bold;
-}
+    .hero-badge {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 7px 13px;
+      border: 1px solid rgba(233, 64, 151, 0.18);
+      border-radius: 999px;
+      color: var(--pink);
+      background: rgba(255, 255, 255, 0.7);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
 
-/* SUBJECT COLOURS */
+    h1 {
+      margin: 0;
+      color: var(--pink);
+      font-size: clamp(2rem, 5vw, 3.7rem);
+      line-height: 1.05;
+    }
 
-.english{
-    background:#bde8ff;
-}
+    .hero p {
+      margin: 10px 0 0;
+      color: var(--muted);
+    }
 
-.math{
-    background:#ffd8a8;
-}
+    .week {
+      margin-bottom: clamp(36px, 6vw, 58px);
+    }
 
-.science{
-    background:#ff66cc;
-    color:white;
-}
+    h2 {
+      margin: 0 0 16px;
+      font-size: clamp(1.35rem, 3vw, 1.85rem);
+    }
 
-.dance{
-    background:#d9c2ff;
-}
+    .table-wrap {
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.75);
+      border-radius: 22px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
 
-.hass{
-    background:#fff4a8;
-}
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
 
-.re{
-    background:#c7ddba;
-}
+    th {
+      padding: 15px 10px;
+      color: white;
+      background: linear-gradient(135deg, #ff83c5, #ed5fa9);
+      font-size: 0.9rem;
+    }
 
-.pe{
-    background:#ffd6e8;
-}
+    th:first-child {
+      width: 86px;
+    }
 
-.japanese{
-    background:#f4e6cf;
-}
+    td {
+      height: 76px;
+      padding: 12px 9px;
+      border: 1px solid #eee8f0;
+      text-align: center;
+      font-size: 0.88rem;
+      font-weight: 750;
+    }
 
-.prayer{
-    background:#66e0d1;
-}
+    td:first-child {
+      color: var(--pink);
+      background: #fffafd;
+      font-weight: 900;
+    }
 
-.tute{
-    background:#b8f0b8;
-}
+    /* Subject colours */
 
-</style>
+    .english {
+      background: #bde8ff;
+    }
+
+    .math {
+      background: #ffd8a8;
+    }
+
+    .science {
+      color: white;
+      background: #e85ab8;
+    }
+
+    .dance,
+    .visual-art {
+      background: #d9c2ff;
+    }
+
+    .hass {
+      background: #fff4a8;
+    }
+
+    .re {
+      background: #c7ddba;
+    }
+
+    .pe {
+      background: #ffd6e8;
+    }
+
+    .japanese {
+      background: #f4e6cf;
+    }
+
+    .prayer {
+      background: #66e0d1;
+    }
+
+    .tute {
+      background: #b8f0b8;
+    }
+
+    .itd {
+      background: #c9e8e1;
+    }
+
+    .mobile-timetable {
+      display: none;
+    }
+
+    /* Mobile view */
+
+    @media (max-width: 720px) {
+      body {
+        padding: 18px 14px 34px;
+      }
+
+      .hero {
+        margin: 12px 0 30px;
+      }
+
+      .hero p {
+        font-size: 0.92rem;
+      }
+
+      .desktop-timetable {
+        display: none;
+      }
+
+      .mobile-timetable {
+        display: block;
+      }
+
+      .week {
+        margin-bottom: 38px;
+      }
+
+      .day-tabs {
+        display: flex;
+        gap: 8px;
+        margin: 0 -14px 16px;
+        padding: 2px 14px 10px;
+        overflow-x: auto;
+        scrollbar-width: none;
+        scroll-snap-type: x proximity;
+      }
+
+      .day-tabs::-webkit-scrollbar {
+        display: none;
+      }
+
+      .day-tab {
+        flex: 0 0 auto;
+        min-width: 58px;
+        padding: 10px 12px;
+        border: 0;
+        border-radius: 14px;
+        color: #756c7c;
+        background: rgba(255, 255, 255, 0.72);
+        box-shadow: 0 5px 16px rgba(73, 43, 91, 0.06);
+        font: inherit;
+        font-size: 0.82rem;
+        font-weight: 800;
+        cursor: pointer;
+        scroll-snap-align: start;
+      }
+
+      .day-tab[aria-selected="true"] {
+        color: white;
+        background: linear-gradient(135deg, #ff83c5, #e94097);
+      }
+
+      .day-panel {
+        display: none;
+      }
+
+      .day-panel.active {
+        display: grid;
+        gap: 11px;
+        animation: reveal 0.22s ease-out;
+      }
+
+      .lesson-card {
+        display: grid;
+        grid-template-columns: 52px minmax(0, 1fr);
+        align-items: center;
+        min-height: 78px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        border-radius: 18px;
+        box-shadow: 0 9px 24px rgba(73, 43, 91, 0.09);
+      }
+
+      .lesson-period {
+        display: grid;
+        align-self: stretch;
+        place-items: center;
+        color: var(--pink);
+        background: rgba(255, 255, 255, 0.88);
+        font-size: 0.8rem;
+        font-weight: 900;
+      }
+
+      .lesson-name {
+        padding: 16px;
+        font-size: 0.95rem;
+        font-weight: 800;
+        line-height: 1.3;
+      }
+    }
+
+    @keyframes reveal {
+      from {
+        opacity: 0;
+        transform: translateY(5px);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <main class="page">
 
-<h1>📅 My School Timetable</h1>
+    <header class="hero">
+      <span class="hero-badge">School planner</span>
+      <h1>📅 My School Timetable</h1>
+      <p>Everything you need for the school day, all in one place.</p>
+    </header>
 
-<div class="week">
-<h2>🌈 Week A</h2>
+    <!-- Week A -->
 
-<table>
+    <section class="week" data-week>
+      <h2>🌈 Week A</h2>
 
-<tr>
-<th>Period</th>
-<th>Monday</th>
-<th>Tuesday</th>
-<th>Wednesday</th>
-<th>Thursday</th>
-<th>Friday</th>
-</tr>
+      <div class="table-wrap desktop-timetable">
+        <table>
+          <thead>
+            <tr>
+              <th>Period</th>
+              <th>Monday</th>
+              <th>Tuesday</th>
+              <th>Wednesday</th>
+              <th>Thursday</th>
+              <th>Friday</th>
+            </tr>
+          </thead>
 
-<tr>
-<td>P1</td>
-<td class="english">📖 English</td>
-<td class="visual art"> visual art</td>
-<td class="pe">🎀 Physical Education</td>
-<td class="ITD">ITD</td>
-<td class="english">📖 English</td>
-</tr>
+          <tbody>
+            <tr>
+              <td>P1</td>
+              <td class="english">📖 English</td>
+              <td class="visual-art">🎨 Visual Art</td>
+              <td class="pe">🎀 Physical Education</td>
+              <td class="itd">🛠️ ITD</td>
+              <td class="english">📖 English</td>
+            </tr>
 
-<tr>
-<td>P2</td>
-<td class="re">✝️ Religious Education</td>
-<td class="pe">🎀 Physical Education</td>
-<td class="math">➗ Mathematics</td>
-<td class="re">✝️ Religious Education</td>
-<td class="math">➗ Mathematics</td>
-</tr>
+            <tr>
+              <td>P2</td>
+              <td class="re">✝️ Religious Education</td>
+              <td class="pe">🎀 Physical Education</td>
+              <td class="math">➗ Mathematics</td>
+              <td class="re">✝️ Religious Education</td>
+              <td class="math">➗ Mathematics</td>
+            </tr>
 
-<tr>
-<td>P&T</td>
-<td class="prayer">🙏 Prayer & 💬 Tute</td>
-<td class="prayer">🙏 Prayer & 💬 Tute</td>
-<td class="prayer">🙏 Prayer & 💬 Tute</td>
-<td class="prayer">🙏 Prayer & 💬 Tute</td>
-<td class="prayer">🙏 Prayer & 💬 Tute</td>
-</tr>
+            <tr>
+              <td>P&amp;T</td>
+              <td class="prayer">🙏 Prayer &amp; 💬 Tute</td>
+              <td class="prayer">🙏 Prayer &amp; 💬 Tute</td>
+              <td class="prayer">🙏 Prayer &amp; 💬 Tute</td>
+              <td class="prayer">🙏 Prayer &amp; 💬 Tute</td>
+              <td class="prayer">🙏 Prayer &amp; 💬 Tute</td>
+            </tr>
 
-<tr>
-<td>P3</td>
-<td class="science">🥼 Science</td>
-<td class="math">➗ Mathematics</td>
-<td class="hass">🌏 H.A.S.S</td>
-<td class="tute">💬 Tute</td>
-<td class="hass">🌏 H.A.S.S</td>
-</tr>
+            <tr>
+              <td>P3</td>
+              <td class="science">🥼 Science</td>
+              <td class="math">➗ Mathematics</td>
+              <td class="hass">🌏 H.A.S.S</td>
+              <td class="tute">💬 Tute</td>
+              <td class="hass">🌏 H.A.S.S</td>
+            </tr>
 
-<tr>
-<td>P4</td>
-<td class="hass">🌏 H.A.S.S</td>
-<td class="english">📖 English</td>
-<td class="visual art">visual art</td>
-<td class="science">🥼 Science</td>
-<td class="ITD">ITD</td>
-</tr>
+            <tr>
+              <td>P4</td>
+              <td class="hass">🌏 H.A.S.S</td>
+              <td class="english">📖 English</td>
+              <td class="visual-art">🎨 Visual Art</td>
+              <td class="science">🥼 Science</td>
+              <td class="itd">🛠️ ITD</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-</table>
-</div>
+      <div class="mobile-timetable"></div>
+    </section>
 
-<div class="week">
+    <!-- Week B -->
 
-<h2>✨ Week B</h2>
+    <section class="week" data-week>
+      <h2>✨ Week B</h2>
 
-<table>
+      <div class="table-wrap desktop-timetable">
+        <table>
+          <thead>
+            <tr>
+              <th>Period</th>
+              <th>Monday</th>
+              <th>Tuesday</th>
+              <th>Wednesday</th>
+              <th>Thursday</th>
+              <th>Friday</th>
+            </tr>
+          </thead>
 
-<tr>
-<th>Period</th>
-<th>Monday</th>
-<th>Tuesday</th>
-<th>Wednesday</th>
-<th>Thursday</th>
-<th>Friday</th>
-</tr>
+          <tbody>
+            <tr>
+              <td>P1</td>
+              <td class="math">➗ Mathematics</td>
+              <td class="english">📖 English</td>
+              <td class="visual-art">🎨 Visual Art</td>
+              <td class="science">🥼 Science</td>
+              <td class="pe">🎀 Physical Education</td>
+            </tr>
 
-<tr>
-<td>P1</td>
-<td class="math">➗ Mathematics</td>
-<td class="english">📖 English</td>
-<td class="visual art">visual art</td>
-<td class="science">🥼 Science</td>
-<td class="pe">🎀 Physical Education</td>
-</tr>
+            <tr>
+              <td>P2</td>
+              <td class="science">🥼 Science</td>
+              <td class="math">➗ Mathematics</td>
+              <td class="english">📖 English</td>
+              <td class="itd">🛠️ ITD</td>
+              <td class="hass">🌏 H.A.S.S</td>
+            </tr>
 
-<tr>
-<td>P2</td>
-<td class="science">🥼 Science</td>
-<td class="math">➗ Mathematics</td>
-<td class="english">📖 English</td>
-<td class="ITD">ITD</td>
-<td class="hass">🌏 H.A.S.S</td>
-</tr>
+            <tr>
+              <td>P&amp;T</td>
+              <td class="prayer">🙏 Prayer &amp; 💬 Tute</td>
+              <td class="prayer">🙏 Prayer &amp; 💬 Tute</td>
+              <td class="prayer">🙏 Prayer &amp; 💬 Tute</td>
+              <td class="prayer">🙏 Prayer &amp; 💬 Tute</td>
+              <td class="prayer">🙏 Prayer &amp; 💬 Tute</td>
+            </tr>
 
-<tr>
-<td>P&T</td>
-<td class="prayer">🙏 Prayer & 💬 Tute</td>
-<td class="prayer">🙏 Prayer & 💬 Tute</td>
-<td class="prayer">🙏 Prayer & 💬 Tute</td>
-<td class="prayer">🙏 Prayer & 💬 Tute</td>
-<td class="prayer">🙏 Prayer & 💬 Tute</td>
-</tr>
+            <tr>
+              <td>P3</td>
+              <td class="re">✝️ Religious Education</td>
+              <td class="re">✝️ Religious Education</td>
+              <td class="itd">🛠️ ITD</td>
+              <td class="tute">💬 Tute</td>
+              <td class="visual-art">🎨 Visual Art</td>
+            </tr>
 
-<tr>
-<td>P3</td>
-<td class="re">✝️ Religious Education</td>
-<td class="re">✝️ Religious Education</td>
-<td class="ITD">ITD</td>
-<td class="tute">💬 Tute</td>
-<td class="visual art">visual art</td>
-</tr>
+            <tr>
+              <td>P4</td>
+              <td class="pe">🎀 Physical Education</td>
+              <td class="science">🥼 Science</td>
+              <td class="hass">🌏 H.A.S.S</td>
+              <td class="english">📖 English</td>
+              <td class="math">➗ Mathematics</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-<tr>
-<td>P4</td>
-<td class="pe">🎀 Physical Education</td>
-<td class="science">🥼 Science</td>
-<td class="hass">🌏 H.A.S.S</td>
-<td class="english">📖 English</td>
-<td class="math">➗ Mathematics</td>
-</tr>
+      <div class="mobile-timetable"></div>
+    </section>
 
-</table>
+  </main>
 
-</div>
+  <script>
+    document.querySelectorAll("[data-week]").forEach((week, weekIndex) => {
+      const table = week.querySelector("table");
+      const mobile = week.querySelector(".mobile-timetable");
 
+      const days = [...table.querySelectorAll("thead th")]
+        .slice(1)
+        .map((heading) => heading.textContent.trim());
+
+      const rows = [...table.querySelectorAll("tbody tr")];
+
+      const tabs = document.createElement("div");
+      tabs.className = "day-tabs";
+      tabs.setAttribute("role", "tablist");
+
+      mobile.appendChild(tabs);
+
+      days.forEach((day, dayIndex) => {
+        const id = `week-${weekIndex}-day-${dayIndex}`;
+
+        const button = document.createElement("button");
+        button.className = "day-tab";
+        button.type = "button";
+        button.textContent = day.slice(0, 3);
+        button.setAttribute("role", "tab");
+        button.setAttribute("aria-controls", id);
+        button.setAttribute(
+          "aria-selected",
+          String(dayIndex === 0)
+        );
+
+        tabs.appendChild(button);
+
+        const panel = document.createElement("div");
+        panel.id = id;
+        panel.className =
+          `day-panel${dayIndex === 0 ? " active" : ""}`;
+
+        panel.setAttribute("role", "tabpanel");
+        panel.setAttribute("aria-label", day);
+
+        rows.forEach((row) => {
+          const cells = row.querySelectorAll("td");
+          const lesson = cells[dayIndex + 1];
+
+          const card = document.createElement("article");
+          card.className = `lesson-card ${lesson.className}`;
+
+          card.innerHTML = `
+            <span class="lesson-period">
+              ${cells[0].textContent}
+            </span>
+
+            <span class="lesson-name">
+              ${lesson.textContent}
+            </span>
+          `;
+
+          panel.appendChild(card);
+        });
+
+        mobile.appendChild(panel);
+
+        button.addEventListener("click", () => {
+          tabs.querySelectorAll(".day-tab").forEach((tab) => {
+            tab.setAttribute("aria-selected", "false");
+          });
+
+          mobile.querySelectorAll(".day-panel").forEach((item) => {
+            item.classList.remove("active");
+          });
+
+          button.setAttribute("aria-selected", "true");
+          panel.classList.add("active");
+        });
+      });
+    });
+  </script>
 </body>
 </html>
