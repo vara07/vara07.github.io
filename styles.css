@@ -14,6 +14,122 @@
 
 
 
+
+
+/* ==========================================
+   💅 23 August • Neon Pink Energy Theme
+========================================== */
+
+.update-card-230826{
+  position:relative;
+  overflow:hidden;
+  margin:40px auto;
+  padding:38px;
+  max-width:700px;
+  border-radius:32px;
+  font-family:'Poppins',sans-serif;
+  color:#ffffff;
+
+  background:linear-gradient(
+    135deg,
+    #4a001f 0%,
+    #7a0038 40%,
+    #ff1493 100%
+  );
+
+  border:5px solid #39ff14;
+
+  box-shadow:
+    0 0 20px #39ff14,
+    0 0 35px #ff4fd8,
+    inset 0 0 25px rgba(255,255,255,.12);
+}
+
+/* 🌟 Animated Neon Shine */
+.update-card-230826::before{
+  content:"";
+  position:absolute;
+  top:-40%;
+  left:-30%;
+  width:160%;
+  height:180%;
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.28),
+    transparent
+  );
+  transform:rotate(15deg);
+  animation:shine 7s linear infinite;
+}
+
+@keyframes shine{
+  0%{transform:translateX(-120%) rotate(15deg);}
+  100%{transform:translateX(120%) rotate(15deg);}
+}
+
+.update-title{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  font-size:28px;
+  margin-bottom:20px;
+  color:#ffffff;
+  text-shadow:
+    0 0 8px #ff66d9,
+    0 0 18px #39ff14;
+}
+
+.update-text{
+  position:relative;
+  z-index:2;
+  font-size:17px;
+  line-height:1.8;
+  text-shadow:0 1px 4px rgba(0,0,0,.35);
+}
+
+/* 💖 Floating Emojis */
+
+.icon{
+  position:absolute;
+  z-index:1;
+  font-size:28px;
+  opacity:.8;
+  animation:bob 4s ease-in-out infinite;
+}
+
+.i1{top:18px;left:18px;}
+.i2{top:30px;right:24px;animation-delay:1s;}
+.i3{bottom:22px;left:28px;animation-delay:2s;}
+.i4{bottom:30px;right:30px;animation-delay:.5s;}
+.i5{top:50%;right:16px;font-size:30px;animation-delay:1.5s;}
+
+@keyframes bob{
+  0%{transform:translateY(0) rotate(0deg);}
+  50%{transform:translateY(-12px) rotate(8deg);}
+  100%{transform:translateY(0) rotate(0deg);}
+}
+
+/* 🎉 Hover Pop */
+
+.update-card-230826:hover{
+  transform:scale(1.03);
+  transition:.3s ease;
+  box-shadow:
+    0 0 30px #39ff14,
+    0 0 55px #ff4fd8,
+    0 0 80px #ff1493;
+}
+
+
+
+
+
+
+
+
+
+
 .update-card-110426 {
   position: relative;
   padding: 45px;
