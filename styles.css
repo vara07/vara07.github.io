@@ -16,6 +16,121 @@
 
 
 
+
+/* ==========================================
+   🎉 28 August 2026 • Confetti Carnival
+========================================== */
+
+.update-card-280826{
+  position:relative;
+  overflow:hidden;
+  max-width:700px;
+  margin:40px auto;
+  padding:38px;
+  border-radius:30px;
+  font-family:'Poppins',sans-serif;
+  color:#2b1b35;
+
+  background:linear-gradient(
+    135deg,
+    #20e3b2 0%,
+    #f9f871 25%,
+    #ff7b7b 55%,
+    #8b5cf6 100%
+  );
+
+  border:6px dashed #ffffff;
+
+  box-shadow:
+    0 0 20px rgba(255,255,255,.6),
+    0 0 35px rgba(139,92,246,.45);
+}
+
+/* 🎊 Confetti dots */
+.update-card-280826::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:
+    radial-gradient(circle,#ffffff 2px,transparent 2px),
+    radial-gradient(circle,#ff3d81 2px,transparent 2px),
+    radial-gradient(circle,#39ff14 2px,transparent 2px),
+    radial-gradient(circle,#00c2ff 2px,transparent 2px);
+
+  background-size:70px 70px;
+  background-position:0 0,35px 20px,15px 45px,50px 55px;
+  opacity:.28;
+  animation:confettiMove 18s linear infinite;
+}
+
+@keyframes confettiMove{
+  from{transform:translateY(0);}
+  to{transform:translateY(-60px);}
+}
+
+.update-title{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  font-size:28px;
+  color:white;
+  margin-bottom:18px;
+  text-shadow:
+    0 2px 8px rgba(0,0,0,.25);
+}
+
+.update-text{
+  position:relative;
+  z-index:2;
+  font-size:17px;
+  line-height:1.8;
+  background:rgba(255,255,255,.35);
+  padding:18px;
+  border-radius:18px;
+  backdrop-filter:blur(6px);
+}
+
+/* 🎉 Floating icons */
+
+.confetti{
+  position:absolute;
+  font-size:28px;
+  z-index:1;
+  animation:bounce 3.5s ease-in-out infinite;
+}
+
+.c1{top:18px;left:20px;}
+.c2{top:22px;right:25px;animation-delay:.8s;}
+.c3{bottom:20px;left:28px;animation-delay:1.5s;}
+.c4{bottom:26px;right:24px;animation-delay:2.2s;}
+.c5{top:52%;right:12px;animation-delay:1s;}
+
+@keyframes bounce{
+  0%,100%{transform:translateY(0) rotate(0deg);}
+  50%{transform:translateY(-14px) rotate(10deg);}
+}
+
+/* ✨ Hover glow */
+
+.update-card-280826:hover{
+  transform:scale(1.03) rotate(-0.5deg);
+  transition:.3s ease;
+
+  box-shadow:
+    0 0 30px #20e3b2,
+    0 0 55px #ff7b7b,
+    0 0 80px #8b5cf6;
+}
+
+
+
+
+
+
+
+
+
+
 /* ==========================================
    💅 23 August • Neon Pink Energy Theme
 ========================================== */
